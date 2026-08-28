@@ -1,0 +1,59 @@
+import { Section } from "../../components/Section";
+import { sectionIds } from "../Robotics/util";
+import { BlueprintCard } from "./BlueprintCard";
+import AutonomousMobileRobot from "../../../static/img/blueprints/autonomous-mobile-robot.png";
+import StationaryRobotVisionControl from "../../../static/img/blueprints/stationary-robot.png";
+import HumanoidRobots from "../../../static/img/blueprints/humanoid-robots.png";
+import styles from "./Blueprints.module.css";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+const BLUEPRINT_DOCS_VERSION = "v1";
+const base = "/docs/reference-implementations";
+export const Blueprints = () => {
+  const amrDocsHref = useBaseUrl(`${base}/amr/${BLUEPRINT_DOCS_VERSION}/`);
+  const stationaryArmDocsHref = useBaseUrl(
+    `${base}/stationary-arm/${BLUEPRINT_DOCS_VERSION}/`,
+  );
+  const humanoidDocsHref = useBaseUrl(
+    `${base}/humanoid/${BLUEPRINT_DOCS_VERSION}/`,
+  );
+
+  return (
+    <Section className={styles.container} id={sectionIds.blueprints}>
+      <Section.Title>Blueprints</Section.Title>
+      <Section.Subtitle>
+        Explore concrete reference implementation
+      </Section.Subtitle>
+
+      <Section.Description>
+        Kick-start your robotics journey with specialized reference
+        applications. Built on Intel’s robotics expertise, these reference apps
+        help developers design, test, and deploy real-time autonomous systems on
+        Intel silicon - scaling from ARM-based platforms to cobots and humanoid
+        robots.
+      </Section.Description>
+
+      <div className={styles.cards}>
+        <BlueprintCard
+          icon={AutonomousMobileRobot}
+          href={amrDocsHref}
+          title="Autonomous Mobile Robot"
+          description="Safely navigate AMRs in industrial environments using real-time SLAM and open-source AI models."
+        />
+        <BlueprintCard
+          icon={StationaryRobotVisionControl}
+          href={stationaryArmDocsHref}
+          title="Stationary Robot Vision & Control"
+          description="Run real-time control, perception, and AI on a single power-efficient Intel processor with advanced 3D vision and depth sensing."
+        />
+        <BlueprintCard
+          icon={HumanoidRobots}
+          href={humanoidDocsHref}
+          title="Humanoid Robots"
+          imageClassName={styles.humanoidIcon}
+          description="Enable natural robot interaction via voice and text using LLMs and Vision AI to generate actions and accelerate task planning."
+        />
+      </div>
+    </Section>
+  );
+};

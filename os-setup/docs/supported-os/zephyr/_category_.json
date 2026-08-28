@@ -1,0 +1,5 @@
+{
+  "label": "Zephyr",
+  "position": 3,
+  "link": { "type": "doc", "id": "os-setup/supported-os/zephyr/index" }
+}

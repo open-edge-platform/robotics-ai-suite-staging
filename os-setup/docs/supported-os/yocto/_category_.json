@@ -1,0 +1,5 @@
+{
+  "label": "Yocto",
+  "position": 2,
+  "link": { "type": "doc", "id": "os-setup/supported-os/yocto/index" }
+}

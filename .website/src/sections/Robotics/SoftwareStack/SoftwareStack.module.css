@@ -1,0 +1,29 @@
+.description {
+  font-size: var(--size-14);
+  max-width: var(--size-390);
+  margin-top: var(--size-24);
+  line-height: var(--size-20);
+  margin-left: auto;
+  letter-spacing: var(--size-0_25);
+  text-align: end;
+}
+
+.textEnd {
+  text-align: end;
+}
+
+.mapContent {
+  display: flex;
+  margin-top: var(--size-24);
+  align-items: start;
+}
+
+.cards {
+  gap: var(--size-24);
+  display: flex;
+  flex-direction: column;
+}
+
+.roboticsAiSuite {
+  transform: translateY(var(--size-50));
+}

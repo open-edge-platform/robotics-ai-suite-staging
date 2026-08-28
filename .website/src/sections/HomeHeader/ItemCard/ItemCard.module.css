@@ -1,0 +1,55 @@
+.card {
+  padding: var(--size-36) var(--size-44);
+  position: relative;
+  border-radius: var(--size-7);
+  background: #03123361;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: var(--size-1);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.45) 0%,
+      transparent 100%
+    );
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    filter: blur(var(--size-2));
+    pointer-events: none;
+  }
+
+  .iconContainer {
+    height: var(--size-80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  h3 {
+    color: #fff;
+    font-size: var(--size-24);
+    margin-top: var(--size-24);
+    font-weight: 500;
+    line-height: var(--size-32);
+    text-align: center;
+  }
+
+  p {
+    font-size: var(--size-14);
+    margin-top: var(--size-16);
+    text-align: center;
+    font-weight: 400;
+    line-height: var(--size-20);
+    letter-spacing: var(--size-0_25);
+  }
+}

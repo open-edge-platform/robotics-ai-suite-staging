@@ -1,0 +1,51 @@
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import Sensor from "../../../../static/img/robot-perception/sensor.png";
+import Link from "../../../components/Link";
+import styles from "./Gmsl.module.css";
+
+export const Gmsl = () => {
+  const camerasHref = useBaseUrl("/docs/sensors/cameras");
+
+  return (
+    <>
+      <div className={styles.imageContainer}>
+        <div>
+          <h3 className={styles.title}>GMSL</h3>
+          <p className={styles.description}>
+            Cameras placed meters from the developer kit
+          </p>
+
+          <ul className={styles.items}>
+            <li>
+              Sends full-quality video over one cable across several meters
+            </li>
+            <li>One connector on the kit runs up to four cameras.</li>
+            <li>
+              A dedicated Intel image-processing unit (IPU) handles the imaging
+              in hardware, keeping the CPU and GPU free.
+            </li>
+          </ul>
+
+          <Link
+            href={camerasHref}
+            className={styles.link}
+            label="See all supported cameras"
+          />
+        </div>
+
+        <img src={Sensor} alt="GMSL Sensor" />
+      </div>
+
+      <ul className={styles.list}>
+        <li>
+          Pre-integrated with over 60 ready-to-deploy camera modules from 11
+          imaging partners.
+        </li>
+        <li>
+          Validated on 20+ industrial edge boards built by 9 leading
+          manufacturers.
+        </li>
+      </ul>
+    </>
+  );
+};

@@ -1,0 +1,5 @@
+{
+  "label": "How-to Guides",
+  "position": 99,
+  "link": { "type": "doc", "id": "runtime-middleware/how-to-guides/index" }
+}
