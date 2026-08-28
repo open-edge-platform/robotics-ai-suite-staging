@@ -23,7 +23,7 @@ jobs:
   cleanup-pr-preview:
     name: Cleanup PR preview
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ["innersource.prod.amr.dind"]
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
@@ -47,7 +47,7 @@ jobs:
   website-deploy:
     name: Build and deploy
     if: "!(github.event_name == 'pull_request' && github.event.action == 'closed')"
-    runs-on: ["innersource.prod.amr.dind"]
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
