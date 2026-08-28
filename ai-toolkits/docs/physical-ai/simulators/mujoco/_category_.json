@@ -1,0 +1,5 @@
+{
+  "label": "MuJoCo",
+  "position": 2,
+  "link": { "type": "doc", "id": "ai-toolkits/physical-ai/simulators/mujoco/index" }
+}

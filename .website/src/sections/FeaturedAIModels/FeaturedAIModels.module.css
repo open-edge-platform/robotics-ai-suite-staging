@@ -1,0 +1,18 @@
+.container {
+  padding: var(--size-68) 0;
+}
+
+.cards {
+  gap: var(--size-16);
+  display: flex;
+  margin-top: var(--size-48);
+}
+
+.exploreMore {
+  margin-top: 48px;
+  font-size: var(--font-size-16);
+}
+
+.card {
+  max-width: var(--size-270);
+}

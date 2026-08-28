@@ -1,0 +1,11 @@
+.container {
+  flex: 1;
+  gap: 1.5rem;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+
+  border-radius: 12px;
+  background-color: #ffffff0d;
+  padding: 16px;
+}

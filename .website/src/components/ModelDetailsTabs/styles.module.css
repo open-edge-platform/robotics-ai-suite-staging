@@ -1,0 +1,25 @@
+.tabs {
+  & > ul {
+    border-bottom: 0.0625rem solid #ffffff1f;
+  }
+}
+
+.quickStart {
+  color: var(--geti-color-white);
+
+  h1,
+  h2,
+  h3 {
+    color: var(--geti-color-white);
+    font-size: var(--size-16);
+  }
+
+  a {
+    color: #6ddcff;
+  }
+
+  pre {
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}

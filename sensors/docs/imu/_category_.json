@@ -1,0 +1,5 @@
+{
+  "label": "IMU",
+  "position": 3,
+  "link": { "type": "doc", "id": "sensors/imu/index" }
+}

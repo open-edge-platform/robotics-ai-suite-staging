@@ -1,0 +1,5 @@
+{
+  "label": "System Tuning",
+  "position": 5,
+  "link": { "type": "doc", "id": "os-setup/real-time-setup/system-tuning/index" }
+}

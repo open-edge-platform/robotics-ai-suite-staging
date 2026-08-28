@@ -1,0 +1,5 @@
+{
+  "label": "USB (UVC)",
+  "position": 3,
+  "link": { "type": "doc",   "id": "sensors/cameras/usb-uvc/index" }
+}

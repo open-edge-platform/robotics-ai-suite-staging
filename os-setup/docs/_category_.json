@@ -1,0 +1,5 @@
+{
+  "label": "Operating System",
+  "position": 2,
+  "link": { "type": "doc", "id": "os-setup/index" }
+}

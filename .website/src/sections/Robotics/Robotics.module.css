@@ -1,0 +1,38 @@
+.container {
+  background: #031233;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: #fff;
+  }
+
+  h3 {
+    font-size: var(--size-24);
+    font-weight: 300;
+    line-height: var(--size-30);
+
+    span {
+      font-size: var(--size-48);
+      font-weight: 600;
+      line-height: var(--size-48);
+    }
+  }
+}
+
+.developerKit {
+  flex: 1;
+}
+
+.softwareStack {
+  flex: 1.1;
+}

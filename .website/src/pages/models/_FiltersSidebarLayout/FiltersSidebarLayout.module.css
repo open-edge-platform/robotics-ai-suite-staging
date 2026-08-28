@@ -1,0 +1,12 @@
+.layout {
+  gap: 3rem;
+  display: flex;
+  align-items: flex-start;
+  min-height: 70vh;
+}
+
+@media (max-width: 640px) {
+  .layout {
+    flex-direction: column;
+  }
+}

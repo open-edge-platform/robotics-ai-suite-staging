@@ -1,0 +1,5 @@
+{
+  "label": "Physical AI",
+  "position": 3,
+  "link": { "type": "doc", "id": "ai-toolkits/physical-ai/index" }
+}

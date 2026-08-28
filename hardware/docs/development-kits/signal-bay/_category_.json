@@ -1,0 +1,5 @@
+{
+  "label": "Signal Bay",
+  "position": 3,
+  "link": { "type": "doc", "id": "hardware/development-kits/signal-bay/index" }
+}

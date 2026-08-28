@@ -1,0 +1,8 @@
+{
+  "label": "Blueprints",
+  "position": 10,
+  "link": {
+    "type": "doc",
+    "id": "reference-implementations/index"
+  }
+}

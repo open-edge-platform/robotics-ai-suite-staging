@@ -1,0 +1,7 @@
+.container {
+  padding: var(--size-68) 0;
+}
+
+.tabs {
+  margin-top: var(--size-32);
+}
