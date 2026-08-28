@@ -84,7 +84,6 @@ jobs:
           HF_ORG: ${{ vars.HF_ORG }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
 
-
       - name: Debug OIDC
         run: |
           curl -H "Authorization: bearer ${{ secrets.GITHUB_TOKEN }}" \
