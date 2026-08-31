@@ -4,10 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "copy-docs": "node scripts/copy-docs.js",
-    "prestart": "node scripts/copy-docs.js",
     "start": "docusaurus start",
-    "prebuild": "node scripts/copy-docs.js",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

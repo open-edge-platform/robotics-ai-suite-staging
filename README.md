@@ -6,8 +6,7 @@ models, robotics skills, and reference implementations.
 
 ## Layout
 
-Each top-level folder covers one layer of the stack, containing related scripts,
-libraries, and documentation.
+Documentation lives under `docs/`, with one subfolder per layer of the stack.
 
 ## Features
 
@@ -17,7 +16,7 @@ libraries, and documentation.
 
 ## Making changes
 
-Docs are Markdown in each domain's `docs/`. Preview them locally with a
+Docs are Markdown under `docs/<layer>/`. Preview them locally with a
 live-reloading site:
 
 ```bash

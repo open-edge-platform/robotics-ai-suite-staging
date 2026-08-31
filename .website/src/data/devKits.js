@@ -31,7 +31,7 @@ const devKits = [
     mipiPhy: PHY.CPHY,
     docLink: '/docs/hardware/development-kits/robinson-bay/quick-start',
     connectLink: '/docs/hardware/development-kits/robinson-bay/interfaces',
-    image: require('@site/docs/hardware/img/aaeon-cexd-intrbl.png')
+    image: require('@site/../docs/hardware/img/aaeon-cexd-intrbl.png')
       .default,
     description:
       'Modular form factor supporting a wide range of robotics with integrated GMSL camera connectivity, EtherCAT for real-time controls, and additional capabilities to address diverse robotic requirements.',

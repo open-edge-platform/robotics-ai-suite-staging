@@ -35,12 +35,6 @@ jobs:
           role-session-name: Github
           aws-region: us-east-1
 
-      - name: Install AWS CLI
-        run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
-
       - name: Delete PR preview from S3
         run: aws s3 rm ${{ env.PROD_BUCKET }}/pr/${{ github.event.number }} --recursive
 

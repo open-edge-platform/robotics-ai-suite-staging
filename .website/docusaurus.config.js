@@ -65,7 +65,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: "docs",
+          path: "../docs",
           sidebarPath: "./sidebars.js",
           routeBasePath: "docs",
           // Injects the AI actions toolbar under each doc's H1 at build time.
@@ -116,7 +116,7 @@ const config = {
         indexBlog: false,
         indexPages: true,
         searchBarShortcutHint: false,
-        docsDir: "docs",
+        docsDir: "../docs",
       },
     ],
   ],

@@ -90,7 +90,7 @@ Add an entry to `devKits.js`:
   mipiPhy: PHY.CPHY,                    // PHY of the kit's MIPI connectors
   docLink: '/docs/hardware/development-kits/vendor-board/quick-start',
   connectLink: '/docs/hardware/development-kits/vendor-board/connect-a-camera',
-  image: require('@site/docs/hardware/img/vendor-board.png').default,
+  image: require('@site/../docs/hardware/img/vendor-board.png').default,
   description: 'Short card blurb.',
   specs: {                             // card spec bullets
     ai: '…', memory: '…', vision: '…', control: '…',

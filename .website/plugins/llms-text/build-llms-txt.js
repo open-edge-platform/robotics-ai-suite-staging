@@ -19,10 +19,11 @@ function formatItem(item, depth, options, full = false) {
   if (item.type === "link") {
     if (item.file && item.file.endsWith("redirect.md")) {
       item.file = undefined;
+      item.webFile = undefined;
     }
 
     const pageUrl = normalizeUrl([siteUrl, item.href]);
-    const fileUrl = item.file ? normalizeUrl([siteUrl, baseUrl, item.file]) : undefined;
+    const fileUrl = item.webFile ? normalizeUrl([siteUrl, baseUrl, item.webFile]) : undefined;
 
     const title = item.metadata ? item.metadata.title : item.label;
     const description = item.metadata?.description ?? item.description ?? "";
