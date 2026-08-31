@@ -69,6 +69,11 @@ function getDocItemsFromSidebars(routes, baseUrl) {
 
   const { getFilePath, getMetadata } = mapPathsToSourceFilePath(container);
 
+  // `file` is the source path relative to siteDir; when docs live outside the
+  // site dir it is prefixed with `../`. `webFile` strips that so it can be used
+  // as a build-output subpath and URL (both rooted at the site/build dir).
+  const toWebFile = (file) => (file ? file.replace(/^(\.\.\/)+/, "") : file);
+
   function parseItem(item) {
     if (item.type === "link") {
       const file = getFilePath(item);
@@ -81,19 +86,22 @@ function getDocItemsFromSidebars(routes, baseUrl) {
           href: item.href,
           description: item.description,
           file,
+          webFile: toWebFile(file),
           metadata,
         },
       ];
     }
 
     if (item.type === "category") {
+      const file = getFilePath(item);
       return [
         {
           type: "category",
           label: item.label,
           link: item.link,
           description: item.description,
-          file: getFilePath(item),
+          file,
+          webFile: toWebFile(file),
           items: item.items.flatMap(parseItem),
         },
       ];

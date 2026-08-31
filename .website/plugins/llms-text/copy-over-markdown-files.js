@@ -11,7 +11,7 @@ async function copyOverMarkdownFiles(docItems, options) {
         const source = path.join(siteDir, item.file);
         if (fs.existsSync(source)) {
           const content = stripFrontMatter(fs.readFileSync(source, "utf8"));
-          const destination = path.join(outDir, item.file);
+          const destination = path.join(outDir, item.webFile);
           await fs.promises.mkdir(path.dirname(destination), { recursive: true });
           fs.writeFileSync(destination, content, { encoding: "utf8" });
         }
