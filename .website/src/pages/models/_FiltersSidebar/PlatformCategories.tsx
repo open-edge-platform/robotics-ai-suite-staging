@@ -1,6 +1,7 @@
 import React from "react";
 import CheckMark from "../../../../static/img/icon/check-mark.svg";
 import ChipsetIcon from "../../../../static/img/icon/chipset.svg";
+import { getTierLabel } from "../../../data/models/hardware";
 import styles from "./PlatformCategories.module.css";
 
 export type PlatformCategoryItem = {
@@ -13,12 +14,6 @@ type PlatformCategoriesProps = {
   items: PlatformCategoryItem[];
   selectedItems: string[];
   onSelectionChange: (selectedItem: string) => void;
-};
-
-const CATEGORIES: Record<string, string> = {
-  ptl: "Core Ultra 4",
-  nvl: "Core Ultra 2",
-  wcl: "Core Series 3",
 };
 
 export const PlatformCategories = ({
@@ -44,7 +39,7 @@ export const PlatformCategories = ({
               <span className={styles.leadingIcon}>
                 {isSelected ? <CheckMark /> : <ChipsetIcon />}
               </span>
-              {CATEGORIES[item.value]}{" "}
+              {getTierLabel(item.value)}{" "}
               <span className={styles.label}>{item.label}</span>
             </button>
           );

@@ -24,8 +24,8 @@ export const SoftwareStack = ({ className }: SoftwareStackProps) => {
       </h3>
 
       <p className={clsx(styles.description)}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt.
+        A modular software stack spanning blueprints, AI toolkits, and inference
+        backends for production robotics.
       </p>
 
       <div className={styles.mapContent}>
