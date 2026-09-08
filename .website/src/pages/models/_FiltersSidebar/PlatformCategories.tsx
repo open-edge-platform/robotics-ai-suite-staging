@@ -1,8 +1,8 @@
 import React from "react";
 import CheckMark from "../../../../static/img/icon/check-mark.svg";
 import ChipsetIcon from "../../../../static/img/icon/chipset.svg";
-import { getTierLabel } from "../../../data/models/hardware";
 import styles from "./PlatformCategories.module.css";
+import { getTierLabel } from "@site/src/data/models/hardware";
 
 export type PlatformCategoryItem = {
   value: string;

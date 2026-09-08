@@ -2,6 +2,10 @@ import {
   getBenchmarksByMetric,
   getYAxisConfig,
 } from "@site/src/components/ModelBenchmarks/utils";
+import {
+  getHardwareColor,
+  getHardwareLabel,
+} from "@site/src/data/models/hardware";
 import React from "react";
 import {
   Bar,
@@ -16,10 +20,6 @@ import {
 import { useCategoryFilter } from "../_hooks/useCategoryFilter";
 import styles from "./BenchmarksTab.module.css";
 import { BenchmarkTooltip } from "./BenchmarkTooltip";
-import {
-  getHardwareColor,
-  getHardwareLabel,
-} from "@site/src/data/models/hardware";
 
 export const BenchmarksTab = (): React.JSX.Element => {
   const {

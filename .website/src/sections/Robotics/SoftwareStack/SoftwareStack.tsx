@@ -1,7 +1,7 @@
-import styles from "./SoftwareStack.module.css";
 import clsx from "clsx";
-import { sectionIds } from "../../Robotics/util";
 import { useState } from "react";
+import { sectionIds } from "../../Robotics/util";
+import styles from "./SoftwareStack.module.css";
 
 import roboticsAiSuite from "../../../../static/img/robotics-ai-suite.png";
 import { CollapsibleCard } from "../../../components/CollapsibleCard";

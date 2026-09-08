@@ -1,10 +1,10 @@
+import { getHardwareLabel } from "@site/src/data/models/hardware";
 import type { TooltipContentProps } from "recharts";
 import type {
   NameType,
   ValueType,
 } from "recharts/types/component/DefaultTooltipContent";
 import styles from "./BenchmarkTooltip.module.css";
-import { getHardwareLabel } from "@site/src/data/models/hardware";
 
 export type BenchmarkTooltipProps = TooltipContentProps<ValueType, NameType> & {
   metricLabel: string;

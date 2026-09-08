@@ -1,7 +1,3 @@
-// Canonical hardware alias metadata for the AI Models catalog.
-// Chipset codenames and tiers follow .designs/model-catalogue-convention.md;
-// keep entries here in sync with that document.
-
 export type HardwareAlias = "nvl" | "ptl" | "wcl";
 
 export type HardwareInfo = {
