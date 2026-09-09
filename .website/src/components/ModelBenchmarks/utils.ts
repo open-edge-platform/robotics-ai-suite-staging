@@ -1,3 +1,9 @@
+// -----------------------------------------------------------------------------
+// Palette + human-readable labels
+// -----------------------------------------------------------------------------
+
+import { getHardwareLabel } from "@site/src/data/models/hardware";
+
 export const METRIC_COLORS = [
   "#c8f000",
   "#3b5ea6",
@@ -11,11 +17,9 @@ const METRIC_LABELS: Record<string, string> = {
   throughput: "Throughput",
 };
 
-const HARDWARE_LABELS: Record<string, string> = {
-  nvl: "Core Ultra 4 NOVA LAKE",
-  ptl: "Core Ultra 3 PANTHER LAKE",
-  wcl: "Intel Core 300 WILDCAT LAKE",
-};
+// -----------------------------------------------------------------------------
+// Public types
+// -----------------------------------------------------------------------------
 
 export type BenchmarkMetric = {
   name: string;
@@ -28,95 +32,193 @@ export type ChartRow = {
   [metricKey: string]: string | number;
 };
 
-type BenchmarkWithSlug = {
-  slug: string;
+export type MetricChartDataset = {
+  metricKey: string;
+  metricLabel: string;
+  unit?: string;
+  rows: ChartRow[];
+  hardwareKeys: string[];
 };
 
-type BenchmarkWithMetrics = {
-  metrics: ReadonlyArray<{
-    name: string;
-    unit?: string;
-    value?: number;
-  }>;
-};
+// -----------------------------------------------------------------------------
+// Minimal structural constraints for the generic helpers below. Each function
+// only asks for the fields it actually reads, so callers can pass richer types
+// (e.g. the API's Benchmark) without extra plumbing.
+// -----------------------------------------------------------------------------
 
-type BenchmarkWithHardware = {
-  hardware: string;
-};
+type MetricLike = { name: string; unit?: string; value?: number };
+type HasMetrics = { metrics: ReadonlyArray<MetricLike> };
+type HasSlug = { slug: string };
+type HasHardware = { hardware: string };
+type ModelLike = { slug: string; name: string };
 
-export const toTitleCase = (value: string) =>
+// -----------------------------------------------------------------------------
+// String + label helpers
+// -----------------------------------------------------------------------------
+
+export const toTitleCase = (value: string): string =>
   value
     .replace(/[_-]+/g, " ")
     .toLowerCase()
     .replace(/\b\w/g, (char) => char.toUpperCase());
 
-export const getModelBenchmarks = <T extends BenchmarkWithSlug>(
+const formatMetricLabel = (metricKey: string, unit?: string): string => {
+  const base = toTitleCase(METRIC_LABELS[metricKey] ?? metricKey);
+  return unit ? `${base} (${unit})` : base;
+};
+
+// -----------------------------------------------------------------------------
+// Benchmark selection + metric discovery
+// -----------------------------------------------------------------------------
+
+export const getModelBenchmarks = <T extends HasSlug>(
   benchmarks: ReadonlyArray<T>,
   slug: string,
-): T[] => benchmarks.filter(({ slug: modelSlug }) => modelSlug === slug);
+): T[] => benchmarks.filter((entry) => entry.slug === slug);
 
-export const getMetricKeys = <T extends BenchmarkWithMetrics>(
-  modelBenchmarks: ReadonlyArray<T>,
+export const getMetricKeys = <T extends HasMetrics>(
+  benchmarks: ReadonlyArray<T>,
 ): string[] =>
   Array.from(
-    new Set(
-      modelBenchmarks.flatMap((entry) => entry.metrics.map(({ name }) => name)),
-    ),
+    new Set(benchmarks.flatMap((entry) => entry.metrics.map((m) => m.name))),
   );
 
-export const getMetricLabels = <T extends BenchmarkWithMetrics>(
-  modelBenchmarks: ReadonlyArray<T>,
+const findFirstMetric = <T extends HasMetrics>(
+  benchmarks: ReadonlyArray<T>,
+  metricKey: string,
+): MetricLike | undefined => {
+  for (const entry of benchmarks) {
+    const match = entry.metrics.find((m) => m.name === metricKey);
+    if (match) return match;
+  }
+  return undefined;
+};
+
+export const getMetricLabels = <T extends HasMetrics>(
+  benchmarks: ReadonlyArray<T>,
   metricKeys: string[],
 ): Record<string, string> =>
-  metricKeys.reduce<Record<string, string>>((acc, key) => {
-    const metric = modelBenchmarks
-      .flatMap((entry) => entry.metrics)
-      .find(({ name }) => name === key);
+  Object.fromEntries(
+    metricKeys.map((key) => [
+      key,
+      formatMetricLabel(key, findFirstMetric(benchmarks, key)?.unit),
+    ]),
+  );
 
-    const baseLabel = METRIC_LABELS[key] ?? key;
-    const formattedLabel = toTitleCase(baseLabel);
+// -----------------------------------------------------------------------------
+// Chart-row builders
+// -----------------------------------------------------------------------------
 
-    acc[key] = metric?.unit
-      ? `${formattedLabel} (${metric.unit})`
-      : formattedLabel;
-    return acc;
-  }, {});
-
-export const getChartData = <
-  T extends BenchmarkWithMetrics & BenchmarkWithHardware,
->(
-  modelBenchmarks: ReadonlyArray<T>,
+export const getChartData = <T extends HasMetrics & HasHardware>(
+  benchmarks: ReadonlyArray<T>,
 ): ChartRow[] =>
-  modelBenchmarks.map((entry) => {
-    const row: ChartRow = {
-      name: HARDWARE_LABELS[entry.hardware] ?? entry.hardware.toUpperCase(),
-    };
-
+  benchmarks.map((entry) => {
+    const row: ChartRow = { name: getHardwareLabel(entry.hardware) };
     for (const metric of entry.metrics) {
       row[metric.name] = metric.value ?? 0;
     }
-
     return row;
   });
+
+// -----------------------------------------------------------------------------
+// Y-axis scaling
+// -----------------------------------------------------------------------------
+
+// Picks a "nice" tick step (1/2/5 × 10^n) so single-digit latencies and
+// hundreds-scale throughputs both render with clean gridlines.
+const pickNiceStep = (maxValue: number, targetTicks = 5): number => {
+  if (maxValue <= 0) return 1;
+  const rough = maxValue / targetTicks;
+  const magnitude = 10 ** Math.floor(Math.log10(rough));
+  const normalized = rough / magnitude;
+  const niceMultiplier =
+    normalized <= 1 ? 1 : normalized <= 2 ? 2 : normalized <= 5 ? 5 : 10;
+  return niceMultiplier * magnitude;
+};
+
+const maxValueAcross = (rows: ChartRow[], metricKeys: string[]): number =>
+  Math.max(
+    0,
+    ...rows.flatMap((row) => metricKeys.map((key) => Number(row[key] ?? 0))),
+  );
 
 export const getYAxisConfig = (
   chartData: ChartRow[],
   metricKeys: string[],
-  step = 20,
-  minMax = 20,
+  step?: number,
+  minMax = 0,
 ): { yAxisMax: number; yTicks: number[] } => {
-  const maxMetricValue = Math.max(
-    0,
-    ...chartData.flatMap((row) =>
-      metricKeys.map((metricKey) => Number(row[metricKey] ?? 0)),
-    ),
+  const maxMetricValue = maxValueAcross(chartData, metricKeys);
+  const effectiveStep = step ?? pickNiceStep(maxMetricValue);
+
+  const yAxisMax = Math.max(
+    minMax,
+    Math.ceil(maxMetricValue / effectiveStep) * effectiveStep,
+    effectiveStep,
   );
 
-  const yAxisMax = Math.max(minMax, Math.ceil(maxMetricValue / step) * step);
-  const yTicks = Array.from(
-    { length: yAxisMax / step + 1 },
-    (_, index) => index * step,
+  const tickCount = Math.round(yAxisMax / effectiveStep) + 1;
+  const yTicks = Array.from({ length: tickCount }, (_, index) =>
+    Number((index * effectiveStep).toFixed(6)),
   );
 
   return { yAxisMax, yTicks };
+};
+
+// -----------------------------------------------------------------------------
+// Split benchmarks into one dataset per metric so each chart owns its Y scale
+// -----------------------------------------------------------------------------
+
+const buildMetricRow = <B extends HasSlug & HasHardware & HasMetrics>(
+  model: ModelLike,
+  benchmarks: ReadonlyArray<B>,
+  metricKey: string,
+  hardwareSeen: Set<string>,
+): ChartRow | null => {
+  const row: ChartRow = { name: model.name };
+  let hasValue = false;
+
+  for (const entry of benchmarks) {
+    if (entry.slug !== model.slug) continue;
+    const metric = entry.metrics.find((m) => m.name === metricKey);
+    if (metric?.value == null) continue;
+
+    row[entry.hardware] = metric.value;
+    hardwareSeen.add(entry.hardware);
+    hasValue = true;
+  }
+
+  return hasValue ? row : null;
+};
+
+export const getBenchmarksByMetric = <
+  B extends HasSlug & HasHardware & HasMetrics,
+  M extends ModelLike,
+>(
+  benchmarks: ReadonlyArray<B>,
+  models: ReadonlyArray<M>,
+): MetricChartDataset[] => {
+  const metricKeys = getMetricKeys(benchmarks);
+  const hardwareOrder = Array.from(
+    new Set(benchmarks.map((entry) => entry.hardware)),
+  );
+
+  return metricKeys.map((metricKey) => {
+    const unit = findFirstMetric(benchmarks, metricKey)?.unit;
+    const hardwareSeen = new Set<string>();
+
+    const rows = models.flatMap((model) => {
+      const row = buildMetricRow(model, benchmarks, metricKey, hardwareSeen);
+      return row ? [row] : [];
+    });
+
+    return {
+      metricKey,
+      // Chart titles render the unit separately, so keep the label unit-free.
+      metricLabel: toTitleCase(METRIC_LABELS[metricKey] ?? metricKey),
+      unit,
+      rows,
+      hardwareKeys: hardwareOrder.filter((hw) => hardwareSeen.has(hw)),
+    };
+  });
 };

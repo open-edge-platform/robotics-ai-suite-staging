@@ -1,7 +1,7 @@
-import styles from "./SoftwareStack.module.css";
 import clsx from "clsx";
-import { sectionIds } from "../../Robotics/util";
 import { useState } from "react";
+import { sectionIds } from "../../Robotics/util";
+import styles from "./SoftwareStack.module.css";
 
 import roboticsAiSuite from "../../../../static/img/robotics-ai-suite.png";
 import { CollapsibleCard } from "../../../components/CollapsibleCard";
@@ -24,8 +24,8 @@ export const SoftwareStack = ({ className }: SoftwareStackProps) => {
       </h3>
 
       <p className={clsx(styles.description)}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt.
+        A modular software stack spanning blueprints, AI toolkits, and inference
+        backends for production robotics.
       </p>
 
       <div className={styles.mapContent}>

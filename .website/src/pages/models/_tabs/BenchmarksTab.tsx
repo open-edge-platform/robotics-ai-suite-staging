@@ -1,16 +1,17 @@
-import type { ChartRow } from "@site/src/components/ModelBenchmarks/utils";
 import {
-  METRIC_COLORS,
-  getMetricKeys,
-  getMetricLabels,
+  getBenchmarksByMetric,
   getYAxisConfig,
 } from "@site/src/components/ModelBenchmarks/utils";
+import {
+  getHardwareColor,
+  getHardwareLabel,
+} from "@site/src/data/models/hardware";
 import React from "react";
 import {
   Bar,
   BarChart,
   CartesianGrid,
-  LabelList,
+  ReferenceArea,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -32,98 +33,121 @@ export const BenchmarksTab = (): React.JSX.Element => {
     displayedSlugs.has(slug),
   );
 
-  const chartData = filteredItems.map((model) => {
-    const row: Record<string, string | number> = { name: model.name };
-    for (const entry of displayedBenchmarks) {
-      if (entry.slug !== model.slug) continue;
+  const datasets = getBenchmarksByMetric(
+    displayedBenchmarks,
+    filteredItems,
+  ).filter((d) => d.rows.length > 0 && d.hardwareKeys.length > 0);
 
-      for (const metric of entry.metrics) {
-        row[`${metric.name}__${entry.hardware}`] = metric.value ?? 0;
-      }
-    }
-    return row;
-  });
-
-  const metricKeys = getMetricKeys(displayedBenchmarks);
-  const metricLabels = getMetricLabels(displayedBenchmarks, metricKeys);
-
-  const barKeys = Array.from(
-    new Set(
-      displayedBenchmarks.flatMap((e) =>
-        e.metrics.map((m) => `${m.name}__${e.hardware}`),
-      ),
-    ),
+  const legendHardware = Array.from(
+    new Set(datasets.flatMap((d) => d.hardwareKeys)),
   );
-
-  const barLabels = barKeys.reduce<Record<string, string>>((acc, key) => {
-    const sep = key.indexOf("__");
-    const metricName = key.slice(0, sep);
-    const hardware = key.slice(sep + 2);
-    acc[key] =
-      `${metricLabels[metricName] ?? metricName} – ${hardware.toUpperCase()}`;
-    return acc;
-  }, {});
-
-  const { yAxisMax, yTicks } = getYAxisConfig(chartData as ChartRow[], barKeys);
 
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
-  if (chartData.length === 0 || metricKeys.length === 0) {
+  if (filteredItems.length === 0 || datasets.length === 0) {
     return <p>No benchmark data available for the selected models.</p>;
   }
 
   return (
     <div className={styles.container}>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart
-          data={chartData}
-          margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
-          barCategoryGap="30%"
-          barGap={4}
-        >
-          <CartesianGrid vertical={false} strokeDasharray="" />
-          <XAxis
-            dataKey="name"
-            axisLine={false}
-            tickLine={false}
-            tick={false}
-            interval={0}
-          />
-          <YAxis
-            domain={[0, yAxisMax]}
-            ticks={yTicks}
-            axisLine={false}
-            tickLine={false}
-          />
-          <Tooltip
-            cursor={{ fill: "#ffffff0d" }}
-            allowEscapeViewBox={{ x: false, y: true }}
-            position={{ y: -8 }}
-            offset={12}
-            content={(props) => (
-              <BenchmarkTooltip {...props} barLabels={barLabels} />
-            )}
-          />
-          {barKeys.map((barKey) => (
-            <Bar
-              key={barKey}
-              dataKey={barKey}
-              name={barLabels[barKey]}
-              fill={
-                METRIC_COLORS[
-                  metricKeys.indexOf(barKey.split("__")[0] ?? "") %
-                    METRIC_COLORS.length
-                ]
-              }
-              radius={[2, 2, 0, 0]}
-            >
-              <LabelList dataKey={barKey} position="top" />
-            </Bar>
+      {legendHardware.length > 0 && (
+        <ul className={styles.legend} aria-label="Hardware legend">
+          {legendHardware.map((hw, i) => (
+            <li key={hw} className={styles.legendItem}>
+              <span
+                className={styles.legendSwatch}
+                style={{ background: getHardwareColor(hw, i) }}
+                aria-hidden
+              />
+              <span>{getHardwareLabel(hw)}</span>
+            </li>
           ))}
-        </BarChart>
-      </ResponsiveContainer>
+        </ul>
+      )}
+
+      {datasets.map((dataset) => {
+        const { yAxisMax, yTicks } = getYAxisConfig(
+          dataset.rows,
+          dataset.hardwareKeys,
+        );
+
+        return (
+          <section key={dataset.metricKey} className={styles.chartSection}>
+            <h4 className={styles.chartTitle}>
+              {dataset.metricLabel}
+              {dataset.unit ? (
+                <span className={styles.chartUnit}> ({dataset.unit})</span>
+              ) : null}
+            </h4>
+            <ResponsiveContainer width="100%" height={280}>
+              <BarChart
+                data={dataset.rows}
+                margin={{ top: 12, right: 20, left: 0, bottom: 40 }}
+                barCategoryGap="20%"
+                barGap={2}
+              >
+                {dataset.rows.map((row, i) =>
+                  i % 2 === 1 ? (
+                    <ReferenceArea
+                      key={`band-${row.name}`}
+                      x1={row.name as string}
+                      x2={row.name as string}
+                      fill="#ffffff08"
+                      fillOpacity={1}
+                      ifOverflow="visible"
+                      stroke="none"
+                    />
+                  ) : null,
+                )}
+                <CartesianGrid vertical={false} strokeDasharray="" />
+                <XAxis
+                  dataKey="name"
+                  axisLine={false}
+                  tickLine={false}
+                  interval={0}
+                  angle={-25}
+                  textAnchor="end"
+                  height={60}
+                  tick={{ fontSize: 12 }}
+                  padding={{ left: 8, right: 8 }}
+                />
+                <YAxis
+                  domain={[0, yAxisMax]}
+                  ticks={yTicks}
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fontSize: 12 }}
+                  width={48}
+                />
+                <Tooltip
+                  cursor={{ fill: "#ffffff0d" }}
+                  allowEscapeViewBox={{ x: false, y: true }}
+                  position={{ y: -8 }}
+                  offset={12}
+                  content={(props) => (
+                    <BenchmarkTooltip
+                      {...props}
+                      metricLabel={dataset.metricLabel}
+                      unit={dataset.unit}
+                    />
+                  )}
+                />
+                {dataset.hardwareKeys.map((hw, index) => (
+                  <Bar
+                    key={hw}
+                    dataKey={hw}
+                    name={getHardwareLabel(hw)}
+                    fill={getHardwareColor(hw, index)}
+                    radius={[2, 2, 0, 0]}
+                  />
+                ))}
+              </BarChart>
+            </ResponsiveContainer>
+          </section>
+        );
+      })}
     </div>
   );
 };
