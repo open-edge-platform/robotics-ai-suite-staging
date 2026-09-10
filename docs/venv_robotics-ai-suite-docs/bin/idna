@@ -1,0 +1,6 @@
+#!/home/jmouille/new-docs/docs/venv_robotics-ai-suite-docs/bin/python
+import sys
+from idna.cli import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())

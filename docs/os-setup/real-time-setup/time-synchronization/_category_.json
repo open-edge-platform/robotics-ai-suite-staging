@@ -1,8 +1,0 @@
-{
-  "label": "Time Synchronization",
-  "position": 4,
-  "link": {
-    "type": "doc",
-    "id": "os-setup/real-time-setup/time-synchronization/index"
-  }
-}

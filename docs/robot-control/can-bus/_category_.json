@@ -1,8 +1,0 @@
-{
-  "label": "CAN Bus",
-  "position": 2,
-  "link": {
-    "type": "doc",
-    "id": "robot-control/can-bus/index"
-  }
-}
