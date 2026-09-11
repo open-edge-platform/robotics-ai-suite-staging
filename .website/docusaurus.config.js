@@ -16,11 +16,6 @@ const LLMS_SIDEBARS_CONFIG = {
     description:
       "The layered bring-up stack: development kits, OS setup, real-time, middleware, sensors, models, and frameworks.",
   },
-  referenceImplementationsSidebar: {
-    title: "Blueprints",
-    description:
-      "End-to-end reference implementations: AMR, humanoid, and stationary arm.",
-  },
 };
 
 /** @type {import('@docusaurus/types').Config} */
@@ -88,22 +83,6 @@ const config = {
           ],
           // Injects the AI actions toolbar under each doc's H1 at build time.
           remarkPlugins: [remarkAiActions],
-          // Blueprints is a top-level navbar section of its own
-          // (referenceImplementationsSidebar), so drop it from the main Stack sidebar.
-          // The label below must match reference-implementations/_category_.json.
-          sidebarItemsGenerator: async ({
-            defaultSidebarItemsGenerator,
-            ...args
-          }) => {
-            const items = await defaultSidebarItemsGenerator(args);
-            if (args.item.dirName === ".") {
-              return items.filter(
-                (item) =>
-                  !(item.type === "category" && item.label === "Blueprints"),
-              );
-            }
-            return items;
-          },
         },
         blog: false,
         theme: {
@@ -137,7 +116,7 @@ const config = {
         searchBarShortcutHint: false,
         // Only the Docusaurus-rendered docs; the Sphinx source under
         // ../docs/user-guide is not indexed here.
-        docsDir: "../docs/reference-implementations",
+        docsDir: "../docs",
       },
     ],
   ],
@@ -162,10 +141,12 @@ const config = {
             position: "left",
           },
           {
-            type: "docSidebar",
-            sidebarId: "referenceImplementationsSidebar",
-            position: "left",
+            // `pathname://` links to the staged static Sphinx site directly,
+            // bypassing the SPA router and broken-link checks.
+            to: "pathname:///development-stack/hardware_blueprints/index.html",
             label: "Blueprints",
+            target: "_self",
+            position: "left",
           },
           {
             to: "/skills/",

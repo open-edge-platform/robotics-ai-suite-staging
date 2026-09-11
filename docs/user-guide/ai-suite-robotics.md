@@ -149,6 +149,7 @@ Physical AI Studio  <https://github.com/open-edge-platform/physical-ai-studio>
 :caption: Hardware Blueprints
 :hidden:
 
+Hardware Blueprints <hardware_blueprints/index>
 Autonomous Mobile Robot <hardware_blueprints/amr/index>
 Humanoid Robot <hardware_blueprints/humanoid/index>
 Stationary Arm <hardware_blueprints/stationary_arm/index>
