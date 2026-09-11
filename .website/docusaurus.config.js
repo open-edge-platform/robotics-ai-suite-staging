@@ -2,7 +2,6 @@
 
 const path = require("path");
 
-const remarkAiActions = require("./plugins/llms-text/remark-ai-actions");
 const sphinxDocs = require("./plugins/sphinx-docs");
 
 // Header text for the generated llms.txt (see plugins/llms-text).
@@ -66,24 +65,9 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          path: "../docs",
-          sidebarPath: "./sidebars.js",
-          routeBasePath: "docs",
-          // The Sphinx "Development Stack" docs live under docs/ but are built
-          // separately; keep their source, output, and venv out of Docusaurus.
-          exclude: [
-            "**/_*.{js,jsx,ts,tsx,md,mdx}",
-            "**/_*/**",
-            "**/*.test.{js,jsx,ts,tsx}",
-            "**/__tests__/**",
-            "user-guide/**",
-            "out/**",
-            "venv_*/**",
-          ],
-          // Injects the AI actions toolbar under each doc's H1 at build time.
-          remarkPlugins: [remarkAiActions],
-        },
+        // All docs now live in the Sphinx "Development Stack" site (served at
+        // /development-stack/); no Docusaurus-rendered docs remain.
+        docs: false,
         blog: false,
         theme: {
           customCss: "./src/css/custom.css",
