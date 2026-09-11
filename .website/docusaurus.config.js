@@ -90,19 +90,6 @@ const config = {
     ],
   ],
 
-  themes: [
-    [
-      "@easyops-cn/docusaurus-search-local",
-      {
-        hashed: true,
-        indexBlog: false,
-        indexPages: true,
-        searchBarShortcutHint: false,
-        indexDocs: false,
-      },
-    ],
-  ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

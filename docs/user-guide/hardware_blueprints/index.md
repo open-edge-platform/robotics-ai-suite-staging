@@ -30,13 +30,3 @@ SLAM-based mapping and autonomous navigation on a mobile robot using Nav2, FastM
 Collect teleoperation data, train an ACT policy, convert it with OpenVINO, and run inference on-device.
 :::
 ::::
-
-
-:::{toctree}
-:maxdepth: 1
-:hidden:
-
-Autonomous Mobile Robot <amr/index>
-Humanoid Robot <humanoid/index>
-Stationary Arm <stationary_arm/index>
-:::
