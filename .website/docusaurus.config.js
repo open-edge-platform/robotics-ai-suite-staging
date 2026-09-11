@@ -114,9 +114,7 @@ const config = {
         indexBlog: false,
         indexPages: true,
         searchBarShortcutHint: false,
-        // Only the Docusaurus-rendered docs; the Sphinx source under
-        // ../docs/user-guide is not indexed here.
-        docsDir: "../docs",
+        indexDocs: false,
       },
     ],
   ],
