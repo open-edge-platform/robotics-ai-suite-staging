@@ -5,18 +5,12 @@ import AutonomousMobileRobot from "../../../static/img/blueprints/autonomous-mob
 import StationaryRobotVisionControl from "../../../static/img/blueprints/stationary-robot.png";
 import HumanoidRobots from "../../../static/img/blueprints/humanoid-robots.png";
 import styles from "./Blueprints.module.css";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 
-const BLUEPRINT_DOCS_VERSION = "v1";
-const base = "/docs/reference-implementations";
+const base = "/development-stack/hardware_blueprints";
 export const Blueprints = () => {
-  const amrDocsHref = useBaseUrl(`${base}/amr/${BLUEPRINT_DOCS_VERSION}/`);
-  const stationaryArmDocsHref = useBaseUrl(
-    `${base}/stationary-arm/${BLUEPRINT_DOCS_VERSION}/`,
-  );
-  const humanoidDocsHref = useBaseUrl(
-    `${base}/humanoid/${BLUEPRINT_DOCS_VERSION}/`,
-  );
+  const amrDocsHref = `${base}/amr/index.html`;
+  const stationaryArmDocsHref = `${base}/stationary_arm/index.html`;
+  const humanoidDocsHref = `${base}/humanoid/index.html`;
 
   return (
     <Section className={styles.container} id={sectionIds.blueprints}>

@@ -112,11 +112,13 @@ html_theme_options = {
     # "navigation_with_keys": True,
     # Navbar Configuration
     # "navbar_start": [],  # Logo on the left
-    "navbar_center": ["navbar-nav"],  # Main navigation in the center
+    # Custom links (see _templates/navbar-links.html) mirroring the Docusaurus navbar.
+    "navbar_center": ["navbar-links"],
     # "navbar_end": ["search-field"],  # Search + Theme Switcher on the right
     "header_links_before_dropdown": 4,
     "logo": {
         "text": "Robotics AI Suite",
+        "link": "/",
         # "image_dark": "_static/logo-dark.svg",
     },
     "show_prev_next": False,

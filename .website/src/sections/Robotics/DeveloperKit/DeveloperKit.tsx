@@ -1,4 +1,3 @@
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import motherBoard from "../../../../static/img/mother-board.png";
 import DottedCardDetails from "../../../components/DottedCardDetails";
 import Link from "../../../components/Link";
@@ -9,7 +8,7 @@ type DeveloperKitProps = {
 };
 
 export const DeveloperKit = ({ className }: DeveloperKitProps) => {
-  const docsHref = useBaseUrl("/docs");
+  const docsHref = "/development-stack/platform_foundation/development_kits/index.html";
 
   return (
     <div className={className}>

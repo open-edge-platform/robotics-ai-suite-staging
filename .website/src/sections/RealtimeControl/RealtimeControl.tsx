@@ -1,4 +1,3 @@
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import lockIcon from "../../../static/img/realtime-control/lock.png";
 import shieldCheckIcon from "../../../static/img/realtime-control/shield-check.png";
 import timeIcon from "../../../static/img/realtime-control/time.png";
@@ -8,9 +7,10 @@ import styles from "./RealtimeControl.module.css";
 import { RealtimeControlCard } from "./RealtimeControlCard";
 
 export const RealtimeControl = () => {
-  const safetyHref = useBaseUrl("/docs/safety");
-  const securityHref = useBaseUrl("/docs/security");
-  const realTimeSetupHref = useBaseUrl("/docs/os-setup/real-time-setup");
+  const safetyHref = "/development-stack/components/security/index.html";
+  const securityHref = "/development-stack/components/security/index.html";
+  const realTimeSetupHref =
+    "/development-stack/components/realtime_determinism/index.html";
 
   return (
     <Section className={styles.container} id={sectionIds.realtimeControl}>

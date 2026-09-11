@@ -1,6 +1,9 @@
 // @ts-check
 
+const path = require("path");
+
 const remarkAiActions = require("./plugins/llms-text/remark-ai-actions");
+const sphinxDocs = require("./plugins/sphinx-docs");
 
 // Header text for the generated llms.txt (see plugins/llms-text).
 const LLMS_SITE_DESCRIPTION =
@@ -32,6 +35,10 @@ const config = {
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
+
+  // `static` holds site assets; the second entry is the staged Sphinx HTML
+  // (see plugins/sphinx-docs.js), served verbatim at /development-stack/.
+  staticDirectories: ["static", sphinxDocs.STAGING_DIR],
 
   // AI Models catalog is backed by a Hugging Face organization. `hfToken` is a
   // read token used ONLY to reach a private staging org during testing; it is
@@ -68,6 +75,17 @@ const config = {
           path: "../docs",
           sidebarPath: "./sidebars.js",
           routeBasePath: "docs",
+          // The Sphinx "Development Stack" docs live under docs/ but are built
+          // separately; keep their source, output, and venv out of Docusaurus.
+          exclude: [
+            "**/_*.{js,jsx,ts,tsx,md,mdx}",
+            "**/_*/**",
+            "**/*.test.{js,jsx,ts,tsx}",
+            "**/__tests__/**",
+            "user-guide/**",
+            "out/**",
+            "venv_*/**",
+          ],
           // Injects the AI actions toolbar under each doc's H1 at build time.
           remarkPlugins: [remarkAiActions],
           // Blueprints is a top-level navbar section of its own
@@ -96,6 +114,7 @@ const config = {
   ],
 
   plugins: [
+    sphinxDocs,
     require.resolve("./plugins/model-routes.js"),
     [
       require.resolve("./plugins/llms-text"),
@@ -116,7 +135,9 @@ const config = {
         indexBlog: false,
         indexPages: true,
         searchBarShortcutHint: false,
-        docsDir: "../docs",
+        // Only the Docusaurus-rendered docs; the Sphinx source under
+        // ../docs/user-guide is not indexed here.
+        docsDir: "../docs/reference-implementations",
       },
     ],
   ],
@@ -128,10 +149,12 @@ const config = {
         title: "Robotics AI Suite",
         items: [
           {
-            type: "docSidebar",
-            sidebarId: "docsSidebar",
-            position: "left",
+            // `pathname://` links to the staged static Sphinx site directly,
+            // bypassing the SPA router and broken-link checks.
+            to: "pathname:///development-stack/ai-suite-robotics.html",
             label: "Development Stack",
+            target: "_self",
+            position: "left",
           },
           {
             to: "/models/",
