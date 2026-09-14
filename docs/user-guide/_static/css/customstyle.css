@@ -485,9 +485,16 @@ iframe#installerFrame {
 
 
 /* CODE BLOCKS */
+:root {
+  --pst-font-family-monospace: 'IntelOne-Display-Mono', SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Courier New', monospace;
+}
+div.highlight,
 div.highlight pre,
-div.highlight pre span {
-  font-family: 'IntelOne-Display-Mono';
+div.highlight pre *,
+code, code *, kbd, samp, pre, tt, tt *,
+code.literal, .docutils.literal, .docutils.literal *,
+span.pre {
+  font-family: 'IntelOne-Display-Mono', SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Courier New', monospace !important;
 }
 
 

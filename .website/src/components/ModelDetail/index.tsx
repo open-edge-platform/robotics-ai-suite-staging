@@ -10,6 +10,7 @@ import { Divider } from "../Divider";
 import Link from "../Link";
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import ModelsPage from "@site/src/pages/models";
 import { ModelBreadcrumbs } from "../ModelBreadcrumbs";
 import { ModelDetailsTabs } from "../ModelDetailsTabs";
 import { ModelLinks } from "../ModelLinks";
@@ -23,11 +24,18 @@ const slugFromPath = (pathname: string) => {
   return parts[parts.length - 1] ?? "";
 };
 
+// With `trailingSlash: true` the models list is emitted as the static file
+// `models/index.html`, which the catch-all `/models/:slug` route also matches
+// (slug === "index.html"). Treat that (and a bare `/models`) as the list page.
+const isModelsIndexSlug = (slug: string) =>
+  slug === "" || slug === "index" || slug === "index.html";
+
 export default function ModelDetail() {
   const cfg = useHfConfig();
   const location = useLocation();
   const slug = slugFromPath(location.pathname);
   const allModelsHref = useBaseUrl("/models/");
+  const isIndex = isModelsIndexSlug(slug);
 
   const {
     data: model,
@@ -35,13 +43,17 @@ export default function ModelDetail() {
     isLoading,
   } = useQuery({
     ...modelQueryOptions(cfg, slug),
-    enabled: Boolean(slug),
+    enabled: Boolean(slug) && !isIndex,
   });
 
   const relatedLocal = model?.relatedModels ?? [];
 
   const chipsetLabel = (alias: string) =>
     cfg.chipsets.find((c) => c.alias === alias)?.label ?? alias;
+
+  if (isIndex) {
+    return <ModelsPage />;
+  }
 
   if (isError) {
     return (
