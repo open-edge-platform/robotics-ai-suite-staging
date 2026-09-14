@@ -1,6 +1,8 @@
 // @ts-check
 
-const remarkAiActions = require("./plugins/llms-text/remark-ai-actions");
+const path = require("path");
+
+const sphinxDocs = require("./plugins/sphinx-docs");
 
 // Header text for the generated llms.txt (see plugins/llms-text).
 const LLMS_SITE_DESCRIPTION =
@@ -12,11 +14,6 @@ const LLMS_SIDEBARS_CONFIG = {
     title: "Development Stack",
     description:
       "The layered bring-up stack: development kits, OS setup, real-time, middleware, sensors, models, and frameworks.",
-  },
-  referenceImplementationsSidebar: {
-    title: "Blueprints",
-    description:
-      "End-to-end reference implementations: AMR, humanoid, and stationary arm.",
   },
 };
 
@@ -32,6 +29,10 @@ const config = {
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
+
+  // `static` holds site assets; the second entry is the staged Sphinx HTML
+  // (see plugins/sphinx-docs.js), served verbatim at /development-stack/.
+  staticDirectories: ["static", sphinxDocs.STAGING_DIR],
 
   // AI Models catalog is backed by a Hugging Face organization. `hfToken` is a
   // read token used ONLY to reach a private staging org during testing; it is
@@ -64,29 +65,9 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          path: "../docs",
-          sidebarPath: "./sidebars.js",
-          routeBasePath: "docs",
-          // Injects the AI actions toolbar under each doc's H1 at build time.
-          remarkPlugins: [remarkAiActions],
-          // Blueprints is a top-level navbar section of its own
-          // (referenceImplementationsSidebar), so drop it from the main Stack sidebar.
-          // The label below must match reference-implementations/_category_.json.
-          sidebarItemsGenerator: async ({
-            defaultSidebarItemsGenerator,
-            ...args
-          }) => {
-            const items = await defaultSidebarItemsGenerator(args);
-            if (args.item.dirName === ".") {
-              return items.filter(
-                (item) =>
-                  !(item.type === "category" && item.label === "Blueprints"),
-              );
-            }
-            return items;
-          },
-        },
+        // All docs now live in the Sphinx "Development Stack" site (served at
+        // /development-stack/); no Docusaurus-rendered docs remain.
+        docs: false,
         blog: false,
         theme: {
           customCss: "./src/css/custom.css",
@@ -96,6 +77,7 @@ const config = {
   ],
 
   plugins: [
+    sphinxDocs,
     require.resolve("./plugins/model-routes.js"),
     [
       require.resolve("./plugins/llms-text"),
@@ -108,19 +90,6 @@ const config = {
     ],
   ],
 
-  themes: [
-    [
-      "@easyops-cn/docusaurus-search-local",
-      {
-        hashed: true,
-        indexBlog: false,
-        indexPages: true,
-        searchBarShortcutHint: false,
-        docsDir: "../docs",
-      },
-    ],
-  ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -128,10 +97,12 @@ const config = {
         title: "Robotics AI Suite",
         items: [
           {
-            type: "docSidebar",
-            sidebarId: "docsSidebar",
-            position: "left",
+            // `pathname://` links to the staged static Sphinx site directly,
+            // bypassing the SPA router and broken-link checks.
+            to: "pathname:///development-stack/ai-suite-robotics.html",
             label: "Development Stack",
+            target: "_self",
+            position: "left",
           },
           {
             to: "/models/",
@@ -139,10 +110,12 @@ const config = {
             position: "left",
           },
           {
-            type: "docSidebar",
-            sidebarId: "referenceImplementationsSidebar",
-            position: "left",
+            // `pathname://` links to the staged static Sphinx site directly,
+            // bypassing the SPA router and broken-link checks.
+            to: "pathname:///development-stack/hardware_blueprints/index.html",
             label: "Blueprints",
+            target: "_self",
+            position: "left",
           },
           {
             to: "/skills/",

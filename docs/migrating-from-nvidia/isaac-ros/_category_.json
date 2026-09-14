@@ -1,8 +1,0 @@
-{
-  "label": "NVIDIA Isaac ROS",
-  "position": 2,
-  "link": {
-    "type": "doc",
-    "id": "migrating-from-nvidia/isaac-ros/index"
-  }
-}

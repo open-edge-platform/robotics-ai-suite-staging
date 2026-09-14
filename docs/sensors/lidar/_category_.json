@@ -1,5 +1,0 @@
-{
-  "label": "LiDAR",
-  "position": 2,
-  "link": { "type": "doc", "id": "sensors/lidar/index" }
-}

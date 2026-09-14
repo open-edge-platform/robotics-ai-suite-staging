@@ -1,10 +1,9 @@
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import Sensor from "../../../../static/img/robot-perception/sensor.png";
 import Link from "../../../components/Link";
 import styles from "./Gmsl.module.css";
 
 export const Gmsl = () => {
-  const camerasHref = useBaseUrl("/docs/sensors/cameras");
+  const camerasHref = "/development-stack/components/sensors/cameras/index.html";
 
   return (
     <>
