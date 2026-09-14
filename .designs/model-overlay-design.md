@@ -25,8 +25,8 @@ model it stores the overview and detailed SVGs, keys them by
 `model_family/model_id`, and embeds `svg://model_family/model_id` links for
 nested components.
 
-See the [Model Gallery convention](<convention-url>) for the layout and diagram
-authoring rules.
+See the [Model Gallery convention](https://github.com/intel-innersource/applications.ai.geti.models-gallery/blob/main/README.md#metadata-conventions)
+for the layout and diagram authoring rules.
 
 ### Model catalogue
 
