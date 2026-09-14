@@ -12,18 +12,18 @@ The `models_gallery` GitHub repository stores the architecture diagrams and
 their metadata. Its CI workflow publishes these files to S3, and CloudFront
 exposes them over HTTP.
 
-When a model card declares a Model Gallery id, the catalogue shows a Model
-Architecture tab backed by a browser. The browser loads the model's diagram and
-lets the user open nested components embedded in it, then step back.
+When a model card declares a Model Gallery id, the catalogue adds a Model
+Architecture tab. The tab hosts a model diagram browser: it displays the model's
+architecture diagram and lets the user open the diagram of nested components, then step back to the parent.
 
 ## Responsibilities
 
 ### Models Gallery
 
-The Model Gallery owns the architecture diagrams and their metadata. For each
-model it stores the overview and detailed SVGs, keys them by
-`model_family/model_id`, and embeds `svg://model_family/model_id` links for
-nested components.
+The Model Gallery owns the architecture diagrams and their metadata. Each model
+entry, identified by `model_family/model_id`, provides an overview and a
+detailed architecture SVG. Inside a diagram, a component that maps to another
+entry carries that entry's `svg://model_family/model_id` link.
 
 See the [Model Gallery convention](https://github.com/intel-innersource/applications.ai.geti.models-gallery/blob/main/README.md#metadata-conventions)
 for the layout and diagram authoring rules.
@@ -32,8 +32,8 @@ for the layout and diagram authoring rules.
 
 The Hugging Face model card carries an optional `model_gallery_id` field in the
 form `model_family/model_id`. When present, the catalogue renders the Model
-Architecture tab and hands the id to the browser. Models without it omit the
-field and show no Architecture tab.
+Architecture tab and hands the id to the Model Architecture Browser. If the
+field is absent, the model has no Architecture tab.
 
 ```yaml
 model_gallery_id: smolvla/smolvla-libero-fp16-ov
