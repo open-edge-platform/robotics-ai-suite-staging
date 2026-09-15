@@ -99,7 +99,7 @@ jobs:
         with:
           script: |
             const success = '${{ job.status }}' === 'success';
-            const url = `${{ env.SITE_URL }}/pr/${{ github.event.number }}/`;
+            const url = `${{ env.SITE_URL }}/pr/${{ github.event.number }}/index.html`;
             const runUrl = `${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
             const body = success
               ? `✅ Preview deployed for commit \`${{ github.event.pull_request.head.sha }}\`\n\n${url}`
