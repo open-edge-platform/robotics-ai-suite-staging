@@ -13,9 +13,9 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  PROD_ROLE: arn:aws:iam::935436532682:role/github-uploader-935436532682-edocs-use1
-  PROD_BUCKET: s3://935436532682-edocs-use1
-  SITE_URL: https://robotics-ai-suite.geti.infra-host.com
+  PROD_ROLE: arn:aws:iam::153402917730:role/robotics-ai-suite
+  PROD_BUCKET: s3://intel-robotics-documentation
+  SITE_URL: https://docs.robotics.intel.com
 
 permissions: read-all
 
@@ -99,7 +99,7 @@ jobs:
         with:
           script: |
             const success = '${{ job.status }}' === 'success';
-            const url = `${{ env.SITE_URL }}/pr/${{ github.event.number }}/`;
+            const url = `${{ env.SITE_URL }}/pr/${{ github.event.number }}/index.html`;
             const runUrl = `${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
             const body = success
               ? `✅ Preview deployed for commit \`${{ github.event.pull_request.head.sha }}\`\n\n${url}`
