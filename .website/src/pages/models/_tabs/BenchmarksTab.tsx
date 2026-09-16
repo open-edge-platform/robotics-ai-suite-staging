@@ -81,7 +81,11 @@ export const BenchmarksTab = (): React.JSX.Element => {
                 <span className={styles.chartUnit}> ({dataset.unit})</span>
               ) : null}
             </h4>
-            <ResponsiveContainer width="100%" height={280}>
+            <div className={styles.chartArea}>
+              <div className={styles.comingSoonOverlay} aria-hidden>
+                <span className={styles.comingSoonText}>COMING SOON</span>
+              </div>
+              <ResponsiveContainer width="100%" height={280}>
               <BarChart
                 data={dataset.rows}
                 margin={{ top: 12, right: 20, left: 0, bottom: 40 }}
@@ -145,6 +149,7 @@ export const BenchmarksTab = (): React.JSX.Element => {
                 ))}
               </BarChart>
             </ResponsiveContainer>
+            </div>
           </section>
         );
       })}

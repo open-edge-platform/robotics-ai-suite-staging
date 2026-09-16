@@ -12,7 +12,7 @@
     "metrics": [
       {
         "name": "inference-latency",
-        "value": 62,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -30,7 +30,7 @@
     "metrics": [
       {
         "name": "inference-latency",
-        "value": 86.1,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -48,7 +48,7 @@
     "metrics": [
       {
         "name": "inference-latency",
-        "value": 129.2,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -66,7 +66,7 @@
     "metrics": [
       {
         "name": "inference-latency",
-        "value": 38,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -84,7 +84,7 @@
     "metrics": [
       {
         "name": "inference-latency",
-        "value": 52.8,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -102,7 +102,7 @@
     "metrics": [
       {
         "name": "inference-latency",
-        "value": 79.2,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -120,7 +120,7 @@
     "metrics": [
       {
         "name": "inference-latency",
-        "value": 21,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -138,7 +138,7 @@
     "metrics": [
       {
         "name": "inference-latency",
-        "value": 29.2,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -156,7 +156,7 @@
     "metrics": [
       {
         "name": "inference-latency",
-        "value": 43.8,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -174,12 +174,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 145,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 6.9,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -197,12 +197,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 104.4,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 9.6,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -220,12 +220,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 69.6,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 14.4,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -243,12 +243,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 310,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 3.2,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -266,12 +266,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 223.2,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 4.5,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -289,12 +289,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 148.8,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 6.7,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -312,12 +312,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 190,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 5.3,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -335,12 +335,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 136.8,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 7.3,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -358,12 +358,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 91.2,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 11,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -381,12 +381,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 520,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 1.9,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -404,12 +404,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 374.4,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 2.7,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -427,12 +427,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 249.6,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 4,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -451,12 +451,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 165,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 6.1,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -475,12 +475,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 118.8,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 8.4,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -499,12 +499,12 @@
     "metrics": [
       {
         "name": "throughput",
-        "value": 79.2,
+        "value": 0,
         "unit": "fps"
       },
       {
         "name": "inference-latency",
-        "value": 12.6,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -522,12 +522,12 @@
     "metrics": [
       {
         "name": "generation-rate",
-        "value": 34,
+        "value": 0,
         "unit": "tokens/s"
       },
       {
         "name": "time-to-first-token",
-        "value": 180,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -545,12 +545,12 @@
     "metrics": [
       {
         "name": "generation-rate",
-        "value": 24.5,
+        "value": 0,
         "unit": "tokens/s"
       },
       {
         "name": "time-to-first-token",
-        "value": 250,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -568,12 +568,12 @@
     "metrics": [
       {
         "name": "generation-rate",
-        "value": 16.3,
+        "value": 0,
         "unit": "tokens/s"
       },
       {
         "name": "time-to-first-token",
-        "value": 375,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -591,12 +591,12 @@
     "metrics": [
       {
         "name": "generation-rate",
-        "value": 96,
+        "value": 0,
         "unit": "tokens/s"
       },
       {
         "name": "time-to-first-token",
-        "value": 240,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -614,12 +614,12 @@
     "metrics": [
       {
         "name": "generation-rate",
-        "value": 69.1,
+        "value": 0,
         "unit": "tokens/s"
       },
       {
         "name": "time-to-first-token",
-        "value": 333.3,
+        "value": 0,
         "unit": "ms"
       }
     ]
@@ -637,12 +637,12 @@
     "metrics": [
       {
         "name": "generation-rate",
-        "value": 46.1,
+        "value": 0,
         "unit": "tokens/s"
       },
       {
         "name": "time-to-first-token",
-        "value": 500,
+        "value": 0,
         "unit": "ms"
       }
     ]
