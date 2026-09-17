@@ -15,7 +15,7 @@ concurrency:
 env:
   PROD_ROLE: arn:aws:iam::153402917730:role/robotics-ai-suite
   PROD_BUCKET: s3://intel-robotics-documentation
-  SITE_URL: https://docs.robotics.intel.com
+  SITE_URL: https://developer.robotics.intel.com
 
 permissions: read-all
 
