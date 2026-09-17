@@ -4,7 +4,7 @@ import Layout from "@theme/Layout";
 import clsx from "clsx";
 import React from "react";
 import { AllModelsTab } from "./_tabs/AllModelsTab";
-import { BenchmarksTab } from "./_tabs/BenchmarksTab";
+// import { BenchmarksTab } from "./_tabs/BenchmarksTab";
 import styles from "./index.module.css";
 import { useUrlQueryParam } from "@site/src/hooks/useUrlQueryParam.hook";
 import { FiltersSidebarLayout } from "./_FiltersSidebarLayout/FiltersSidebarLayout";
@@ -52,11 +52,11 @@ export default function Models(): React.JSX.Element {
                   <AllModelsTab />
                 </FiltersSidebarLayout>
               </Tab>
-              <Tab title="Benchmarks">
+              {/* <Tab title="Benchmarks">
                 <FiltersSidebarLayout cfg={cfg}>
                   <BenchmarksTab />
                 </FiltersSidebarLayout>
-              </Tab>
+              </Tab> */}
             </Tabs>
           </div>
         </main>

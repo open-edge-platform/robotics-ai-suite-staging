@@ -13,13 +13,9 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  PROD_ROLE: arn:aws:iam::935436532682:role/github-uploader-935436532682-edocs-use1
-  PROD_BUCKET: s3://935436532682-edocs-use1
-  SITE_URL: https://robotics-ai-suite.geti.infra-host.com
-  # Use when new site is ready for publication
-  #PROD_ROLE: arn:aws:iam::153402917730:role/robotics-ai-suite
-  #PROD_BUCKET: s3://intel-robotics-documentation
-  #SITE_URL: https://docs.robotics.intel.com
+  PROD_ROLE: arn:aws:iam::153402917730:role/robotics-ai-suite
+  PROD_BUCKET: s3://intel-robotics-documentation
+  SITE_URL: https://developer.robotics.intel.com
 
 permissions: read-all
 

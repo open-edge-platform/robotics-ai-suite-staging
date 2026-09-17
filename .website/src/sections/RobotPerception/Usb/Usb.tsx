@@ -1,27 +1,26 @@
-import Sensor from "../../../../static/img/robot-perception/gmsl_camera.png";
+import Sensor from "../../../../static/img/robot-perception/usb_camera.png";
 import Link from "../../../components/Link";
-import styles from "./Gmsl.module.css";
+import styles from "./Usb.module.css";
 
-export const Gmsl = () => {
+export const Usb = () => {
   const camerasHref = "/development-stack/components/sensors/cameras/index.html";
 
   return (
     <>
       <div className={styles.imageContainer}>
         <div>
-          <h3 className={styles.title}>GMSL</h3>
+          <h3 className={styles.title}>USB</h3>
           <p className={styles.description}>
-            Cameras placed meters from the developer kit
+            Cameras connected via USB to the developer kit
           </p>
 
           <ul className={styles.items}>
             <li>
-              Sends full-quality video over one cable across several meters
+              Flexible and easy to connect to the developer kit via USB
             </li>
-            <li>One connector on the kit runs up to four cameras.</li>
+            <li>Wide range of USB cameras supported, making USB versatile for different use cases</li>
             <li>
-              A dedicated Intel image-processing unit (IPU) handles the imaging
-              in hardware, keeping the CPU and GPU free.
+              Easy to configure and use without requiring specialized software
             </li>
           </ul>
 
@@ -32,7 +31,7 @@ export const Gmsl = () => {
           />
         </div>
 
-        <img src={Sensor} alt="GMSL Sensor" />
+        <img src={Sensor} alt="USB Sensor" />
       </div>
 
       <ul className={styles.list}>

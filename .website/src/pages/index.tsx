@@ -3,7 +3,7 @@ import Layout from "@theme/Layout";
 import React from "react";
 import { HomeHeader } from "../sections/HomeHeader/HomeHeader";
 import { Robotics } from "../sections/Robotics/Robotics";
-import { AiToolKits } from "../sections/AiToolKits/AiToolKits";
+// import { AiToolKits } from "../sections/AiToolKits/AiToolKits";
 import { Blueprints } from "../sections/Blueprints/Blueprints";
 import { FeaturedAIModels } from "../sections/FeaturedAIModels/FeaturedAIModels";
 import { RobotPerception } from "../sections/RobotPerception/RobotPerception";
@@ -20,7 +20,7 @@ export default function Home(): React.JSX.Element {
       <Robotics />
       <Blueprints />
       <FeaturedAIModels />
-      <AiToolKits />
+      {/* <AiToolKits /> */}
       <RobotPerception />
       <RealtimeControl />
     </Layout>

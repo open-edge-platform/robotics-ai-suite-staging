@@ -2,6 +2,7 @@ import { Section } from "../../components/Section";
 import { Tabs, Tab } from "../../components/Tabs";
 import { sectionIds } from "../Robotics/util";
 import { Gmsl } from "./Gmsl/Gmsl";
+import { Usb } from "./Usb/Usb";
 import styles from "./RobotPerception.module.css";
 
 export const RobotPerception = () => {
@@ -19,8 +20,9 @@ export const RobotPerception = () => {
         <Tab title="GMSL">
           <Gmsl />
         </Tab>
-        <Tab title="MIPI CSI">Content for second tab</Tab>
-        <Tab title="USB (UVC)">Content for third tab</Tab>
+        <Tab title="USB">
+          <Usb />
+        </Tab>
       </Tabs>
     </Section>
   );
