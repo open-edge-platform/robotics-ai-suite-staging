@@ -123,7 +123,7 @@ const config = {
             position: "left",
           },
           {
-            href: "https://github.com/intel-innersource/applications.ai.geti.robotics-ai-suite-docs",
+            href: "https://github.com/open-edge-platform/robotics-ai-suite",
             label: "GitHub",
             position: "right",
           },
