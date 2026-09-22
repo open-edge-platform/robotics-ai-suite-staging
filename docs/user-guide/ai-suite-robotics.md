@@ -127,6 +127,7 @@ Real-time Determinism <components/realtime_determinism/index>
 Benchmarking <components/benchmarking/index>
 Security <components/security/index>
 Middleware <components/middleware/index>
+Virtualization <components/virtualization/index>
 Sensors <components/sensors/index>
 :::
 
