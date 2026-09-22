@@ -1,8 +1,8 @@
-<!--hide_directive
+
 ```{eval-rst}
 :orphan:
 ```
-hide_directive-->
+
 
 | Camera | Validated Development Kit | Interface | Type | Sensor | Vendor |
 | --- | --- | --- | --- | --- | --- |
