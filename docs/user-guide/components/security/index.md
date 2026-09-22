@@ -1,33 +1,20 @@
 # Security
 
-When deploying, your solution will have security-hardening requirements. The below documentation covers system-hardening guidance for Robotics AI Suite on supported platforms.
-deployments.
+When deploying, your solution will have security-hardening requirements. Robotics AI Suite relies on the Open Edge Platform Guidance for application platform security. Follow below for more information and recommendations.
 
+::::{grid} 1
 
-::::{grid} 2
-
-:::{grid-item-card} **Secure Boot**
-:link: secure-boot
-:link-type: doc
+:::{grid-item-card} **Application Security Enablement**
+:link: https://docs.openedgeplatform.intel.com/dev/OEP-articles/application-security.html
+:link-type: url
 :link-alt: clickable cards
 
-Enable secure boot on your system to protect the trusted boot chain.
-:::
-
-:::{grid-item-card} **Platform Security**
-:link: platform-security
-:link-type: doc
-:link-alt: clickable cards
-
-Learn more about the security features and capabilities of Intel processors.
+Intel Open Edge Platform includes guidance on application and platform security for your edge and robotics applications.
 :::
 ::::
-
-
 
 :::{toctree}
 :hidden:
 
-Secure Boot <secure-boot>
-Platform Security <platform-security>
+Application Security Enablement <https://docs.openedgeplatform.intel.com/dev/OEP-articles/application-security.html>
 :::
