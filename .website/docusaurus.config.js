@@ -119,7 +119,7 @@ const config = {
           },
           {
             to: "/skills/",
-            label: "Agents Skills",
+            label: "AI Skills",
             position: "left",
           },
           {

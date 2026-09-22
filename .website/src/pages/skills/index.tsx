@@ -8,14 +8,14 @@ import clsx from "clsx";
 export default function Skills() {
   return (
     <Layout
-      title="Agent Skills"
-      description="Agent skills for the Intel Robotics AI Suite."
+      title="AI Skills"
+      description="AI skills for the Intel Robotics AI Suite."
     >
       <SuiteHero>
         <div className={clsx(styles.heroContent, "container")}>
-          <h1 className={styles.title}>Agent Skills</h1>
+          <h1 className={styles.title}>AI Skills</h1>
           <p className={styles.subtitle}>
-            Agent skills for the Intel Robotics AI Suite. Each skill maps to a
+            Skills for the Intel Robotics AI Suite to power AI agents and workflows. Each skill maps to a
             section of the documentation that involves writing code or a task a
             coding agent can carry out for you — configuring the OS, bringing up
             sensors and motion buses, wiring middleware, and running models.

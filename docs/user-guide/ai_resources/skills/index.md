@@ -1,4 +1,4 @@
-# Agentic Skills
+# AI Skills
 
 Find the right skills to accelerate your development project, from proof-of-concept generators to interactive optimizers to find the right algorithm for your use case.
 

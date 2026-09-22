@@ -72,7 +72,7 @@ Optimize and deploy deep-learning inference on available Intel compute devices.
 Install and configure OpenVINO, PyTorch XPU, and oneAPI.
 :::
 
-:::{grid-item-card} **Agentic Skills**
+:::{grid-item-card} **AI Skills**
 :link: skills/index
 :link-type: doc
 :link-alt: clickable cards

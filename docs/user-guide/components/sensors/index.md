@@ -24,7 +24,7 @@ Bring up 3D point clouds for mapping and obstacle avoidance.
 ::::
 
 
-## Reference Applications
+## Software Solutions
 
 Use these applications to validate RealSense cameras and process 3D point cloud data from RealSense cameras or LiDAR sensors.
 
@@ -55,5 +55,5 @@ Process 3D point cloud data to segment ground surfaces and detect traversable re
 
 Cameras <cameras/index>
 LiDAR <lidar>
-Reference Applications <reference_applications/index>
+Software Solutions <reference_applications/index>
 :::

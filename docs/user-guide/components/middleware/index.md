@@ -19,7 +19,7 @@ Use the primary robotics runtime for reliable application lifetime management an
 :link-type: doc
 :link-alt: clickable cards
 
-Use simulation reference applications for validating robotics behavior before deployment.
+Use simulation software solutions for validating robotics behavior before deployment.
 :::
 ::::
 

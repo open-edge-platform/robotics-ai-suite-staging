@@ -1,6 +1,6 @@
-# Gazebo Reference Applications
+# Gazebo Software Solutions
 
-Reference applications demonstrate integrated ROS 2 workloads in Gazebo.
+Software Solutions demonstrate integrated ROS 2 workloads in Gazebo.
 
 The [Wandering Gazebo simulation](../../../../software_references/amr/simulation/wandering_sim.md)
 demonstrates autonomous mapping and exploration with Nav2 and RTAB-Map.
