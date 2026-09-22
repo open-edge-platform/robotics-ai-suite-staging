@@ -21,12 +21,10 @@ See **[USB Camera Guide](./usb/index.md)** for instructions on setting up a GMSL
 ```{include} ./usb/fragment_camera_table_usb.md
 ```
 
-:::{note}
-The cameras listed on this page are those that have been tested with the
-Robotics AI Suite. For a comprehensive list of Verified Supported Edge Cameras,
-see [Verified Supported Edge Cameras](https://builders.intel.com/solutionslibrary/verified-supported-edge-camera).
-:::
-
+> [!NOTE]
+> The cameras listed on this page are those that have been tested with the
+> Robotics AI Suite. For a comprehensive list of Verified Supported Edge Cameras,
+> see [Verified Supported Edge Cameras](https://builders.intel.com/solutionslibrary/verified-supported-edge-camera).
 
 
 :::{toctree}
