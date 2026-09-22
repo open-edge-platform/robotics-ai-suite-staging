@@ -1,7 +1,7 @@
 # Getting Started
 
 This guide will setup and install the Robotics AI Suite, providing a common base
-for running the included ingredients and reference applications, and for developing
+for running the included ingredients and software solutions, and for developing
 your own applications.
 
 ## Requirements

@@ -7,5 +7,5 @@ robot applications.
 :::{toctree}
 :maxdepth: 1
 
-Reference Applications <reference_applications/index>
+Software Solutions <reference_applications/index>
 :::

@@ -21,8 +21,7 @@ export const DottedCardDetails = ({
 
       {children && <div className={styles.description}>{children}</div>}
 
-      <Link href={readModeLink} label="Read more" className={styles.link} />
-    </div>
+   </div>
   );
 };
 

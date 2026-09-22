@@ -1,6 +1,6 @@
-# OpenVINO Reference Applications
+# OpenVINO Software Solutions
 
-These reference applications demonstrate OpenVINO inference with ROS 2 camera
+These software solutions demonstrate OpenVINO inference with ROS 2 camera
 and vision workloads.
 
 
