@@ -45,6 +45,7 @@ validating the resulting environment.
 
 | Tool | Use |
 | --- | --- |
+| [PyTorch XPU](developer_tools/pytorch-xpu.md) | Accelerate model prototyping, training, and rapid iteration on Intel GPUs. |
 | [OpenVINO](https://docs.openvino.ai/) | Optimize and deploy deep-learning inference workloads. |
 | [Intel oneAPI Toolkits](https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html) | Develop and profile heterogeneous C++, SYCL, and data-parallel workloads. |
 | [OpenVINO Physical AI Runtime](https://github.com/openvinotoolkit/physicalai) | Accelerate your OpenVINO-powered deployment with a unified API for connecting cameras, robots, and policy inference. |
@@ -68,7 +69,7 @@ Optimize and deploy deep-learning inference on available Intel compute devices.
 :link-type: doc
 :link-alt: clickable cards
 
-Install and configure OpenVINO, oneAPI, IPEX, IPEX-LLM, and OpenXLA.
+Install and configure OpenVINO, PyTorch XPU, and oneAPI.
 :::
 
 :::{grid-item-card} **Agentic Skills**
