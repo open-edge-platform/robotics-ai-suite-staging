@@ -35,3 +35,11 @@
   margin-top: auto;
   font-size: var(--size-16);
 }
+
+.comingSoon {
+  display: block;
+  margin-top: auto;
+  font-size: var(--size-16);
+  color: var(--geti-color-gray-400);
+  font-style: italic;
+}

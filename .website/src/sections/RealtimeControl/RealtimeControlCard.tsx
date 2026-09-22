@@ -2,7 +2,7 @@ import { Link } from "../../components/Link";
 import styles from "./RealtimeControlCard.module.css";
 
 type RealtimeControlCardProps = {
-  href: string;
+  href?: string;
   icon: string;
   title: string;
   subtitle: string;
@@ -32,7 +32,11 @@ export const RealtimeControlCard = ({
         ))}
       </ul>
 
-      <Link className={styles.link} label="Learn more" href={href} />
+      {href ? (
+        <Link className={styles.link} label="Learn more" href={href} />
+      ) : (
+        <span className={styles.comingSoon}>Coming soon</span>
+      )}
     </div>
   );
 };
