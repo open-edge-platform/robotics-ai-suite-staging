@@ -1,6 +1,6 @@
 # Security
 
-When deploying, your solution will have security-hardening requirements. Robotics AI Suite relies on the Open Edge Platform Guidance for application platform security. Follow below for more information and recommendations.
+When deploying, your solution will have security-hardening requirements. Robotics AI Suite relies on the Open Edge Platform Guidance for application platform security. Follow the link below for more information and recommendations.
 
 ::::{grid} 1
 
