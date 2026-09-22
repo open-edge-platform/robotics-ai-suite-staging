@@ -184,6 +184,7 @@ myst_enable_extensions = [
     "attrs_block",
     "substitution",
     "colon_fence",
+    "alert",
 ]
 
 # -- Functions for handling linkcheck ignore and substitutions lists ---------
