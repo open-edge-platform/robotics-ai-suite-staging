@@ -41,12 +41,13 @@ warning_is_error = True
 
 # extensions
 extensions = [
-    "sphinx.ext.autosectionlabel",
+    #    "sphinx.ext.autosectionlabel",
     "sphinx.ext.intersphinx",
     "sphinx_copybutton",
     "sphinx_design",
     "sphinx_favicon",
     "sphinx_sitemap",
+    "sphinx_togglebutton",
     "sphinxcontrib.asciinema",
     #    "sphinxcontrib.images",
     "sphinxcontrib.jquery",
@@ -54,8 +55,6 @@ extensions = [
     "sphinxcontrib.openapi",
     "sphinxcontrib.spelling",
     "sphinxcontrib.video",
-    "sphinxcontrib.mermaid",
-    "sphinx_tabs.tabs",
     "myst_parser",
 ]
 
@@ -196,42 +195,42 @@ if os.path.isfile(linkcheck_ignore_append_file):
         linkcheck_ignore_append = [line.strip() for line in file if line.strip()]
 
 
+# -- Functions for uncommenting hidden directives in Markdown files ----------
 def show_hidden_directives(app, config):  # pylint: disable=unused-argument
     """
     Remove custom html comment tags used to hide the Sphinx directives in .md files
     """
+    found_file = 0
     mdocs = pathlib.Path(__file__).parent
     mdfiles = glob.iglob(os.path.join(mdocs, "*/**/*.md"), recursive=True)
     for md in mdfiles:
-        if os.path.isfile(md):
-            try:
-                with open(md, "r+", encoding="utf-8") as md_file:
-                    contents = md_file.read()
-                    start_tag = re.findall(r"<!--\s{0,2}hide.{0,2}directive", contents)
-                    if start_tag:
-                        # Remove the "<!--hide_directive" comment tag that hides content in GitHub.
-                        rm_start_tag = [
-                            (re.sub(r"<!--\s{0,2}hide.{0,2}directive", "", h))
-                            for h in start_tag
-                        ]
-                        for a, b in zip(start_tag, rm_start_tag):
-                            contents = contents.replace(a, b)
-                        # Remove the "hide_directive-->" comment tag that hides content in GitHub.
-                        end_tag = re.findall(r"hide.{0,2}directive\s{0,2}-->", contents)
-                        rm_end_tag = [
-                            (re.sub(r"hide.{0,2}directive\s{0,2}-->", "", i))
-                            for i in end_tag
-                        ]
-                        for c, d in zip(end_tag, rm_end_tag):
-                            contents = contents.replace(c, d)
-                        md_file.seek(0)
-                        md_file.write(contents)
-                        md_file.truncate()
-                        print("Uncommented directives in " + str(md))
-            except Exception:  # pylint: disable=broad-exception-caught
-                pass
+        if not os.path.isfile(md):
+            continue
+        try:
+            with open(md, "r+", encoding="utf-8") as md_file:
+                contents = md_file.read()
+                if not re.search(r"<!--\s{0,2}hide.{0,2}directive", contents):
+                    continue
+                # Remove the "<!--hide_directive" comment tag that hides content in GitHub.
+                for tag in re.findall(r"<!--\s{0,2}hide.{0,2}directive", contents):
+                    contents = contents.replace(
+                        tag, re.sub(r"<!--\s{0,2}hide.{0,2}directive", "", tag)
+                    )
+                # Remove the "hide_directive-->" comment tag that hides content in GitHub.
+                for tag in re.findall(r"hide.{0,2}directive\s{0,2}-->", contents):
+                    contents = contents.replace(
+                        tag, re.sub(r"hide.{0,2}directive\s{0,2}-->", "", tag)
+                    )
+                md_file.seek(0)
+                md_file.write(contents)
+                md_file.truncate()
+                found_file += 1
+        except Exception:  # pylint: disable=broad-exception-caught
+            pass
+    print(f"Uncommented directives in {found_file} files", flush=True)
 
 
+# -- Function for setting up Sphinx extensions and event handlers ------------
 def setup(app):
     """
     Sphinx entrypoint function
