@@ -312,7 +312,7 @@ echo 0000:00:0b.0 | sudo tee /sys/bus/pci/drivers/vfio-pci/bind
 :::
 ::::
 
-### Passthrough Intel iGPU
+### Passthrough Intel® iGPU
 
 Please refer to [Build Romfile](#build-the-ovmf-and-igpu-rom-file) for the iGPU ROM file(`iGPU_GOP.rom`).
 

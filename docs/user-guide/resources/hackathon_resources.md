@@ -6,7 +6,7 @@ orphan: true
 
 The below [software stack](https://amrdocs.intel.com/downloads/hackathon_install.zip) has been pre-installed on your system. Feel free to review and launch Physical AI Studio when ready to get started. For launch instructions, see [Daily Use After Installation](#daily-use-after-installation).
 
-# Intel Edge AI / Robotics Stack — Script-Based Installation & Verification
+# Intel® Edge AI / Robotics Stack — Script-Based Installation & Verification
 
 **Target:** Ubuntu 24.04 LTS (HWE kernel) · Intel Core Ultra / Arc (NPU + iGPU)
 **Stack:** NPU Driver → iGPU Driver → Miniforge3 (`intel_dev_env`) → Physical AI Studio → OpenVINO 2026.3 → Anomalib v2.6.0 → LeRobot (PyTorch XPU) → VS Code

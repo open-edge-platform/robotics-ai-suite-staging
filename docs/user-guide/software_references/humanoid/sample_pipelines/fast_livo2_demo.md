@@ -36,7 +36,7 @@ apply to.
 | [0004-Reformat-sources-to-the-real-clang-format-style.patch](https://github.com/open-edge-platform/edge-ai-suites/blob/main/robotics-ai-suite/pipelines/fast-livo2-demo/patches/0004-Reformat-sources-to-the-real-clang-format-style.patch) | Reformats `IMU_Processing.cpp`, `LIVMapper.cpp`, `main.cpp`, `preprocess.cpp`, and `vio.cpp` to the Google-based clang-format style used elsewhere in this fork; no logic changes. |
 | [0005-Fix-crash-race-risks-and-an-info-leak-in-the-ROS2-no.patch](https://github.com/open-edge-platform/edge-ai-suites/blob/main/robotics-ai-suite/pipelines/fast-livo2-demo/patches/0005-Fix-crash-race-risks-and-an-info-leak-in-the-ROS2-no.patch) | Wraps `main()` in a try/catch so a startup exception logs via `RCLCPP_FATAL` instead of taking the node down unhandled; reorders null-pointer checks to test-before-dereference and repositions two mutex locks so the shared state they guard is actually covered; guards three VIO score/residual computations and `plane_judge` against division by zero; frees a leaked scratch patch buffer in `updateVisualMapPoints`; replaces an internal lab IP address in a camera-intrinsics config comment with a generic rig description (a BDBA information-leakage finding); lists the ROS2-port maintainer in `package.xml`. |
 
-## Environment setup (Ubuntu 24.04 / ROS 2 Jazzy, Intel Core Ultra / PTL)
+## Environment setup (Ubuntu 24.04 / ROS 2 Jazzy, Intel® Core Ultra / PTL)
 
 The following [scripts](https://github.com/open-edge-platform/edge-ai-suites/tree/main/robotics-ai-suite/pipelines/fast-livo2-demo/scripts) automate the one-time host prerequisites and repository-specific setup:
 
@@ -105,7 +105,7 @@ SSH is impractical. It opens with the
 [ntu_viral.rviz](https://github.com/hku-mars/FAST-LIVO2/blob/0d2c0346107b75b59934975adec9a6eeeb913c64/rviz_cfg/ntu_viral.rviz) config, showing the
 live point cloud and pose trajectory as the bag plays back.
 
-### Reference: running on Intel PTL
+### Reference: running on Intel® PTL
 
 `run_ntu_viral.sh` ships a reference core-pinning + frequency-locking
 setup for Intel PTL (validated on Core Ultra X7 358H: 4 P-cores `cpu0-3` up
@@ -227,7 +227,7 @@ relative paths are relative to that directory).
 ./scripts/install_deps.sh
 ```
 
-### 2. Apply the Intel patches
+### 2. Apply the Intel® patches
 
 ```bash
 cd FAST-LIVO2

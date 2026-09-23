@@ -126,7 +126,7 @@ session (e.g. on the PTL board's display, not over plain SSH) — rviz2's
 point-cloud rendering needs a real GPU display, so X11-forwarding it over
 SSH is impractical.
 
-### Reference: running on Intel PTL
+### Reference: running on Intel® PTL
 
 `run_ulhk.sh` ships a reference core-pinning + frequency-locking setup for
 Intel PTL (validated on Core Ultra X7 358H: 4 P-cores `cpu0-3` up to 4700
@@ -254,7 +254,7 @@ cmake --build /tmp/livox-sdk2/build -j"$(nproc)"
 sudo cmake --install /tmp/livox-sdk2/build
 ```
 
-### 2. Apply the Intel patches
+### 2. Apply the Intel® patches
 
 ```bash
 cd Point-LIO

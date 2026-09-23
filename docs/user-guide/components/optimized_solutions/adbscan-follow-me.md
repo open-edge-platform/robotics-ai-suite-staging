@@ -13,7 +13,7 @@ with one Gazebo simulation and one Clearpath Jackal deployment scenario.
 
 [ADBScan source code](https://github.com/open-edge-platform/edge-ai-suites/tree/main/robotics-ai-suite/components/adbscan)
 
-## Intel-Optimized ADBSCAN
+## Intel®-Optimized ADBSCAN
 
 In this version of ADBSCAN, the algorithm has been optimized for Intel® SOC by
 replacing linear neighbor point search with an optimized oneAPI PCL library

@@ -4,7 +4,7 @@ The Robotics AI Suite supports the platform and middleware configurations below.
 Each Blueprint defines the hardware, drivers, packages, and peripherals that
 have been validated for its workflows.
 
-## Supported Intel Processors
+## Supported Intel® Processors
 
 | Code Name | Intel Processor
 | --- | --- |

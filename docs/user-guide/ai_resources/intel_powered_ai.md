@@ -1,4 +1,4 @@
-# Intel Powered AI
+# Intel® Powered AI
 
 Here you will find guidance that covers the frameworks, models, and tools used to build and
 optimize robot perception and intelligence workloads.
@@ -62,6 +62,14 @@ For performance analysis, see [Benchmarking and Profiling](../components/benchma
 :link-alt: clickable cards
 
 Optimize and deploy deep-learning inference on available Intel compute devices.
+:::
+
+:::{grid-item-card} **Geti"
+:link: developer_tools/geti
+:link-type: doc
+:link-alt: clickable cards
+
+Use an end-to-end pipeline to create Vision AI models.
 :::
 
 :::{grid-item-card} **Developer Tools**
