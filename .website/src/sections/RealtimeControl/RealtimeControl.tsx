@@ -7,7 +7,6 @@ import styles from "./RealtimeControl.module.css";
 import { RealtimeControlCard } from "./RealtimeControlCard";
 
 export const RealtimeControl = () => {
-  const safetyHref = "/development-stack/components/security/index.html";
   const securityHref = "/development-stack/components/security/index.html";
   const realTimeSetupHref =
     "/development-stack/components/realtime_determinism/index.html";
@@ -46,7 +45,6 @@ export const RealtimeControl = () => {
             "Keeps demanding AI workloads on the P-cores, GPU, and NPU without disrupting the safety path.",
             "Intel® Silicon Integrity Technology detects hardware faults and reports error conditions.",
           ]}
-          href={safetyHref}
         />
 
         <RealtimeControlCard
