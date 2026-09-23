@@ -9,12 +9,10 @@ export default function NavbarWrapper(props: ComponentProps<typeof Navbar>) {
 
   const homePath = useBaseUrl("/");
   const modelsPath = useBaseUrl("/models/");
-  const skillsPath = useBaseUrl("/skills/");
 
   const hasGlassMenu =
     pathname === homePath ||
-    pathname.startsWith(modelsPath) ||
-    pathname.startsWith(skillsPath);
+    pathname.startsWith(modelsPath);
 
   return (
     <div className={clsx({ navbarGlass: hasGlassMenu })}>

@@ -1,18 +1,3 @@
-
-<div class="component_card_widget">
-  <a class="icon_github" href="https://github.com/open-edge-platform/edge-ai-suites/tree/main/robotics-ai-suite">
-     GitHub
-  </a>
-  <a class="icon_document" href="https://github.com/open-edge-platform/edge-ai-suites/blob/main/robotics-ai-suite/docs/user-guide/resources/release-notes.md">
-     Release Notes
-  </a>
-  <a class="icon_document" href="https://github.com/open-edge-platform/edge-ai-suites/blob/main/robotics-ai-suite/README.md">
-     Readme
-  </a>
-</div>
-
-
-
 # Autonomous Mobile Robot
 
 The Autonomous Mobile Robot provides software packages and pre-validated hardware modules for sensor data ingestion, classification, environment modeling, action planning, action control. It supports documented ROS 2 Jazzy and Humble configuration tracks, with reference algorithms and working examples.
@@ -47,32 +32,9 @@ supports every hardware or middleware combination.
 | Clearpath Jackal | Clearpath Jackal onboard computer | Canonical Ubuntu 24.04 LTS | Jazzy Jalisco | RealSense D435i | [Clearpath Robotics Jackal](clearpath-jackal.md) |
 
 
-## AMR Development Paths
-
-
-::::{grid} 2
-
-:::{grid-item-card} **Simulation Learning Path**
-:link: ../../software_references/amr/simulation/index
-:link-type: doc
-:link-alt: clickable cards
-
-Learn how to use the simulation-focused tools and components provided in the toolkit.
-:::
-
-:::{grid-item-card} **Deployment Learning Path**
-:link: ../../software_references/amr/deployment/index
-:link-type: doc
-:link-alt: clickable cards
-
-Learn how to use the deployment-focused tools and components provided in the toolkit.
-:::
-::::
-
-
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 :hidden:
 
-clearpath-jackal
+Clearpath Robotics Jackal <clearpath-jackal>
 ```

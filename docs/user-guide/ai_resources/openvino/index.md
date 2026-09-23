@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenVINO
 
 [OpenVINO](https://docs.openvino.ai/) is the primary toolkit for optimizing and
@@ -6,45 +10,14 @@ models from common frameworks and can target available Intel compute devices.
 
 Use the current [OpenVINO installation documentation](https://docs.openvino.ai/latest/get-started/install-openvino.html) for the selected environment.
 
-## Software Solutions
+## Reference Applications
 
-OpenVINO software solutions cover object detection, segmentation, and
-RealSense camera workflows.
+OpenVINO reference applications for object detection, segmentation, and
+RealSense camera workflows are available in
+[Demos & Blogs](../../resources/demos_and_blogs/index.md).
 
 
 ::::{grid} 2
-
-:::{grid-item-card} **Semantic Segmentation with RealSense**
-:link: reference_applications/segmentation_realsense_tutorial
-:link-type: doc
-:link-alt: clickable cards
-
-Run semantic segmentation on RealSense image data using OpenVINO inference.
-:::
-
-:::{grid-item-card} **Object Detection**
-:link: reference_applications/object_detection_tutorial
-:link-type: doc
-:link-alt: clickable cards
-
-Deploy object-detection workloads with ROS 2 camera inputs and OpenVINO acceleration.
-:::
-
-:::{grid-item-card} **OpenVINO Multi-Camera Demo**
-:link: reference_applications/openvino_multicam_demo
-:link-type: doc
-:link-alt: clickable cards
-
-Process multiple camera streams in a single OpenVINO-powered demo pipeline.
-:::
-
-:::{grid-item-card} **YOLOv8 with OpenVINO**
-:link: reference_applications/yolov8_openvino_tutorial
-:link-type: doc
-:link-alt: clickable cards
-
-Use a YOLOv8 model with OpenVINO for accelerated object detection on robotics systems.
-:::
 
 :::{grid-item-card} **OpenVINO Model Guidance**
 :link: models/index
@@ -68,8 +41,6 @@ Convert, compress, benchmark, and validate the Pi0.5 vision-language-action mode
 :::{toctree}
 :hidden:
 
-Software Solutions <reference_applications/index>
-models/index
 pi05-optimization
 OpenVINO Physical AI Runtime <https://github.com/openvinotoolkit/physicalai>
 :::

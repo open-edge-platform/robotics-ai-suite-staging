@@ -13,8 +13,9 @@ configuration.
 
 ## 2. Install and Configure ROS 2
 
-Follow the [ROS 2 Runtime](../../components/middleware/ros2.md) guide to install ROS 2
-Jazzy and configure the environment.
+The Robotics AI Suite uses ROS 2 Jazzy Jalisco. Follow the official
+[ROS 2 Jazzy installation instructions for Ubuntu](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)
+to install ROS 2 and configure the environment.
 
 ## 3. Set up Robotics AI Suite, oneAPI, and Graphics APT Repositories
 

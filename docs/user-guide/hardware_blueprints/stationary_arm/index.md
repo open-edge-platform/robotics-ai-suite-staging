@@ -90,37 +90,9 @@ validation specific to the target workspace. Validation does not make a safety
 claim for a production deployment; system integrators remain responsible for
 risk assessment, guarding, emergency stops, and applicable safety requirements.
 
-## Stationary Arm Development Path
-
-Start with the Vision and Controls Simulation Demo to validate the
-pick-and-place workflow before enabling physical robot motion. Then use the
-Vision and Controls Deployment Demo to deploy object detection, pose and grasp selection,
-ROS 2 task orchestration, and MoveIt 2 Servo arm control on the target robot.
-
-
-::::{grid} 2
-
-:::{grid-item-card} **Vision and Controls Simulation Demo**
-:link: ../../software_references/stationary_arm/simulation/rvc_sim
-:link-type: doc
-:link-alt: clickable cards
-
-Validate the vision-guided pick-and-place workflow in simulation. This demo is in development.
-:::
-
-:::{grid-item-card} **Vision and Controls Deployment Demo**
-:link: ../../software_references/stationary_arm/deployment/rvc_deploy
-:link-type: doc
-:link-alt: clickable cards
-
-Explore the vision-guided pick-and-place workflow and its ROS 2 components.
-:::
-::::
-
-
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 :hidden:
 
-ur5e-robotiq-realsense
+UR5e <ur5e-robotiq-realsense>
 ```

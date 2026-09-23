@@ -7,8 +7,8 @@ SPDX-License-Identifier: Apache-2.0
 # Pick & Place Pipeline Benchmark
 
 This benchmark measures KPI performance of the
-[Pick & Place Simulation](../../middleware/gazebo/reference_applications/picknplace.md)
-— a stationary arm pipeline where two UR5 robotic arms coordinate with a
+[Pick & Place Simulation](../../../resources/demos_and_blogs/picknplace.md)
+â€” a stationary arm pipeline where two UR5 robotic arms coordinate with a
 TurtleBot3 AMR on a conveyor belt using Nav2 and MoveIt2.
 
 The Robotics System Profiler automates the full experiment lifecycle: launching the
@@ -61,8 +61,8 @@ uv run python src/aggregate_kpi.py monitoring_sessions/picknplace/bench_20260319
 | Parameter | Description | Default |
 |-----------|-------------|--------|
 | `--timeout N` | Max duration per run (seconds) | 300 |
-| `--record` | Record KPI topics to a rosbag | — |
-| `--plot` | Save trigger-timeline PNG plots | — |
+| `--record` | Record KPI topics to a rosbag | â€” |
+| `--plot` | Save trigger-timeline PNG plots | â€” |
 
 Sessions are stored in `monitoring_sessions/picknplace/`.
 
@@ -100,24 +100,24 @@ uv run python src/visualize_gpu.py monitoring_sessions/picknplace/bench_20260319
 
 | Problem | Fix |
 |---------|-----|
-| Simulation fails to launch | Ensure `picknplace-simulation` package is installed (see [Pick & Place tutorial](../../middleware/gazebo/reference_applications/picknplace.md)) |
+| Simulation fails to launch | Ensure `picknplace-simulation` package is installed (see [Pick & Place tutorial](../../../resources/demos_and_blogs/picknplace.md)) |
 | No GPU data in results | Use `--gpu` flag or verify `intel_gpu_top` is installed on the target |
-| Benchmark stops early | Increase `PN_TIMEOUT` — the full pick-and-place cycle can take up to 5 minutes |
+| Benchmark stops early | Increase `PN_TIMEOUT` â€” the full pick-and-place cycle can take up to 5 minutes |
 | MoveIt2 instability | Run with CycloneDDS: `RMW_IMPLEMENTATION=rmw_cyclonedds_cpp bash src/picknplace_run.sh` |
 
 ## Session Data Layout
 
 ```text
 monitoring_sessions/
-└── picknplace/
-    ├── bench_20260319_164521/        # benchmark run directory
-    │   ├── 20260319_164521/          # individual run session
-    │   │   ├── session_info.txt
-    │   │   ├── graph_timing.csv
-    │   │   ├── resource_usage.log
-    │   │   ├── gpu_usage.log         # present when GPU=1
-    │   │   └── visualizations/
-    │   └── kpi_summary.txt           # aggregated KPIs across runs
-    └── 20260319_183913/              # standalone single run
-        └── ...
+â””â”€â”€ picknplace/
+    â”œâ”€â”€ bench_20260319_164521/        # benchmark run directory
+    â”‚   â”œâ”€â”€ 20260319_164521/          # individual run session
+    â”‚   â”‚   â”œâ”€â”€ session_info.txt
+    â”‚   â”‚   â”œâ”€â”€ graph_timing.csv
+    â”‚   â”‚   â”œâ”€â”€ resource_usage.log
+    â”‚   â”‚   â”œâ”€â”€ gpu_usage.log         # present when GPU=1
+    â”‚   â”‚   â””â”€â”€ visualizations/
+    â”‚   â””â”€â”€ kpi_summary.txt           # aggregated KPIs across runs
+    â””â”€â”€ 20260319_183913/              # standalone single run
+        â””â”€â”€ ...
 ```

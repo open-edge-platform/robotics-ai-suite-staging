@@ -41,8 +41,8 @@ Select the appropriate deserializer based on the your system's IPU below. Unlist
 
 | Code Name | Intel Processor | IPU Version | Deserializer |
 | --- | --- | --- | --- |
-| Panther Lake | Series 3 Intel® Core™ Ultra Processor | IPU7 | `max96724` |
-| Arrow Lake | Series 2 Intel® Core™ Ultra Processor | IPU6 | `max9296` 
+| Panther Lake | Series 3 IntelÂ® Coreâ„¢ Ultra Processor | IPU7 | `max96724` |
+| Arrow Lake | Series 2 IntelÂ® Coreâ„¢ Ultra Processor | IPU6 | `max9296` 
 
 ![GMSL deserializer selection dialog](../../../../images/gmsl/gmsl-dkms-select.png "gmsl deserializer selection dialog")
 
@@ -290,5 +290,5 @@ Your camera is now setup. This is a good chance to fetch a live image from your 
 ### Next Steps
 
 Now that your GMSL camera is properly connected, you can test out using it with various samples or immediately use in your robotics solution:
-- Use OpenVINO to stream GMSL video data into a YOLO-based computer vision sample: [OpenVINO RealSense AI Demo](../../../ai_resources/openvino/reference_applications/openvino_multicam_demo.md)
-- Use ROS 2 to ingest camera frames for use in a ROS-powered application: [RealSense ROS2 Node](../../reference_applications/realsense-ros2.md)
+- Use OpenVINO to stream GMSL video data into a YOLO-based computer vision sample: [OpenVINO RealSense AI Demo](../../../../resources/demos_and_blogs/openvino_multicam_demo.md)
+- Use ROS 2 to ingest camera frames for use in a ROS-powered application: [RealSense ROS2 Node](../../../../resources/demos_and_blogs/realsense-ros2.md)

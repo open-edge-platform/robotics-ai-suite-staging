@@ -120,5 +120,5 @@ TCP offset configuration for the Robotiq 2F-85 gripper
 ## Next Steps
 
 Once the hardware baseline and network connection are verified, proceed to:
-* Validate trajectory execution safely in [Stationary Robotics Toolkit Simulation](../../software_references/stationary_arm/simulation/rvc_sim.md).
-* Execute the end-to-end vision-guided pick-and-place application in the [Stationary Robot Toolkit Vision and Controls Deployment Demo](../../software_references/stationary_arm/deployment/rvc_deploy.md).
+* Validate trajectory execution safely in [Stationary Robotics Toolkit Simulation](../../resources/demos_and_blogs/rvc_sim.md).
+* Execute the end-to-end vision-guided pick-and-place application in the [Stationary Robot Toolkit Vision and Controls Deployment Demo](../../resources/demos_and_blogs/rvc_deploy.md).

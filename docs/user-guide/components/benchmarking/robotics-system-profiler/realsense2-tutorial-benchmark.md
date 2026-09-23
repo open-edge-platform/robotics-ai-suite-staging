@@ -7,8 +7,8 @@ SPDX-License-Identifier: Apache-2.0
 # RealSense2 Tutorial Camera Benchmark
 
 This benchmark measures KPI performance of the
-[RealSense Camera with ROS 2 Sample Application](../../sensors/reference_applications/realsense-ros2.md)
-— a live-camera streaming pipeline (camera driver + rviz2), supporting both a
+[RealSense Camera with ROS 2 Sample Application](../../../resources/demos_and_blogs/realsense-ros2.md)
+â€” a live-camera streaming pipeline (camera driver + rviz2), supporting both a
 USB-connected RealSense camera and a GMSL-connected RealSense Depth Camera D457.
 
 Unlike the simulation benchmarks, this is a live-camera scenario: there's no
@@ -21,7 +21,7 @@ duration, capturing timing, resource, and optionally GPU metrics.
 ## Prerequisites
 
 Complete the [Installation Guide](installation.md) and ensure the
-[RealSense tutorial](../../sensors/reference_applications/realsense-ros2.md)
+[RealSense tutorial](../../../resources/demos_and_blogs/realsense-ros2.md)
 runs successfully before benchmarking. Run
 `scripts/find_cameras.sh` (from the `realsense2_tutorial` package) first to
 confirm whether a USB or GMSL camera is connected.
@@ -55,8 +55,8 @@ uv run src/visualize_graph.py monitoring_sessions/realsense2_tutorial/<session>/
 | Parameter | Description | Default |
 |-----------|-------------|--------|
 | `--timeout N` | Max duration for the run (seconds) | 30 |
-| `--record` | Record KPI topics to a rosbag | — |
-| `--plot` | Save trigger-timeline PNG plots | — |
+| `--record` | Record KPI topics to a rosbag | â€” |
+| `--plot` | Save trigger-timeline PNG plots | â€” |
 | `--output-parent DIR` | Session parent directory | `monitoring_sessions/realsense2_tutorial/` |
 
 ## What the Benchmark Script Does
@@ -67,7 +67,7 @@ using `config/realsense2_tutorial_run.yaml`. It automates:
 1. Launches `ros2 launch realsense2_tutorial realsense2_tutorial.launch.py
    camera_type:=usb` in the background.
 2. Waits `init_sleep` seconds (20s for USB, 8s for GMSL) before starting the
-   monitor — the RealSense USB camera's device-detection delay measured
+   monitor â€” the RealSense USB camera's device-detection delay measured
    ~15-16s even when already connected, so the USB config's `init_sleep`
    accounts for that.
 3. Starts `uv run python src/monitor_stack.py` to capture graph timing and
@@ -96,13 +96,13 @@ uv run src/visualize_graph.py monitoring_sessions/realsense2_tutorial/<session>/
 
 ```text
 monitoring_sessions/
-└── realsense2_tutorial/
-    └── 20260819_141351/
-        ├── session_info.txt
-        ├── graph_timing.csv
-        ├── resource_usage.json
-        ├── gpu_usage.log
-        ├── kpi.json
-        ├── report.html
-        └── visualizations/
+â””â”€â”€ realsense2_tutorial/
+    â””â”€â”€ 20260819_141351/
+        â”œâ”€â”€ session_info.txt
+        â”œâ”€â”€ graph_timing.csv
+        â”œâ”€â”€ resource_usage.json
+        â”œâ”€â”€ gpu_usage.log
+        â”œâ”€â”€ kpi.json
+        â”œâ”€â”€ report.html
+        â””â”€â”€ visualizations/
 ```

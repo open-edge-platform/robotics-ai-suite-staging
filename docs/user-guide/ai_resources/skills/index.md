@@ -1,9 +1,12 @@
-# AI Skills
+---
+orphan: true
+---
+
+# Agentic Skills
 
 Find the right skills to accelerate your development project, from proof-of-concept generators to interactive optimizers to find the right algorithm for your use case.
 
-> [!NOTE]
-> These skills are used by AI agents. AI may produce undesired results. These are offered as learning and experimental tools only. Always verify your robotics solution follows acceptable guidance for safety and reliability.
+> **Note** These skills are used by AI agents. AI may produce undesired results. These are offered as learning and experimental tools only. Always verify your robotics solution follows acceptable guidance for safety and reliability.
 
 ## robotics-ai-suite focus
 

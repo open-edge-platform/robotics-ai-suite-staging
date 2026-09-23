@@ -116,13 +116,21 @@ additional model, sensor, firmware, or package setup.
 
 - [Real-Time Linux](../../components/realtime_determinism/realtime_linux.md) configures the kernel
   and runtime tuning.
-- [Packages List](../../software_references/humanoid/packages_list.md) lists the
-  supported motion-control, sensor, and pipeline packages.
+- [Heterogeneous Computing](heterogeneous_computing.md) explains how to allocate
+  Humanoid workloads across the CPU, iGPU, NPU, and discrete GPU.
 
 ### Not Yet Validated
 
 PTL 358H with Ubuntu 24.04, ROS 2 Jazzy, and the 6.17.11 real-time kernel is
 not currently validated for this Blueprint. Do not apply that platform baseline
 to Humanoid workflows until it is documented here as a validated configuration.
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+
+GEAR-SONIC Introduction <../../software_references/humanoid/gr00t_wbc>
+Heterogeneous Computing <heterogeneous_computing>
+```
 
 

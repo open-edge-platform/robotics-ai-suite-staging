@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Developer Tools
 
 Intel provides a range of developer tools which cover a wide range of topics from heterogeneous computing to deep learning optimization, to help you build and optimize Robotics AI Suite models and workflows.
@@ -12,7 +16,7 @@ More information is available:
 
 Also, you can find some advice for arranging heterogeneous computing through different workloads in the following section:
 
-- [Heterogeneous Computing](../../resources/heterogeneous_computing.md)
+- [Heterogeneous Computing](../../hardware_blueprints/humanoid/heterogeneous_computing.md)
 
 Some of the models used in Humanoid Toolkit solutions are enabled on Intel platforms; see the following tutorials:
 

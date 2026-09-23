@@ -36,7 +36,7 @@ export const AiToolKits = () => {
         <div className={styles.primaryPanel}>
           <InfoCard
             title="Physical AI"
-            link="/development-stack/ai_resources/physical-ai/index.html"
+            link="/development-stack/ai_resources/ai_toolkits/physical_ai_studio.html"
             description="Perception to action for robot tasks"
             imageSrc={PhysicalAI}
             logos={[PhysicalAIFramework, PhysicalAIStudio, OpenVINO]}
@@ -59,7 +59,7 @@ export const AiToolKits = () => {
         <div className={clsx(styles.secondaryPanel, styles.column1)}>
           <InfoCard
             title="Vision AI"
-            link="/development-stack/ai_resources/vision-ai/index.html"
+            link="/development-stack/ai_resources/ai_toolkits/geti.html"
             description="Perception for robot autonomy"
             imageSrc={VisionAI}
             logos={[AnomalibStudio, Geti, DLStreamer, Ultralytics]}
@@ -73,7 +73,7 @@ export const AiToolKits = () => {
         <div className={clsx(styles.secondaryPanel, styles.column2)}>
           <InfoCard
             title="Gen AI"
-            link="/development-stack/ai_resources/gen-ai/index.html"
+            link="/development-stack/ai_resources/ai_toolkits/openvino_toolkit.html"
             description="Reasoning and coordination for robot execution"
             imageSrc={GenAI}
             logos={[LLM, OpenVINO, SGL, LLaMAC]}

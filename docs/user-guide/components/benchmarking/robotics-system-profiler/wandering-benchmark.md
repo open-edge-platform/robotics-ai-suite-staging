@@ -7,8 +7,8 @@ SPDX-License-Identifier: Apache-2.0
 # Wandering AMR Pipeline Benchmark
 
 This benchmark measures KPI performance of the
-[Wandering Application](../../../software_references/amr/simulation/wandering_sim.md)
-— an AMR pipeline where a TurtleBot3 Waffle autonomously maps a Gazebo
+[Wandering Application](../../../resources/demos_and_blogs/wandering_sim.md)
+â€” an AMR pipeline where a TurtleBot3 Waffle autonomously maps a Gazebo
 environment using Nav2 and RTAB-Map.
 
 The Robotics System Profiler records timing, resource, and optionally GPU/NPU metrics
@@ -59,8 +59,8 @@ uv run python src/aggregate_kpi.py monitoring_sessions/wandering/bench_20260319_
 | Parameter | Description | Default |
 |-----------|-------------|--------|
 | `--timeout N` | Max duration per run (seconds) | off |
-| `--record` | Record KPI topics to a rosbag | — |
-| `--plot` | Save trigger-timeline PNG plots | — |
+| `--record` | Record KPI topics to a rosbag | â€” |
+| `--plot` | Save trigger-timeline PNG plots | â€” |
 
 Sessions are stored in `monitoring_sessions/wandering/`.
 
@@ -84,8 +84,7 @@ uv run python src/monitor_stack.py --remote-ip 10.0.0.1 --remote-user intel \
     --ros-domain-id 46 --gpu --npu --algorithm wandering --duration 180
 ```
 
-> [!NOTE]
-> DDS discovery on remote sessions typically takes 30–60 seconds.
+> **Note:** DDS discovery on remote sessions typically takes 30â€“60 seconds.
 > Use `--duration 180` or longer to ensure meaningful data is captured.
 
 For repeated remote runs:
@@ -135,16 +134,16 @@ uv run python src/visualize_graph.py monitoring_sessions/wandering/<session>/gra
 
 ```text
 monitoring_sessions/
-└── wandering/
-    ├── bench_20260319_100421/        # benchmark run directory
-    │   ├── 20260319_100421/          # individual run session
-    │   │   ├── session_info.txt
-    │   │   ├── graph_timing.csv
-    │   │   ├── resource_usage.log
-    │   │   ├── gpu_usage.log         # present when GPU=1
-    │   │   ├── npu_usage.log         # present when NPU=1
-    │   │   └── visualizations/
-    │   └── kpi_summary.txt           # aggregated KPIs across runs
-    └── 20260319_183913/              # standalone single run
-        └── ...
+â””â”€â”€ wandering/
+    â”œâ”€â”€ bench_20260319_100421/        # benchmark run directory
+    â”‚   â”œâ”€â”€ 20260319_100421/          # individual run session
+    â”‚   â”‚   â”œâ”€â”€ session_info.txt
+    â”‚   â”‚   â”œâ”€â”€ graph_timing.csv
+    â”‚   â”‚   â”œâ”€â”€ resource_usage.log
+    â”‚   â”‚   â”œâ”€â”€ gpu_usage.log         # present when GPU=1
+    â”‚   â”‚   â”œâ”€â”€ npu_usage.log         # present when NPU=1
+    â”‚   â”‚   â””â”€â”€ visualizations/
+    â”‚   â””â”€â”€ kpi_summary.txt           # aggregated KPIs across runs
+    â””â”€â”€ 20260319_183913/              # standalone single run
+        â””â”€â”€ ...
 ```

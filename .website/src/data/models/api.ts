@@ -4,6 +4,7 @@
 // internals here know about Hugging Face.
 
 import { stripFrontMatter } from "@site/src/utils/markdown";
+import { getHardware } from "./hardware";
 
 export type Domain = { label: string; tag: string };
 export type Chipset = { label: string; alias: string };
@@ -173,7 +174,8 @@ async function resolveAsset(
 function chipsetsFromTags(tags: string[]): string[] {
   return tags
     .filter((t) => t.startsWith(CHIPSET_PREFIX))
-    .map((t) => t.slice(CHIPSET_PREFIX.length));
+    .map((t) => t.slice(CHIPSET_PREFIX.length))
+    .filter((alias) => getHardware(alias) !== undefined);
 }
 
 function linksFor(cfg: HfConfig, slug: string, card: CardData): ModelLinks {

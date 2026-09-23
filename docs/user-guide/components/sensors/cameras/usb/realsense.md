@@ -43,7 +43,7 @@ sudo apt install ros-humble-librealsense2-tools ros-humble-realsense2-camera
 ## Next steps
 
 - For USB-connected depth cameras, see the
-  [RealSense with ROS 2 sample application](../../reference_applications/realsense-ros2.md).
+  [RealSense with ROS 2 sample application](../../../../resources/demos_and_blogs/realsense-ros2.md).
 
 Individual Blueprints can require additional firmware, launch parameters, or
 camera calibration. Follow their prerequisites before using a camera in a robot
