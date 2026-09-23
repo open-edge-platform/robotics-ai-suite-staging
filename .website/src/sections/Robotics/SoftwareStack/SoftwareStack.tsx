@@ -50,19 +50,6 @@ export const SoftwareStack = ({ className }: SoftwareStackProps) => {
           </CollapsibleCard>
 
           <CollapsibleCard
-            title="AI Toolkits"
-            href={`#${sectionIds.aiToolkits}`}
-            isOpen={openCard === "AI Toolkits"}
-            onToggle={() => toggleCard("AI Toolkits")}
-          >
-            <ul>
-              <li>Physical Al</li>
-              <li>Vision Al</li>
-              <li>Gen Al</li>
-            </ul>
-          </CollapsibleCard>
-
-          <CollapsibleCard
             title="Inference Backends"
             href={`#${sectionIds.aiToolkits}`}
             isOpen={openCard === "Inference Backends"}
@@ -70,7 +57,7 @@ export const SoftwareStack = ({ className }: SoftwareStackProps) => {
           >
             <ul>
               <li>OpenVINO</li>
-              <li>PyTorch</li>
+              <li>PyTorch XPU</li>
             </ul>
           </CollapsibleCard>
 
@@ -81,7 +68,7 @@ export const SoftwareStack = ({ className }: SoftwareStackProps) => {
             onToggle={() => toggleCard("Perception")}
           >
             <ul>
-              <li>GMSL/MIPI-SCI/UVC cameras</li>
+              <li>USB and GMSL cameras</li>
               <li>Intel Image Processing Unit</li>
             </ul>
           </CollapsibleCard>
@@ -106,7 +93,6 @@ export const SoftwareStack = ({ className }: SoftwareStackProps) => {
           >
             <ul>
               <li>Intel FuSa</li>
-              <li>Fail safe over EtherCAT</li>
             </ul>
           </CollapsibleCard>
         </div>
