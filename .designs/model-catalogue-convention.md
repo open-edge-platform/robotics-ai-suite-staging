@@ -41,7 +41,6 @@ Chipset aliases:
 
 | Alias | Chipset |
 | --- | --- |
-| `nvl` | Core Ultra 2 Nova Lake |
 | `ptl` | Core Ultra 3 Panther Lake |
 
 ## YAML header
