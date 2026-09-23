@@ -3,39 +3,6 @@
 Here you will find guidance that covers the frameworks, models, and tools used to build and
 optimize robot perception and intelligence workloads.
 
-## AI Toolkits
-
-AI Frameworks are the runtimes and toolkits that train, optimize, deploy, and serve
-models on the development kit. Each framework targets OpenVINO, so inference runs across
-the Intel CPU, GPU, and NPU and integrates with the ROS 2 and control stack.
-
-::::{grid} 2
-
-:::{grid-item-card} **Gen AI**
-:link: gen-ai/index
-:link-type: doc
-:link-alt: clickable cards
-
-Serve large language models on the robot for natural-language command interpretation, task planning, and reasoning, offline and on-device.
-:::
-
-:::{grid-item-card} **Vision AI**
-:link: vision-ai/index
-:link-type: doc
-:link-alt: clickable cards
-
-Train, optimize, and run the perception models that let a robot detect objects, segment scenes, and inspect for defects.
-:::
-
-:::{grid-item-card} **Physical AI**
-:link: physical-ai/index
-:link-type: doc
-:link-alt: clickable cards
-
-Develop and run the robot-learning and embodied-AI policies that map perception to action.
-:::
-::::
-
 ## Developer Tools
 
 Use these tools to develop, optimize, and profile AI workloads for Robotics AI

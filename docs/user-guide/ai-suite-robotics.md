@@ -93,7 +93,7 @@ Intel® Powered AI <ai_resources/intel_powered_ai>
 OpenVINO <ai_resources/openvino/index>
 Developer Tools <ai_resources/developer_tools/index>
 AI Skills <ai_resources/skills/index>
-OpenVINO™ Physical AI <ai_resources/developer_tools.openvino_physical_ai_runtime>
+OpenVINO™ Physical AI <ai_resources/openvino/openvino_physical_ai_runtime>
 Physical AI Studio  <ai_resources/physical_ai_studio>
 Geti <ai_resources/developer_tools/geti>
 :::
@@ -116,7 +116,7 @@ Release Notes <resources/release-notes.md>
 Autonomous Mobile Robot <software_references/amr/index>
 Humanoid Robot <software_references/humanoid/index>
 Stationary Arm <software_references/stationary_arm/index>
-Software Index <components/optimized_solutions/index>
+Software Index <resources/index>
 Heterogeneous Computing <resources/heterogeneous_computing.md>
 Troubleshooting <resources/troubleshooting.md>
 Glossary <resources/glossary.md>
