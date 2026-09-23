@@ -1,9 +1,4 @@
 
-```{eval-rst}
-:orphan:
-```
-
-
 # Conditional Setup
 
 | Guide | Condition | Description |
