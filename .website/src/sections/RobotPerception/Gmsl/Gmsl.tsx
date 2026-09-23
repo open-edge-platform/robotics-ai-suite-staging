@@ -35,16 +35,7 @@ export const Gmsl = () => {
         <img src={Sensor} alt="GMSL Sensor" />
       </div>
 
-      <ul className={styles.list}>
-        <li>
-          Pre-integrated with over 60 ready-to-deploy camera modules from 11
-          imaging partners.
-        </li>
-        <li>
-          Validated on 20+ industrial edge boards built by 9 leading
-          manufacturers.
-        </li>
-      </ul>
+
     </>
   );
 };

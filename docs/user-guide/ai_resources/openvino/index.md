@@ -6,9 +6,9 @@ models from common frameworks and can target available Intel compute devices.
 
 Use the current [OpenVINO installation documentation](https://docs.openvino.ai/latest/get-started/install-openvino.html) for the selected environment.
 
-## Reference Applications
+## Software Solutions
 
-OpenVINO reference applications cover object detection, segmentation, and
+OpenVINO software solutions cover object detection, segmentation, and
 RealSense camera workflows.
 
 
@@ -68,7 +68,7 @@ Convert, compress, benchmark, and validate the Pi0.5 vision-language-action mode
 :::{toctree}
 :hidden:
 
-Reference Applications <reference_applications/index>
+Software Solutions <reference_applications/index>
 models/index
 pi05-optimization
 OpenVINO Physical AI Runtime <https://github.com/openvinotoolkit/physicalai>

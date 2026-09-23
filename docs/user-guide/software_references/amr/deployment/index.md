@@ -1,4 +1,4 @@
-# Deployable Robot Software References
+# Deployable Robot Software Solutions
 This software reference series showcases actual real-world deployable algorithms and pipelines delivered by the Intel Robotics AI Suite.
 
 You'll start by validating direct keyboard control of a deployed robot. Next,

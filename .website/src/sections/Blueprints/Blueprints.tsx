@@ -32,18 +32,18 @@ export const Blueprints = () => {
           icon={AutonomousMobileRobot}
           href={amrDocsHref}
           title="Autonomous Mobile Robot"
-          description="Safely navigate AMRs in industrial environments using real-time SLAM and open-source AI models."
+          description="Autonomously navigate AMRs in industrial environments using real-time SLAM and open-source AI models."
         />
         <BlueprintCard
           icon={StationaryRobotVisionControl}
           href={stationaryArmDocsHref}
-          title="Stationary Robot Vision & Control"
-          description="Run real-time control, perception, and AI on a single power-efficient Intel processor with advanced 3D vision and depth sensing."
+          title="Stationary Robot"
+          description="Run real-time control, perception, and AI on Intel with advanced 3D vision and depth sensing."
         />
         <BlueprintCard
           icon={HumanoidRobots}
           href={humanoidDocsHref}
-          title="Humanoid Robots"
+          title="Humanoid Robot"
           imageClassName={styles.humanoidIcon}
           description="Enable natural robot interaction via voice and text using LLMs and Vision AI to generate actions and accelerate task planning."
         />

@@ -44,9 +44,9 @@ The Robotics AI Suite targets the following robot form factors:
   within a defined workspace. Typical applications include pick-and-place,
   assembly, welding, and machine tending on production lines.
 
-## Reference Applications and Ingredients
+## Solutions and Ingredients
 
-The table below lists the reference applications, sample pipelines, and tutorials
+The table below lists the software solutions, sample pipelines, and tutorials
 available across this documentation. The **Domains** column categorizes each
 entry to help you find relevant material for your application.
 
@@ -122,7 +122,7 @@ Getting Started <platform_foundation/getting_started.md>
 :hidden:
 
 
-Intel Optimized Robotics Solutions and Ingredients <components/optimized_solutions/index>
+Intel Optimized Robotics Libraries and Ingredients <components/optimized_solutions/index>
 Real-time Determinism <components/realtime_determinism/index>
 Benchmarking <components/benchmarking/index>
 Security <components/security/index>
@@ -142,7 +142,7 @@ Vision AI <ai_resources/vision-ai/index>
 Physical AI <ai_resources/physical-ai/index>
 OpenVINO <ai_resources/openvino/index>
 Developer Tools <ai_resources/developer_tools/index>
-Agentic Skills <ai_resources/skills/index>
+AI Skills <ai_resources/skills/index>
 Physical AI Studio  <https://github.com/open-edge-platform/physical-ai-studio>
 :::
 
@@ -157,7 +157,7 @@ Stationary Arm <hardware_blueprints/stationary_arm/index>
 :::
 
 :::{toctree}
-:caption: Software References
+:caption: Software Solutions
 :hidden:
 
 Autonomous Mobile Robot <software_references/amr/index>

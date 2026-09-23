@@ -8,7 +8,7 @@ This application uses an OpenVINO-optimized version of YOLOv8, available here:
 [Ultralytics YOLOv8 object detection model](https://docs.ultralytics.com/).
 
 ## Prerequisites
-To run this reference applications, make sure you've completed the [Getting Started](../../../platform_foundation/getting_started.md) guide to onboard your device, install the relevant packages, and setup your device drivers.
+To run this software solutions, make sure you've completed the [Getting Started](../../../platform_foundation/getting_started.md) guide to onboard your device, install the relevant packages, and setup your device drivers.
 
 To use GMSL-enabled cameras, make sure you've followed the [GMSL Setup Guide](../../../components/sensors/cameras/gmsl/index.md).
 

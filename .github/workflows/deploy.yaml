@@ -15,6 +15,7 @@ concurrency:
 env:
   PROD_ROLE: arn:aws:iam::153402917730:role/robotics-ai-suite
   PROD_BUCKET: s3://intel-robotics-documentation
+  CF_DISTRO: E2MELGJBQJ2G04
   SITE_URL: https://developer.robotics.intel.com
 
 permissions: read-all
@@ -91,7 +92,9 @@ jobs:
 
       - name: Deploy to root
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-        run: aws s3 sync build/ ${{ env.PROD_BUCKET }} --delete --exclude "pr/*"
+        run: |
+          aws s3 sync build/ ${{ env.PROD_BUCKET }} --delete --exclude "pr/*"
+          aws cloudfront create-invalidation --distribution-id ${{ env.CF_DISTRO }} --paths "/*"
 
       - name: Comment PR with preview link
         if: always() && github.event_name == 'pull_request'
