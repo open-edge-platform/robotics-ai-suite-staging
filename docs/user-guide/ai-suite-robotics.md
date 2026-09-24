@@ -63,7 +63,7 @@ Continue to the System Requirements guide to learn about supported Intel process
 ![Robot Background](./images/RobotBackground.png)
 
 :::{toctree}
-:caption: Platform Foundation
+:caption: Operating System & Hardware
 :hidden:
 
 System Requirements <platform_foundation/system_requirements.md>
@@ -86,16 +86,16 @@ Sensors <components/sensors/index>
 
 
 :::{toctree}
-:caption: AI Resources
+:caption: AI Toolkits 
 :hidden:
 
 Intel® Powered AI <ai_resources/intel_powered_ai>
 OpenVINO <ai_resources/openvino/index>
-Developer Tools <ai_resources/developer_tools/index>
-AI Skills <ai_resources/skills/index>
 OpenVINO™ Physical AI <ai_resources/openvino/openvino_physical_ai_runtime>
 Physical AI Studio  <ai_resources/physical_ai_studio>
 Geti <ai_resources/developer_tools/geti>
+AI Skills <ai_resources/skills/index>
+Developer Tools <ai_resources/developer_tools/index>
 :::
 
 :::{toctree}

@@ -233,7 +233,7 @@ def show_hidden_directives(app, config):  # pylint: disable=unused-argument
 def filter_blueprints_sidebar(html_content):
     """
     Jinja filter: For pages under hardware_blueprints, filter the sidebar toctree
-    so it only displays Platform Foundation and Hardware Blueprints sections.
+    so it only displays Operating System & Hardware (or Platform Foundation) and Hardware Blueprints sections.
     """
     from bs4 import BeautifulSoup
     from markupsafe import Markup
@@ -247,6 +247,8 @@ def filter_blueprints_sidebar(html_content):
         if child.name == "p" and "caption" in child.get("class", []):
             caption_text = child.get_text(strip=True)
             current_keep = caption_text in (
+                "Operating System & Hardware",
+                "Operation System & Hardware",
                 "Platform Foundation",
                 "Hardware Blueprints",
             )
