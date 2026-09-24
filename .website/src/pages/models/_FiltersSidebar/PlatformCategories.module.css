@@ -65,8 +65,8 @@
 }
 
 .label {
-  font-weight: 900;
-  font-size: var(--size-12);
+  font-weight: 600;
+  font-size: var(--size-14);
 }
 
 .subtitle {

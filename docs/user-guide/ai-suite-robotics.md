@@ -79,7 +79,9 @@ Intel® Optimized Robotics Components <components/optimized_solutions/index>
 Real-time Determinism <components/realtime_determinism/index>
 Benchmarking <components/benchmarking/index>
 Security <components/security/index>
+Navigation <components/navigation/index>
 Middleware <components/middleware/index>
+Simulation <components/simulation/index>
 Virtualization <components/virtualization/index>
 Sensors <components/sensors/index>
 :::
@@ -102,7 +104,7 @@ Developer Tools <ai_resources/developer_tools/index>
 :caption: Hardware Blueprints
 :hidden:
 
-Hardware Blueprints <hardware_blueprints/index>
+Blueprints and Requirements <hardware_blueprints/index>
 Autonomous Mobile Robot <hardware_blueprints/amr/index>
 Humanoid Robot <hardware_blueprints/humanoid/index>
 Stationary Arm <hardware_blueprints/stationary_arm/index>

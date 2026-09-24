@@ -74,6 +74,11 @@ export type Model = {
   thumbnail: string;
   hasDiagrams: boolean;
   links: ModelLinks;
+  pipelineTag?: string;
+  precision?: string;
+  tags?: string[];
+  hasCustomImage: boolean;
+  architecture?: string;
 };
 
 // Card metadata carried inline on the models list/detail responses. Keys mirror
@@ -82,6 +87,8 @@ type CardData = {
   title?: string;
   subtitle?: string;
   category?: string;
+  description?: string;
+  base_model?: string | string[];
   order?: number;
   primary_type?: string;
   secondary_types?: string[];
@@ -102,6 +109,7 @@ type CardData = {
 type HfModel = {
   id: string;
   tags?: string[];
+  pipeline_tag?: string;
   cardData?: CardData;
 };
 
@@ -184,12 +192,208 @@ function linksFor(cfg: HfConfig, slug: string, card: CardData): ModelLinks {
   };
 }
 
+export const toTitleCase = (value: string): string =>
+  value
+    .replace(/[_-]+/g, " ")
+    .toLowerCase()
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+
+export const PIPELINE_LABELS: Record<string, string> = {
+  "image-text-to-text": "Vision-Language",
+  "text-generation": "Text Generation",
+  "image-classification": "Image Classification",
+  "automatic-speech-recognition": "Speech Recognition",
+  "object-detection": "Object Detection",
+  "image-segmentation": "Image Segmentation",
+  "text-to-image": "Image Generation",
+  "text-to-speech": "Text-to-Speech",
+  robotics: "Robotics & VLA",
+  "vision-language-action": "Robotics & VLA",
+  "feature-extraction": "Feature Extraction",
+  "text-ranking": "Text Ranking",
+};
+
+export function formatPipelineTag(tag?: string): string {
+  if (!tag) return "";
+  return PIPELINE_LABELS[tag.toLowerCase()] ?? toTitleCase(tag);
+}
+
+export function extractPrecision(
+  slug: string,
+  tags: string[] = [],
+): string | undefined {
+  const lower = slug.toLowerCase();
+  const allText = `${lower} ${tags.join(" ").toLowerCase()}`;
+  if (allText.includes("w8a16")) return "W8A16";
+  if (allText.includes("w4a16")) return "W4A16";
+  if (allText.includes("int4")) return "INT4";
+  if (allText.includes("int8")) return "INT8";
+  if (allText.includes("bf16")) return "BF16";
+  if (allText.includes("fp16")) return "FP16";
+  if (allText.includes("fp32")) return "FP32";
+  return undefined;
+}
+
+export function getModelCategory(
+  pipelineTag?: string,
+  tags: string[] = [],
+): string {
+  const lowerTag = pipelineTag?.toLowerCase();
+  if (
+    lowerTag === "robotics" ||
+    tags.includes("robotics") ||
+    tags.includes("physicalai") ||
+    tags.includes("physicalai-train") ||
+    tags.includes("vision-language-action")
+  ) {
+    return "Physical AI";
+  }
+  if (
+    lowerTag === "object-detection" ||
+    lowerTag === "image-segmentation" ||
+    lowerTag === "image-classification" ||
+    tags.includes("object-detection") ||
+    tags.includes("image-segmentation") ||
+    tags.includes("image-classification") ||
+    tags.includes("vision") ||
+    tags.includes("ssd")
+  ) {
+    return "Vision AI";
+  }
+  return "Gen AI";
+}
+
+export function detectArchitecture(
+  slug: string,
+  tags: string[] = [],
+): string {
+  const s = slug.toLowerCase();
+  const t = tags.map((x) => x.toLowerCase());
+
+  if (s.includes("yolo") || t.includes("yolo11") || t.includes("yolov8")) return "YOLO";
+  if (s.includes("qwen") || t.some((x) => x.startsWith("qwen"))) return "QWEN";
+  if (s.includes("phi") || t.some((x) => x.startsWith("phi"))) return "PHI";
+  if (s.includes("mistral") || t.includes("mistral")) return "MISTRAL";
+  if (s.includes("mixtral") || t.includes("mixtral")) return "MIXTRAL";
+  if (s.includes("gemma") || t.some((x) => x.startsWith("gemma"))) return "GEMMA";
+  if (s.includes("whisper") || t.includes("whisper")) return "WHISPER";
+  if (s.includes("llama") || t.some((x) => x.startsWith("llama"))) return "LLAMA";
+  if (s.includes("bert") || t.includes("bert")) return "BERT";
+  if (s.includes("resnet") || t.includes("resnet")) return "RESNET";
+  if (s.includes("mobilenet") || t.includes("mobilenet")) return "MOBILENET";
+  if (s.includes("maskrcnn") || t.includes("maskrcnn")) return "MASK R-CNN";
+  if (s.includes("ssd") || t.includes("ssd")) return "SSD";
+  if (s.includes("act") || t.includes("act")) return "ACT";
+  if (s.includes("smolvla")) return "SMOLVLA";
+  if (s.includes("pi05") || s.includes("pi0")) return "PI0";
+  if (s.includes("flux") || t.includes("flux")) return "FLUX";
+  if (s.includes("lcm") || s.includes("dreamshaper")) return "LCM";
+  if (s.includes("starcoder") || t.includes("starcoder2")) return "STARCODER";
+  if (s.includes("codegen") || t.includes("codegen")) return "CODEGEN";
+  if (s.includes("dolly")) return "DOLLY";
+  if (s.includes("internvl") || t.includes("internvl")) return "INTERNVL";
+  if (s.includes("neural-chat")) return "NEURAL-CHAT";
+  if (s.includes("tinyllama")) return "TINYLLAMA";
+  if (s.includes("rtmdet")) return "RTMDet";
+  if (s.includes("vit") || t.includes("vit")) return "ViT";
+  if (s.includes("dino")) return "DINO";
+  if (s.includes("kokoro")) return "KOKORO";
+
+  const firstPart = slug.split(/[-_.]/)[0].toUpperCase();
+  return firstPart.length <= 10 ? firstPart : "OPENVINO";
+}
+
+function cleanMarkdown(text: string): string {
+  return text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // extract link text
+    .replace(/[*_`]/g, "")                   // remove emphasis and code marks
+    .replace(/<[^>]+>/g, "")                 // remove html tags
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractSummary(markdown: string, card?: CardData): string {
+  if (card?.description) return cleanMarkdown(card.description);
+  if (card?.key_novelty) return cleanMarkdown(card.key_novelty);
+
+  const baseModel = Array.isArray(card?.base_model)
+    ? card.base_model[0]
+    : card?.base_model;
+  const defaultFallback = baseModel
+    ? `OpenVINO optimized model based on ${baseModel}.`
+    : "";
+
+  if (!markdown) return defaultFallback;
+  const body = stripFrontMatter(markdown).trim();
+
+  // 1. Look for ## Description or ### Description section
+  const descHeaderMatch = body.match(/^#{1,3}\s+Description\b/im);
+  if (descHeaderMatch && descHeaderMatch.index !== undefined) {
+    const afterHeader = body.slice(
+      descHeaderMatch.index + descHeaderMatch[0].length,
+    );
+    const nextHeaderMatch = afterHeader.match(/\n#{1,3}\s+/);
+    const descSection = nextHeaderMatch && nextHeaderMatch.index !== undefined
+      ? afterHeader.slice(0, nextHeaderMatch.index)
+      : afterHeader;
+    const paragraphs = descSection
+      .split(/\n\s*\n/)
+      .map((p) => p.trim())
+      .filter(Boolean);
+    for (const p of paragraphs) {
+      if (p.startsWith("#") || p.startsWith("!") || p.startsWith("|")) continue;
+      const cleaned = cleanMarkdown(p);
+      if (cleaned && !cleaned.startsWith("#") && cleaned.length > 10) {
+        return cleaned;
+      }
+    }
+  }
+
+  // 2. Look for first non-header, non-list, non-quote paragraph after H1
+  const lines = body.split("\n");
+  let afterH1 = false;
+  const paragraph: string[] = [];
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!afterH1) {
+      if (trimmed.startsWith("# ")) afterH1 = true;
+      continue;
+    }
+    if (trimmed.startsWith("#")) break;
+    if (
+      trimmed.startsWith(">") ||
+      trimmed.startsWith("*") ||
+      trimmed.startsWith("-") ||
+      trimmed.startsWith("!") ||
+      trimmed.startsWith("|")
+    ) {
+      continue;
+    }
+    if (trimmed) {
+      paragraph.push(trimmed);
+    } else if (paragraph.length > 0) {
+      break;
+    }
+  }
+  if (paragraph.length > 0) {
+    const cleaned = cleanMarkdown(paragraph.join(" "));
+    if (cleaned && cleaned.length > 10) return cleaned;
+  }
+
+  return defaultFallback;
+}
+
 // Maps a raw Hugging Face model to the UI `Model`. The grid only needs the
 // thumbnail; `withDiagrams` additionally resolves the architecture SVGs.
 async function mapModel(
   cfg: HfConfig,
   raw: HfModel,
-  opts: { withDiagrams: boolean; description?: string; quickStart?: string },
+  opts: {
+    withDiagrams: boolean;
+    description?: string;
+    quickStart?: string;
+    readme?: string;
+  },
 ): Promise<Model> {
   const slug = slugOf(raw.id);
   const card = raw.cardData ?? {};
@@ -207,24 +411,35 @@ async function mapModel(
         : Promise.resolve(undefined),
     ]);
 
+  const hasCustomImage = Boolean(thumbnailAsset || taskImage || overviewSvg);
   const thumbnail =
     thumbnailAsset ?? taskImage ?? overviewSvg ?? DEFAULT_THUMBNAIL;
+
+  const summary = extractSummary(opts.readme ?? opts.description ?? "", card);
+  const precision = extractPrecision(slug, tags);
+  const architecture = detectArchitecture(slug, tags);
+  const primaryType =
+    card.primary_type ??
+    (raw.pipeline_tag ? formatPipelineTag(raw.pipeline_tag) : undefined);
+  const secondaryTypes =
+    card.secondary_types ?? (precision ? [precision] : []);
+  const category = card.category ?? getModelCategory(raw.pipeline_tag, tags);
 
   return {
     slug,
     name: card.title ?? slug,
     subtitle: card.subtitle,
-    category: card.category ?? DEFAULT_CATEGORY,
+    category,
     order: typeof card.order === "number" ? card.order : undefined,
     chipsets: chipsetsFromTags(tags),
-    primaryType: card.primary_type,
-    secondaryTypes: card.secondary_types ?? [],
+    primaryType,
+    secondaryTypes,
     license: card.license,
     size: card.size,
     releaseDate: card.release_date,
     datasets: card.datasets,
-    keyNovelty: card.key_novelty ?? "",
-    description: opts.description ?? "",
+    keyNovelty: card.key_novelty ?? summary,
+    description: opts.description || summary,
     quickStart: opts.quickStart ?? "",
     relatedModels: card.related_models ?? [],
     overviewSvg,
@@ -233,6 +448,11 @@ async function mapModel(
     thumbnail,
     hasDiagrams: Boolean(overviewSvg && detailedSvg),
     links: linksFor(cfg, slug, card),
+    pipelineTag: raw.pipeline_tag,
+    precision,
+    tags,
+    hasCustomImage,
+    architecture,
   };
 }
 
@@ -342,7 +562,21 @@ export async function listModelsPage(
 
   const raw = (await res.json()) as HfModel[];
   const models = await Promise.all(
-    raw.map((m) => mapModel(cfg, m, { withDiagrams: false })),
+    raw.map(async (m) => {
+      const slug = slugOf(m.id);
+      let readme = "";
+      try {
+        const readmeRes = await fetch(resolveUrl(cfg, slug, "README.md"), {
+          headers: authHeaders(cfg),
+        });
+        if (readmeRes.ok) {
+          readme = await readmeRes.text();
+        }
+      } catch {
+        // fallback to card data
+      }
+      return mapModel(cfg, m, { withDiagrams: false, readme });
+    }),
   );
 
   return {
@@ -367,12 +601,16 @@ export async function getModel(cfg: HfConfig, slug: string): Promise<Model> {
   }
 
   const raw = (await metaRes.json()) as HfModel;
-  const body = readmeRes.ok
-    ? stripFrontMatter(await readmeRes.text()).trim()
-    : "";
+  const readmeText = readmeRes.ok ? await readmeRes.text() : "";
+  const body = stripFrontMatter(readmeText).trim();
   const { description, quickStart } = splitReadme(body);
 
-  return mapModel(cfg, raw, { withDiagrams: true, description, quickStart });
+  return mapModel(cfg, raw, {
+    withDiagrams: true,
+    description: description || extractSummary(readmeText, raw.cardData),
+    quickStart,
+    readme: readmeText,
+  });
 }
 
 export async function getBenchmarks(): Promise<BenchmarkEntry[]> {

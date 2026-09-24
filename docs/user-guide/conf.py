@@ -233,7 +233,7 @@ def show_hidden_directives(app, config):  # pylint: disable=unused-argument
 def filter_blueprints_sidebar(html_content):
     """
     Jinja filter: For pages under hardware_blueprints, filter the sidebar toctree
-    so it only displays Operating System & Hardware (or Platform Foundation) and Hardware Blueprints sections.
+    so it only displays the Hardware Blueprints section.
     """
     from bs4 import BeautifulSoup
     from markupsafe import Markup
@@ -241,17 +241,12 @@ def filter_blueprints_sidebar(html_content):
     is_soup = isinstance(html_content, BeautifulSoup)
     soup = html_content if is_soup else BeautifulSoup(str(html_content), "html.parser")
 
-    current_keep = True
+    current_keep = False
     elements_to_remove = []
     for child in list(soup.children):
         if child.name == "p" and "caption" in child.get("class", []):
             caption_text = child.get_text(strip=True)
-            current_keep = caption_text in (
-                "Operating System & Hardware",
-                "Operation System & Hardware",
-                "Platform Foundation",
-                "Hardware Blueprints",
-            )
+            current_keep = "blueprint" in caption_text.lower()
         if not current_keep:
             elements_to_remove.append(child)
     for el in elements_to_remove:
@@ -278,7 +273,7 @@ def filter_development_stack_sidebar(html_content):
     for child in list(soup.children):
         if child.name == "p" and "caption" in child.get("class", []):
             caption_text = child.get_text(strip=True)
-            current_keep = caption_text != "Hardware Blueprints"
+            current_keep = "blueprint" not in caption_text.lower()
         if not current_keep:
             elements_to_remove.append(child)
     for el in elements_to_remove:

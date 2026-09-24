@@ -14,13 +14,6 @@ The Robotics AI Suite uses ROS 2 on supported platforms.
 Use the primary robotics runtime for reliable application lifetime management and cross-process communication.
 :::
 
-:::{grid-item-card} **Gazebo**
-:link: gazebo/index
-:link-type: doc
-:link-alt: clickable cards
-
-Use simulation software solutions for validating robotics behavior before deployment.
-:::
 ::::
 
 
@@ -30,5 +23,4 @@ Use simulation software solutions for validating robotics behavior before deploy
 :hidden:
 
 ROS 2 <ros2>
-Gazebo <gazebo/index>
 :::

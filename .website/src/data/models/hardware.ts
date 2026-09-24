@@ -11,13 +11,13 @@ export const HARDWARE: Record<HardwareAlias, HardwareInfo> = {
   ptl: {
     alias: "ptl",
     chipset: "Panther Lake",
-    tier: "Core Ultra 3",
+    tier: "Intel® Core™ Ultra 3",
     color: "#63b3ed",
   },
   wcl: {
     alias: "wcl",
     chipset: "WildCat Lake",
-    tier: "Core Series 3",
+    tier: "Intel® Core™ Series 3",
     color: "#ff8a3d",
   },
 };
@@ -37,14 +37,14 @@ export const listHardware = (): HardwareInfo[] =>
   HARDWARE_ALIASES.map((alias) => HARDWARE[alias]);
 
 export const getChipsetLabel = (alias: string): string =>
-  getHardware(alias)?.chipset ?? alias.toUpperCase();
+  getHardware(alias)?.tier ?? alias.toUpperCase();
 
 export const getTierLabel = (alias: string): string =>
   getHardware(alias)?.tier ?? "";
 
 export const getHardwareLabel = (alias: string): string => {
   const info = getHardware(alias);
-  return info ? `${info.tier} ${info.chipset}` : alias.toUpperCase();
+  return info ? info.tier : alias.toUpperCase();
 };
 
 export const getHardwareColor = (alias: string, index = 0): string =>

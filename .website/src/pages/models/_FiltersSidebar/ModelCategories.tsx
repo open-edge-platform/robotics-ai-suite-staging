@@ -24,7 +24,7 @@ export type ModelCategoriesProps = {
   selectedDomain: string;
   selectedCategory: string | undefined;
   onToggle: (value: string | undefined) => void;
-  onCategoryToggle: (value: string | undefined) => void;
+  onCategoryToggle: (category: string | undefined, domain?: string) => void;
 };
 
 export const DEFAULT_CATEGORIES: Category[] = [
@@ -33,10 +33,10 @@ export const DEFAULT_CATEGORIES: Category[] = [
     label: "Gen AI",
     icon: <AiBrain />,
     subOptions: [
-      { label: "Text & Reasoning", value: "text-reasoning" },
-      { label: "Vision-Language", value: "vision-language" },
-      { label: "Speech & Audio", value: "speech-audio" },
-      { label: "Image & Video Generation", value: "image-video-generation" },
+      { label: "Text Generation", value: "text-generation" },
+      { label: "Vision-Language", value: "image-text-to-text" },
+      { label: "Speech Recognition", value: "automatic-speech-recognition" },
+      { label: "Image Generation", value: "text-to-image" },
     ],
   },
   {
@@ -44,8 +44,7 @@ export const DEFAULT_CATEGORIES: Category[] = [
     label: "Physical AI",
     icon: <Robot />,
     subOptions: [
-      { label: "World Action Models", value: "world-action-models" },
-      { label: "Action Policies & VLA", value: "action-policies-vla" },
+      { label: "Robotics & VLA", value: "robotics" },
     ],
   },
   {
@@ -53,10 +52,9 @@ export const DEFAULT_CATEGORIES: Category[] = [
     label: "Vision AI",
     icon: <Eye />,
     subOptions: [
-      { label: "Detection", value: "detection" },
-      { label: "Segmentation", value: "segmentation" },
-      { label: "Classification", value: "classification" },
-      { label: "Spatial Perception", value: "spatial-perception" },
+      { label: "Object Detection", value: "object-detection" },
+      { label: "Image Segmentation", value: "image-segmentation" },
+      { label: "Image Classification", value: "image-classification" },
     ],
   },
 ];
@@ -73,12 +71,14 @@ export const ModelCategories = ({
   );
 
   const handleCategory = (category: Category) => {
-    onCategoryToggle(undefined);
     onToggle(selectedDomain === category.value ? undefined : category.value);
   };
 
-  const handleSubOption = (value: string) => {
-    onCategoryToggle(value === selectedCategory ? undefined : value);
+  const handleSubOption = (category: Category, value: string) => {
+    onCategoryToggle(
+      value === selectedCategory ? undefined : value,
+      category.value,
+    );
   };
 
   return (
@@ -125,7 +125,7 @@ export const ModelCategories = ({
                         <button
                           key={option.value}
                           className={`${styles.subOption}${isSelected ? ` ${styles.subOptionSelected}` : ""}`}
-                          onClick={() => handleSubOption(option.value)}
+                          onClick={() => handleSubOption(category, option.value)}
                         >
                           {isSelected && (
                             <span className={styles.subOptionCheck}>

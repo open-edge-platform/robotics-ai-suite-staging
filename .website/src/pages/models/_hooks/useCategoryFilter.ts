@@ -17,23 +17,24 @@ export const useCategoryFilter = (options: UseCategoryFilterOptions = {}) => {
   const { searchQuery, selectedDomainTag, selectedChipsets, selectedCategory } =
     useModelFilters(cfg);
 
+  // If a specific subcategory (pipeline_tag) is selected, query HF directly with that filter tag.
+  // If Physical AI is selected without a subcategory, query HF with 'robotics'.
+  const activeHfFilter =
+    selectedCategory ??
+    (selectedDomainTag === "physical-ai" ? "robotics" : undefined);
+
   const {
     models,
     isLoading: isModelsLoading,
     isFetchingNextPage,
     sentinelRef,
-  } = useModelsInfiniteList(cfg, selectedDomainTag);
+  } = useModelsInfiniteList(cfg, activeHfFilter);
 
   const { data: allBenchmarks = [], isLoading: isBenchmarksLoading } = useQuery(
     {
       ...benchmarksQueryOptions(),
       enabled: Boolean(selectedCategory) || alwaysFetchBenchmarks,
     },
-  );
-
-  const filteredByModel = useMemo(
-    () => filterModels(models, searchQuery, selectedChipsets),
-    [models, searchQuery, selectedChipsets],
   );
 
   const relevantBenchmarks = useMemo(
@@ -46,12 +47,17 @@ export const useCategoryFilter = (options: UseCategoryFilterOptions = {}) => {
     [allBenchmarks, selectedCategory],
   );
 
-  const filteredItems = useMemo(() => {
-    if (!selectedCategory) return filteredByModel;
-
-    const benchmarkSlugs = new Set(relevantBenchmarks.map((b) => b.slug));
-    return filteredByModel.filter((model) => benchmarkSlugs.has(model.slug));
-  }, [filteredByModel, relevantBenchmarks, selectedCategory]);
+  const filteredItems = useMemo(
+    () =>
+      filterModels(
+        models,
+        searchQuery,
+        selectedChipsets,
+        selectedDomainTag,
+        selectedCategory,
+      ),
+    [models, searchQuery, selectedChipsets, selectedDomainTag, selectedCategory],
+  );
 
   return {
     items: filteredItems,

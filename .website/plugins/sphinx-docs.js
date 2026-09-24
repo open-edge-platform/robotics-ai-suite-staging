@@ -24,6 +24,25 @@ function stageSphinxHtml() {
   }
 
   fs.cpSync(SPHINX_HTML_DIR, dest, { recursive: true });
+
+  const redirectHtml = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=/development-stack/ai-suite-robotics.html">
+    <script>window.location.replace('/development-stack/ai-suite-robotics.html');</script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/development-stack/ai-suite-robotics.html">Development Stack</a>...</p>
+  </body>
+</html>`;
+
+  fs.writeFileSync(path.join(dest, "index.html"), redirectHtml);
+
+  const aiSuiteDir = path.join(dest, "ai-suite-robotics");
+  fs.mkdirSync(aiSuiteDir, { recursive: true });
+  fs.writeFileSync(path.join(aiSuiteDir, "index.html"), redirectHtml);
+
   console.log(`[sphinx-docs] Staged Sphinx HTML for /${ROUTE_SUBPATH}/`);
 }
 

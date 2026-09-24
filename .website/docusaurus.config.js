@@ -38,12 +38,12 @@ const config = {
   // read token used ONLY to reach a private staging org during testing; it is
   // baked into the client bundle, so never set HF_TOKEN for a public/prod build.
   customFields: {
-    hfOrg: process.env.HF_ORG || "modelapi",
+    hfOrg: process.env.HF_ORG || "OpenVINO",
     hfToken: process.env.HF_TOKEN || null,
     // Catalog membership marker. Only repos carrying this tag are listed; it is
     // ANDed into every models API query so experimental repos in the org are
     // excluded. Every catalog model must carry this tag.
-    hfCatalogTag: process.env.HF_CATALOG_TAG || "robotics-ai-suite",
+    hfCatalogTag: process.env.HF_CATALOG_TAG || "",
     // Domain filter options. `label` is shown in the UI; `tag` is the Hugging
     // Face collection tag sent as the models API `filter` value.
     hfDomains: [

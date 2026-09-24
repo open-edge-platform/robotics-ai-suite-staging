@@ -30,12 +30,10 @@ export default function Models(): React.JSX.Element {
           <div className={clsx(styles.heroContent, "container")}>
             <h1 className={styles.heroTitle}>AI Models</h1>
             <p className={styles.heroText}>
-              From training to deployment, robot policies can be developed with
-              PyTorch and Physical AI Studio and seamlessly deployed with
-              OpenVINO™. Intel® hardware provides flexible execution across
-              integrated GPUs for balanced performance and energy efficiency,
-              NPUs for ultra-low-power operation, and discrete GPUs for
-              demanding, high-performance workloads
+              Build with PyTorch, Physical AI Studio, or your tooling of
+              choice—then deploy with OpenVINO™ across Intel® CPUs, GPUs, and
+              NPUs. Browse the catalog below for models available on Hugging
+              Face, pre-optimized and ready for fine-tuning or edge deployment.
             </p>
           </div>
         </SuiteHero>
