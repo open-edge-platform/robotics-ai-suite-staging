@@ -1,40 +1,7 @@
-# Intel Powered AI
+# Intel® Powered AI
 
 Here you will find guidance that covers the frameworks, models, and tools used to build and
 optimize robot perception and intelligence workloads.
-
-## AI Toolkits
-
-AI Frameworks are the runtimes and toolkits that train, optimize, deploy, and serve
-models on the development kit. Each framework targets OpenVINO, so inference runs across
-the Intel CPU, GPU, and NPU and integrates with the ROS 2 and control stack.
-
-::::{grid} 2
-
-:::{grid-item-card} **Gen AI**
-:link: gen-ai/index
-:link-type: doc
-:link-alt: clickable cards
-
-Serve large language models on the robot for natural-language command interpretation, task planning, and reasoning, offline and on-device.
-:::
-
-:::{grid-item-card} **Vision AI**
-:link: vision-ai/index
-:link-type: doc
-:link-alt: clickable cards
-
-Train, optimize, and run the perception models that let a robot detect objects, segment scenes, and inspect for defects.
-:::
-
-:::{grid-item-card} **Physical AI**
-:link: physical-ai/index
-:link-type: doc
-:link-alt: clickable cards
-
-Develop and run the robot-learning and embodied-AI policies that map perception to action.
-:::
-::::
 
 ## Developer Tools
 
@@ -49,7 +16,8 @@ validating the resulting environment.
 | [OpenVINO](https://docs.openvino.ai/) | Optimize and deploy deep-learning inference workloads. |
 | [Intel oneAPI Toolkits](https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html) | Develop and profile heterogeneous C++, SYCL, and data-parallel workloads. |
 | [OpenVINO Physical AI Runtime](https://github.com/openvinotoolkit/physicalai) | Accelerate your OpenVINO-powered deployment with a unified API for connecting cameras, robots, and policy inference. |
-| [Intel Physical AI Studio](https://github.com/open-edge-platform/physical-ai-studio)| Train and depoy VLA models with an easy-to-use imitation learning dataset generation platform. |
+| [Intel Physical AI Studio](https://github.com/open-edge-platform/physical-ai-studio)| Train and deploy VLA models with an easy-to-use imitation learning dataset generation platform. |
+| [Geti](https://github.com/open-edge-platform/geti) | Use an end-to-end pipeline to create vision AI models optimized for Intel. |
 
 For performance analysis, see [Benchmarking and Profiling](../components/benchmarking/index.md).
 
@@ -62,6 +30,14 @@ For performance analysis, see [Benchmarking and Profiling](../components/benchma
 :link-alt: clickable cards
 
 Optimize and deploy deep-learning inference on available Intel compute devices.
+:::
+
+:::{grid-item-card} **Geti**
+:link: developer_tools/geti
+:link-type: doc
+:link-alt: clickable cards
+
+Use an end-to-end pipeline to create vision AI models.
 :::
 
 :::{grid-item-card} **Developer Tools**

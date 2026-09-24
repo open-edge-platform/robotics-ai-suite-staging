@@ -1,4 +1,4 @@
-export type HardwareAlias = "nvl" | "ptl" | "wcl";
+export type HardwareAlias = "ptl" | "wcl";
 
 export type HardwareInfo = {
   alias: HardwareAlias;
@@ -8,12 +8,6 @@ export type HardwareInfo = {
 };
 
 export const HARDWARE: Record<HardwareAlias, HardwareInfo> = {
-  nvl: {
-    alias: "nvl",
-    chipset: "Nova Lake",
-    tier: "Core Ultra 2",
-    color: "#c8f000",
-  },
   ptl: {
     alias: "ptl",
     chipset: "Panther Lake",

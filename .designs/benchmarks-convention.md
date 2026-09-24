@@ -68,7 +68,6 @@ Recommended `hardware` values match the catalogue chipset aliases (`chipset:<ali
 
 | Alias | Chipset |
 | --- | --- |
-| `nvl` | Nova Lake |
 | `ptl` | Panther Lake |
 | `wcl` | WildCat Lake |
 
@@ -121,7 +120,7 @@ one result for a single `(model, task, hardware)` combination.
   "task": "pick-and-place",
   "model": "PI0.5",
   "slug": "pi05-libero-fp16-ov-catalog",
-  "hardware": "nvl",
+  "hardware": "ptl",
   "precision": "fp16",
   "metrics": [
     { "name": "inference-latency", "value": 62, "unit": "ms" }

@@ -2,8 +2,6 @@ import { type Model } from "@site/src/data/models/api";
 import { useUrlQueryParam } from "@site/src/hooks/useUrlQueryParam.hook";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Architecture } from "../Architecture";
-import { ModelBenchmarks } from "../ModelBenchmarks";
 import { Tab, Tabs } from "../Tabs";
 import styles from "./styles.module.css";
 
@@ -38,11 +36,11 @@ export const ModelDetailsTabs = ({ model }: ModelDetailsTabsProps) => {
       </Tab>
 
       <Tab title="Architecture" id="architecture">
-        <Architecture model={model} />
+        <p className={styles.empty}>Coming soon</p>
       </Tab>
 
       <Tab title="Benchmark" id="benchmark">
-        <ModelBenchmarks slug={model.slug} />
+        <p className={styles.empty}>Coming soon</p>
       </Tab>
     </Tabs>
   );

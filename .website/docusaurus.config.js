@@ -118,11 +118,6 @@ const config = {
             position: "left",
           },
           {
-            to: "/skills/",
-            label: "AI Skills",
-            position: "left",
-          },
-          {
             href: "https://github.com/open-edge-platform/robotics-ai-suite",
             label: "GitHub",
             position: "right",

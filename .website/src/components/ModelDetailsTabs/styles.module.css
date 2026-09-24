@@ -23,3 +23,8 @@
     background: rgba(255, 255, 255, 0.05);
   }
 }
+
+.empty {
+  color: var(--ifm-color-emphasis-600);
+  padding: 1.5rem 0;
+}

@@ -124,7 +124,7 @@ Clearpath Jackal base services publish transforms and topics under a robot names
 export ROBOT_NAMESPACE=/j100_0812
 ```
 
-### Autonomous Exploration Mode (Default: Intel RealSense Depth Sensing)
+### Autonomous Exploration Mode (Default: Intel® RealSense Depth Sensing)
 
 Launch the complete autonomous pipeline using the RealSense depth camera:
 
