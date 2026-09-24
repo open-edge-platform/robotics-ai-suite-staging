@@ -68,11 +68,29 @@
   & > ul {
     gap: 26px;
     border-bottom: 1px solid #ffffff1f;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
 @media (max-width: 640px) {
+  .heroContent {
+    padding: 6rem 1rem 2.5rem;
+  }
+
   .heroTitle {
-    font-size: 40px;
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .heroText {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .container {
+    padding: 2rem 1rem;
+    gap: 2rem;
   }
 }

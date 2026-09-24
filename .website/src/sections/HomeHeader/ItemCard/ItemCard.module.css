@@ -53,3 +53,23 @@
     letter-spacing: var(--size-0_25);
   }
 }
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--size-24) var(--size-20);
+
+    .iconContainer {
+      height: var(--size-64);
+    }
+
+    h3 {
+      font-size: var(--size-20);
+      margin-top: var(--size-16);
+      line-height: var(--size-24);
+    }
+
+    p {
+      margin-top: var(--size-12);
+    }
+  }
+}

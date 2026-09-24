@@ -80,7 +80,7 @@ Real-time Determinism <components/realtime_determinism/index>
 Benchmarking <components/benchmarking/index>
 Security <components/security/index>
 Navigation <components/navigation/index>
-Middleware <components/middleware/index>
+Runtime <components/runtime/index>
 Simulation <components/simulation/index>
 Virtualization <components/virtualization/index>
 Sensors <components/sensors/index>
@@ -93,11 +93,12 @@ Sensors <components/sensors/index>
 
 Intel® Powered AI <ai_resources/intel_powered_ai>
 OpenVINO <ai_resources/openvino/index>
+PyTorch XPU <ai_resources/developer_tools/pytorch-xpu>
 OpenVINO™ Physical AI <ai_resources/openvino/openvino_physical_ai_runtime>
 Physical AI Studio  <ai_resources/physical_ai_studio>
 Geti <ai_resources/developer_tools/geti>
+Intel® oneAPI <ai_resources/developer_tools/oneapi>
 AI Skills <ai_resources/skills/index>
-Developer Tools <ai_resources/developer_tools/index>
 :::
 
 :::{toctree}

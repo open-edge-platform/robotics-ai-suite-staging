@@ -27,12 +27,25 @@
   max-width: var(--max-container-width);
 }
 
+@media (max-width: 768px) {
+  .content {
+    padding: var(--size-24) var(--size-16);
+  }
+}
+
 .title {
   color: var(--geti-color-white);
   font-weight: 500;
   font-size: var(--size-48);
   line-height: var(--size-48);
   letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--size-32);
+    line-height: var(--size-36);
+  }
 }
 
 .description {
@@ -50,4 +63,11 @@
   font-size: var(--size-30);
   line-height: var(--size-48);
   letter-spacing: 0%;
+}
+
+@media (max-width: 768px) {
+  .subtitle {
+    font-size: var(--size-20);
+    line-height: var(--size-28);
+  }
 }

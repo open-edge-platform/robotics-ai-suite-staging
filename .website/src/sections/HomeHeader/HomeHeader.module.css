@@ -22,6 +22,14 @@
   background-clip: text;
 }
 
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--size-36);
+    line-height: var(--size-44);
+    max-width: 100%;
+  }
+}
+
 .gradient {
   z-index: 1;
   background: linear-gradient(
@@ -48,8 +56,28 @@
   text-shadow: var(--size-2) var(--size-2) var(--size-2) #171462db;
 }
 
+@media (max-width: 768px) {
+  .description {
+    font-size: var(--size-16);
+    line-height: var(--size-22);
+    max-width: 100%;
+  }
+}
+
 .cardsContainer {
   gap: var(--size-32);
   display: flex;
   margin-top: var(--size-82);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: var(--size-40);
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    margin-top: var(--size-40);
+    gap: var(--size-16);
+  }
 }

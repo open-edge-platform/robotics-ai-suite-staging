@@ -20,6 +20,22 @@
   }
 }
 
+@media (max-width: 768px) {
+  .header {
+    height: var(--size-160);
+    padding-top: var(--size-16);
+
+    img {
+      max-height: 120px;
+      width: auto;
+    }
+  }
+
+  .title {
+    max-width: 100%;
+  }
+}
+
 .content {
   gap: var(--size-16);
   flex: 1;

@@ -40,14 +40,6 @@ Optimize and deploy deep-learning inference on available Intel compute devices.
 Use an end-to-end pipeline to create vision AI models.
 :::
 
-:::{grid-item-card} **Developer Tools**
-:link: developer_tools/index
-:link-type: doc
-:link-alt: clickable cards
-
-Install and configure OpenVINO, PyTorch XPU, and oneAPI.
-:::
-
 :::{grid-item-card} **AI Skills**
 :link: skills/index
 :link-type: doc

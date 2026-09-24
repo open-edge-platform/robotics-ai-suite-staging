@@ -71,13 +71,13 @@
   color: var(--geti-color-white);
 }
 
-@media (max-width: var(--size-996)) {
+@media (max-width: 996px) {
   .layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .panel {

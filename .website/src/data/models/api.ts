@@ -456,19 +456,11 @@ async function mapModel(
   };
 }
 
-// Section headings the catalog understands. Only these known sections are
-// surfaced; any other README section (e.g. Legal information, Disclaimer) is
-// ignored so unexpected content never leaks onto the page.
-const QUICK_START_HEADINGS = ["how to use"];
-
-type Section = { heading: string; key: string; body: string };
-
-// Parses the README body into an intro (text before the first top-level
-// heading) and a list of top-level (`#`) sections. The leading H1 duplicates
-// the page title and is dropped.
+// Parses the README body into an intro and top-level sections.
 function parseSections(body: string): { intro: string; sections: Section[] } {
   const withoutTitle = body.replace(/^#\s+.*\r?\n+/, "").trim();
-  const re = /^#\s+(.+?)\s*$/gm;
+  // Match either ## Level 2 headings or # Level 1 headings as section boundaries
+  const re = /^#{1,2}\s+(.+?)\s*$/gm;
   const matches = [...withoutTitle.matchAll(re)];
 
   if (matches.length === 0) {
@@ -490,21 +482,35 @@ function parseSections(body: string): { intro: string; sections: Section[] } {
 }
 
 // Assembles the main-page description and the Quick Start guide from known
-// sections only. The intro (text before the first heading) stays on the main
-// page; recognized sections route to their surface; everything else is dropped.
+// sections.
 function splitReadme(body: string): {
   description: string;
   quickStart: string;
 } {
   const { intro, sections } = parseSections(body);
 
-  const pick = (keys: string[]): string =>
-    sections
-      .filter((s) => keys.includes(s.key))
-      .map((s) => s.body)
-      .join("\n\n");
+  const quickStartSections = sections.filter((s) => {
+    const k = s.key;
+    return (
+      k.includes("how to use") ||
+      k.includes("running model") ||
+      k.includes("running inference") ||
+      k.includes("model inference") ||
+      k.includes("inference") ||
+      k.includes("usage") ||
+      k.includes("getting started") ||
+      k.includes("quick start")
+    );
+  });
 
-  return { description: intro, quickStart: pick(QUICK_START_HEADINGS) };
+  const descSection = sections.find(
+    (s) => s.key === "description" || s.key === "overview",
+  );
+
+  const description = descSection ? descSection.body : intro;
+  const quickStart = quickStartSections.map((s) => s.body).join("\n\n");
+
+  return { description, quickStart };
 }
 
 // Extracts the `cursor=...` value from the RFC 5988 Link header's rel="next".
