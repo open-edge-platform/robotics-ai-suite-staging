@@ -4,7 +4,7 @@ Diffusion Policy presents an innovative method for generating robot actions by c
 
 A diffusion policy pipeline is provided for evaluating the diffusion policy model on the `Push-T` task in simulation. This pipeline includes source code optimized with OpenVINO™ for improved performance, and supports both Transformer-based and CNN-based diffusion policy for inference on the `Push-T` task.
 
-In this tutorial, we will introduce how to setup Diffusion Policy simulation pipeline.
+This tutorial explains how to set up the Diffusion Policy simulation pipeline.
 
 ## Simulation Task
 
@@ -23,7 +23,7 @@ The maximum step of the task is 300, and the reward is defined as the maximum ov
 
 ## Prerequisites
 
-Please make sure you have finished setup steps in [Get Started](../../../platform_foundation/getting_started.md).
+Please make sure you have completed the setup steps in [Getting Started](../../../platform_foundation/getting_started.md).
 
 ## Installation
 

@@ -2,9 +2,9 @@
 
 Imitation learning is a machine learning approach where a model is trained to mimic expert behavior by observing and replicating demonstrations, enabling it to perform tasks similarly to the expert. ACT is an action chunking policy with Transformers, an architecture designed for sequence modeling. It is trained as a conditional VAE (CVAE) to capture the variability in human data. It significantly outperforms previous imitation learning algorithms on a range of simulated and real-world fine manipulation tasks.
 
-We have built an imitation learning pipeline for ACT, which can be used to train and evaluate the ACT model on different tasks both in simulation and real robot environment. In this sample pipeline, we provided source code optimized by OpenVINO™ to accelerate the process.
+We have built an imitation learning pipeline for ACT that can be used to train and evaluate the ACT model on different tasks in both simulation and real robot environments. In this sample pipeline, we provide source code optimized by OpenVINO™ to accelerate the process.
 
-In this tutorial, we will introduce how to setup ACT pipeline.
+This tutorial explains how to set up the ACT pipeline.
 
 ## Source Code
 

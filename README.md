@@ -16,8 +16,8 @@ Documentation lives under `docs/`, with one subfolder per layer of the stack.
 
 ## Making changes
 
-Docs are Markdown under `docs/<layer>/`. Preview them locally with a
-live-reloading site:
+Documentation is written in Markdown under `docs/<layer>/`. Preview it locally
+with a live-reloading site:
 
 ```bash
 cd .website

@@ -4,7 +4,7 @@ Robotics Diffusion Transformer (RDT) is the largest bimanual manipulation founda
 
 A RDT pipeline is provided for evaluating the VLA model on the simulation task. This pipeline includes source code optimized with OpenVINO™ for improved performance, and supports running inference on Intel GPUs (discrete GPU and integrated GPU).
 
-In this tutorial, we will introduce how to setup RDT simulation pipeline.
+This tutorial explains how to set up the RDT simulation pipeline.
 
 ## Simulation Task
 

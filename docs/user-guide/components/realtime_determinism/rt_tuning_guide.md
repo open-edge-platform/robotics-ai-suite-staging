@@ -1,6 +1,6 @@
 # Real-time Tuning Guide
 
-For the improved performance with real-time, follow the below guide to set boot paramaters and learn how to optimize your solution for determinisitic workloads.
+To improve real-time performance, follow this guide to adjust boot parameters and optimize your system for deterministic workloads.
 
 ## UEFI Setup
 
