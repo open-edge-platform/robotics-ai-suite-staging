@@ -8,12 +8,12 @@ html[data-theme="dark"] {
   /* body text — light on dark background */
   --ifm-color-content: var(--geti-color-text-primary);
 
-  /* navbar — same navy gradient as light mode: all navbar vars use white-on-dark values */
-  --ifm-navbar-background-color: transparent;
+  /* navbar — Sphinx-aligned dark navy with aqua accents */
+  --ifm-navbar-background-color: #1c223b;
   --ifm-navbar-link-color: var(--geti-color-text-white);
   --geti-header-color-reverse: var(--geti-color-text-white);
   --geti-clean-btn-color: var(--geti-color-text-white);
-  --geti-navbar-link-active-color: var(--geti-color-energy-blue-tint1);
+  --geti-navbar-link-active-color: var(--geti-color-aqua);
   --geti-navbar-logo-background-color: var(--geti-color-gray-50);
   --geti-navbar-search-input-color: var(--geti-color-text-white);
   --geti-navbar-search-background-color: #122f84;

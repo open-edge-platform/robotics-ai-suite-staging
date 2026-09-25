@@ -24,6 +24,36 @@
   justify-content: space-between;
 }
 
+.filterSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-8);
+}
+
+.sectionTitle {
+  font-size: var(--size-12);
+  font-weight: 700;
+  color: #ffffffb3;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.showMoreBtn {
+  background: none;
+  border: none;
+  color: #00c7fd;
+  cursor: pointer;
+  padding: var(--size-4) 0 0;
+  font-size: var(--size-13);
+  text-align: left;
+  font-weight: 500;
+}
+
+.showMoreBtn:hover {
+  text-decoration: underline;
+}
+
 .clearAll {
   color: #00c7fd;
   border: none;

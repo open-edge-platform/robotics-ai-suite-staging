@@ -25,23 +25,27 @@ function stageSphinxHtml() {
 
   fs.cpSync(SPHINX_HTML_DIR, dest, { recursive: true });
 
-  const redirectHtml = `<!DOCTYPE html>
+  const rawBase = process.env.BASE_URL || "/";
+  const baseUrl = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+  const targetUrl = `${baseUrl}development-stack/ai-suite-robotics.html`;
+
+  const makeRedirectHtml = (target) => `<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=/development-stack/ai-suite-robotics.html">
-    <script>window.location.replace('/development-stack/ai-suite-robotics.html');</script>
+    <meta http-equiv="refresh" content="0; url=${target}">
+    <script>window.location.replace('${target}');</script>
   </head>
   <body>
-    <p>Redirecting to <a href="/development-stack/ai-suite-robotics.html">Development Stack</a>...</p>
+    <p>Redirecting to <a href="${target}">Development Stack</a>...</p>
   </body>
 </html>`;
 
-  fs.writeFileSync(path.join(dest, "index.html"), redirectHtml);
+  fs.writeFileSync(path.join(dest, "index.html"), makeRedirectHtml(targetUrl));
 
   const aiSuiteDir = path.join(dest, "ai-suite-robotics");
   fs.mkdirSync(aiSuiteDir, { recursive: true });
-  fs.writeFileSync(path.join(aiSuiteDir, "index.html"), redirectHtml);
+  fs.writeFileSync(path.join(aiSuiteDir, "index.html"), makeRedirectHtml(targetUrl));
 
   console.log(`[sphinx-docs] Staged Sphinx HTML for /${ROUTE_SUBPATH}/`);
 }

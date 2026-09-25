@@ -35,7 +35,7 @@ Detect and follow a person using LiDAR or RealSense point clouds.
 :::
 
 :::{grid-item-card} **ITS Path Planner**
-:link: its-path-planner-plugin
+:link: ../navigation/its-path-planner-plugin
 :link-type: doc
 :link-alt: clickable cards
 
@@ -43,7 +43,7 @@ Configure the ITS global planner for ROS 2 Navigation.
 :::
 
 :::{grid-item-card} **Robot Re-localization**
-:link: navigation-relocalization
+:link: ../navigation/navigation-relocalization
 :link-type: doc
 :link-alt: clickable cards
 
@@ -76,8 +76,8 @@ entry to help you find relevant material for your application.
 | [Collaborative Visual SLAM](./components/optimized_solutions/collaborative-slam.md) | Autonomous Mobile Robot, SLAM | Multi-robot visual SLAM optimized with SSE/AVX2 instruction sets for map building and merging on Intel® CPUs and GPUs. |
 | [FastMapping Algorithm](./components/optimized_solutions/run-fastmapping-algorithm.md) | Autonomous Mobile Robot, Sensors | Intel-optimized octomap implementation that builds 3D voxel maps from RealSense depth camera data for efficient environment representation. |
 | [ADBSCAN Follow-me](./components/optimized_solutions/adbscan-follow-me.md) | Autonomous Mobile Robot, AI, Sensors | Adaptive DBSCAN person detection and tracking from 2D/3D LiDAR or RealSense point clouds, with Gazebo simulation and real-robot deployment examples. |
-| [ITS Path Planner ROS 2 Navigation Plugin](./components/optimized_solutions/its-path-planner-plugin.md) | Autonomous Mobile Robot, Navigation | Intel patented global path planner delivering 20-30x speedup over A* for the ROS 2 Navigation2 stack. |
-| [Robot Re-localization Package for ROS 2 Navigation](./components/optimized_solutions/navigation-relocalization.md) | Autonomous Mobile Robot, Navigation | Re-localization algorithm that rapidly recovers robot pose in Nav2 after sensor glitches or environment disturbances. |
+| [ITS Path Planner ROS 2 Navigation Plugin](../navigation/its-path-planner-plugin.md) | Autonomous Mobile Robot, Navigation | Intel patented global path planner delivering 20-30x speedup over A* for the ROS 2 Navigation2 stack. |
+| [Robot Re-localization Package for ROS 2 Navigation](../navigation/navigation-relocalization.md) | Autonomous Mobile Robot, Navigation | Re-localization algorithm that rapidly recovers robot pose in Nav2 after sensor glitches or environment disturbances. |
 | [GPU ORB Extractor](./components/optimized_solutions/orb-extractor.md) | Autonomous Mobile Robot, SLAM | GPU-accelerated keypoint and descriptor extraction for Visual SLAM front-ends, with OpenCV and OpenCV-free APIs. |
 | [Deploy Robot Teleop Using a Keyboard](./software_references/amr/deployment/teleop_deploy.md) | Autonomous Mobile Robot | Validates motor control on a deployed robot using keyboard teleoperation before running autonomous workloads. |
 | [Deploying `wandering`](./software_references/amr/deployment/wandering_deploy.md) | Autonomous Mobile Robot, Navigation | Deploys the Wandering autonomous exploration pipeline on a physical robot using RTAB-Map and Nav2. |
@@ -114,8 +114,6 @@ entry to help you find relevant material for your application.
 collaborative-slam
 run-fastmapping-algorithm
 adbscan-follow-me
-its-path-planner-plugin
-navigation-relocalization
 orb-extractor
 
 :::

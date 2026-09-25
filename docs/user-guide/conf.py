@@ -103,6 +103,10 @@ spelling_exclude_patterns = []
 html_title = "Robotics AI Suite Documentation"
 html_theme = "pydata_sphinx_theme"
 
+html_context = {
+    "default_mode": "dark",
+}
+
 html_theme_options = {
     "navigation_depth": 6,
     "show_toc_level": 1,
@@ -115,6 +119,14 @@ html_theme_options = {
     "navbar_center": ["navbar-links"],
     # "navbar_end": ["search-field"],  # Search + Theme Switcher on the right
     "header_links_before_dropdown": 4,
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/open-edge-platform/robotics-ai-suite",
+            "icon": "fa-brands fa-github",
+            "type": "fontawesome",
+        }
+    ],
     "logo": {
         "text": "Robotics AI Suite",
         "link": "/",

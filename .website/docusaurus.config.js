@@ -138,6 +138,11 @@ const config = {
         theme: require("prism-react-renderer").themes.github,
         darkTheme: require("prism-react-renderer").themes.dracula,
       },
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
     }),
 };
 

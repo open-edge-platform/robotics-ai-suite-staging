@@ -4,15 +4,30 @@ import { useCopyToClipboard } from "../../../../hooks/useCopyToClipboard.hook";
 import styles from "./styles.module.css";
 
 export const SkillCard = ({ skill }: { skill: Skill }) => {
-  const installCommand = `npx skills add open-edge-platform/skills --skill ${skill.id}`;
+  const installCommand =
+    skill.installCommand || `npx skills add intel/skills --skill ${skill.id}`;
   const { copied, copy } = useCopyToClipboard();
 
   return (
     <div className={styles.item}>
-      <h3 className={styles.name}>{skill.name}</h3>
-      <p className={styles.description}>{skill.description}</p>
+      <h3 className={styles.name}>
+        {skill.sourceUrl ? (
+          <a
+            href={skill.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.nameLink}
+            title={`View source for ${skill.name} on GitHub`}
+          >
+            {skill.name}
+          </a>
+        ) : (
+          skill.name
+        )}
+      </h3>
+      <p className={styles.description}>{skill.summary || skill.description}</p>
 
-      <div className={styles.tags}>
+      <div className={styles.footer}>
         <div className={styles.tags}>
           {skill.labels.map((label) => (
             <span key={label} className={styles.badge}>
@@ -21,7 +36,11 @@ export const SkillCard = ({ skill }: { skill: Skill }) => {
           ))}
         </div>
 
-        <button className={styles.copyButton} onClick={() => copy(installCommand)}>
+        <button
+          className={styles.copyButton}
+          onClick={() => copy(installCommand)}
+          title={`Copy install command: ${installCommand}`}
+        >
           {copied ? (
             "✓ Copied"
           ) : (

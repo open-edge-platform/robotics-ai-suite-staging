@@ -7,6 +7,7 @@ import React from "react";
 import AiBrain from "../../../static/img/icon/ai-brain.svg";
 import Eye from "../../../static/img/icon/eye.svg";
 import Robot from "../../../static/img/icon/robot.svg";
+import roboticsCharm from "../../../static/img/robotics-charm.png";
 import { ChipsetBadge } from "../ChipsetBadge";
 import { LoadingImage } from "../LoadingImage";
 import styles from "./styles.module.css";
@@ -159,6 +160,12 @@ export const ModelCardItem = ({
           />
         ) : (
           <div className={clsx(styles.abstractHeader, categoryHeaderClass)}>
+            <img
+              src={roboticsCharm}
+              alt=""
+              className={styles.ghostCharm}
+              aria-hidden="true"
+            />
             {model.architecture && (
               <span className={styles.archWatermark} aria-hidden="true">
                 {model.architecture}

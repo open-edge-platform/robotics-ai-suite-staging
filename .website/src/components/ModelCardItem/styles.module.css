@@ -69,6 +69,29 @@
   color: #c084fc;
 }
 
+.ghostCharm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 82%;
+  width: auto;
+  max-width: 80%;
+  object-fit: contain;
+  opacity: 0.16;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.card:hover .ghostCharm {
+  transform: translate(-50%, -50%) scale(1.06);
+  opacity: 0.24;
+}
+
 .archWatermark {
   position: absolute;
   right: 0.75rem;
@@ -86,6 +109,7 @@
   max-width: 80%;
   overflow: hidden;
   text-overflow: clip;
+  z-index: 2;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -104,6 +128,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 
   svg {
     width: 100%;

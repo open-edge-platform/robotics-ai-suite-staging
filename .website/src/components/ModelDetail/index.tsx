@@ -14,6 +14,7 @@ import ModelsPage from "@site/src/pages/models";
 import AiBrain from "../../../static/img/icon/ai-brain.svg";
 import Eye from "../../../static/img/icon/eye.svg";
 import Robot from "../../../static/img/icon/robot.svg";
+import roboticsCharm from "../../../static/img/robotics-charm.png";
 import { ModelBreadcrumbs } from "../ModelBreadcrumbs";
 import { ModelDetailsTabs } from "../ModelDetailsTabs";
 import { ModelLinks } from "../ModelLinks";
@@ -160,6 +161,12 @@ export default function ModelDetail() {
               <div
                 className={clsx(styles.abstractHeader, categoryHeaderClass)}
               >
+                <img
+                  src={roboticsCharm}
+                  alt=""
+                  className={styles.ghostCharm}
+                  aria-hidden="true"
+                />
                 {model.architecture && (
                   <span className={styles.archWatermark} aria-hidden="true">
                     {model.architecture}

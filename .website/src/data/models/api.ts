@@ -238,13 +238,29 @@ export function getModelCategory(
   pipelineTag?: string,
   tags: string[] = [],
 ): string {
+  const lowerTags = tags.map((t) => t.toLowerCase());
+
+  // Check explicit domain contract tags first
+  if (
+    lowerTags.includes("physical-ai") ||
+    lowerTags.includes("physicalai") ||
+    lowerTags.includes("physicalai-train")
+  ) {
+    return "Physical AI";
+  }
+  if (lowerTags.includes("vision-ai") || lowerTags.includes("vision")) {
+    return "Vision AI";
+  }
+  if (lowerTags.includes("gen-ai")) {
+    return "Gen AI";
+  }
+
+  // Fallback to pipeline tag or specific task heuristics
   const lowerTag = pipelineTag?.toLowerCase();
   if (
     lowerTag === "robotics" ||
-    tags.includes("robotics") ||
-    tags.includes("physicalai") ||
-    tags.includes("physicalai-train") ||
-    tags.includes("vision-language-action")
+    lowerTags.includes("robotics") ||
+    lowerTags.includes("vision-language-action")
   ) {
     return "Physical AI";
   }
@@ -252,11 +268,10 @@ export function getModelCategory(
     lowerTag === "object-detection" ||
     lowerTag === "image-segmentation" ||
     lowerTag === "image-classification" ||
-    tags.includes("object-detection") ||
-    tags.includes("image-segmentation") ||
-    tags.includes("image-classification") ||
-    tags.includes("vision") ||
-    tags.includes("ssd")
+    lowerTags.includes("object-detection") ||
+    lowerTags.includes("image-segmentation") ||
+    lowerTags.includes("image-classification") ||
+    lowerTags.includes("ssd")
   ) {
     return "Vision AI";
   }
@@ -456,6 +471,12 @@ async function mapModel(
   };
 }
 
+type Section = {
+  heading: string;
+  key: string;
+  body: string;
+};
+
 // Parses the README body into an intro and top-level sections.
 function parseSections(body: string): { intro: string; sections: Section[] } {
   const withoutTitle = body.replace(/^#\s+.*\r?\n+/, "").trim();
@@ -568,21 +589,7 @@ export async function listModelsPage(
 
   const raw = (await res.json()) as HfModel[];
   const models = await Promise.all(
-    raw.map(async (m) => {
-      const slug = slugOf(m.id);
-      let readme = "";
-      try {
-        const readmeRes = await fetch(resolveUrl(cfg, slug, "README.md"), {
-          headers: authHeaders(cfg),
-        });
-        if (readmeRes.ok) {
-          readme = await readmeRes.text();
-        }
-      } catch {
-        // fallback to card data
-      }
-      return mapModel(cfg, m, { withDiagrams: false, readme });
-    }),
+    raw.map((m) => mapModel(cfg, m, { withDiagrams: false })),
   );
 
   return {

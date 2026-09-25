@@ -12,6 +12,14 @@
   background-size: cover;
 }
 
+.title {
+  font-size: var(--size-36);
+  font-weight: 600;
+  line-height: var(--size-48);
+  text-shadow: var(--size-2) var(--size-2) 0 #171462db;
+  color: var(--geti-color-white);
+}
+
 @media (max-width: 768px) {
   .imageContainer {
     flex-direction: column-reverse;
@@ -28,14 +36,6 @@
     font-size: var(--size-24);
     line-height: var(--size-32);
   }
-}
-
-.title {
-  font-size: var(--size-36);
-  font-weight: 600;
-  line-height: var(--size-48);
-  text-shadow: var(--size-2) var(--size-2) 0 #171462db;
-  color: var(--geti-color-white);
 }
 
 .description {
