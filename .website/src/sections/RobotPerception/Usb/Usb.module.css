@@ -20,6 +20,24 @@
   color: var(--geti-color-white);
 }
 
+@media (max-width: 768px) {
+  .imageContainer {
+    flex-direction: column-reverse;
+    padding: var(--size-24) var(--size-20);
+    gap: var(--size-24);
+
+    img {
+      max-width: 200px;
+      height: auto;
+    }
+  }
+
+  .title {
+    font-size: var(--size-24);
+    line-height: var(--size-32);
+  }
+}
+
 .description {
   font-size: var(--size-16);
   font-weight: 600;

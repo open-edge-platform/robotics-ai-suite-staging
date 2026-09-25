@@ -11,6 +11,10 @@ import Link from "../Link";
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ModelsPage from "@site/src/pages/models";
+import AiBrain from "../../../static/img/icon/ai-brain.svg";
+import Eye from "../../../static/img/icon/eye.svg";
+import Robot from "../../../static/img/icon/robot.svg";
+import roboticsCharm from "../../../static/img/robotics-charm.png";
 import { ModelBreadcrumbs } from "../ModelBreadcrumbs";
 import { ModelDetailsTabs } from "../ModelDetailsTabs";
 import { ModelLinks } from "../ModelLinks";
@@ -50,6 +54,20 @@ export default function ModelDetail() {
 
   const chipsetLabel = (alias: string) =>
     cfg.chipsets.find((c) => c.alias === alias)?.label ?? alias;
+
+  const CategoryIcon =
+    model?.category === "Physical AI"
+      ? Robot
+      : model?.category === "Vision AI"
+        ? Eye
+        : AiBrain;
+
+  const categoryHeaderClass =
+    model?.category === "Physical AI"
+      ? styles.headerPhysical
+      : model?.category === "Vision AI"
+        ? styles.headerVision
+        : styles.headerGen;
 
   if (isIndex) {
     return <ModelsPage />;
@@ -132,12 +150,33 @@ export default function ModelDetail() {
             )}
           </div>
 
-          <div>
-            <img
-              src={model.thumbnail}
-              className={styles.taskImage}
-              alt={`${model.name} task illustration`}
-            />
+          <div className={styles.imageColumn}>
+            {model.hasCustomImage ? (
+              <img
+                src={model.thumbnail}
+                className={styles.taskImage}
+                alt={`${model.name} task illustration`}
+              />
+            ) : (
+              <div
+                className={clsx(styles.abstractHeader, categoryHeaderClass)}
+              >
+                <img
+                  src={roboticsCharm}
+                  alt=""
+                  className={styles.ghostCharm}
+                  aria-hidden="true"
+                />
+                {model.architecture && (
+                  <span className={styles.archWatermark} aria-hidden="true">
+                    {model.architecture}
+                  </span>
+                )}
+                <div className={styles.iconWatermark} aria-hidden="true">
+                  <CategoryIcon />
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

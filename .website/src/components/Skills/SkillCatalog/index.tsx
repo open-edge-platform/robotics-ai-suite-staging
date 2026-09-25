@@ -1,32 +1,80 @@
 import { useMemo, useState } from "react";
-import skills from "../../../data/skills";
+import { useQuery } from "@tanstack/react-query";
+import { skillsQueryOptions } from "../../../data/skills";
 import { CheckboxItem } from "../../CheckboxItem";
 import { SearchBox } from "../../SearchBox";
 import { SkillCard } from "./SkillCard";
 import { pluralize } from "@site/src/utils/pluralize";
 import styles from "./styles.module.css";
 
-// Skill groups, shown as filters even when a group has no skills yet.
-const SECTIONS = [
-  "AI Toolkits",
-  "Inference Backends",
-  "Perception",
-  "Realtime Control",
-  "Safety",
-  "Middleware",
-];
-
 export default function SkillCatalog() {
+  const { data: skills = [] } = useQuery(skillsQueryOptions());
+
   const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState<string[]>(SECTIONS);
-  const allSelected = selected.length === SECTIONS.length;
+  const [selectedHw, setSelectedHw] = useState<string[]>([]);
+  const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [showAllProducts, setShowAllProducts] = useState(false);
+
+  // Compute hardware facets from skills
+  const hwOptions = useMemo(() => {
+    const counts: Record<string, number> = {};
+    skills.forEach((skill) => {
+      if (skill.hwClass) {
+        counts[skill.hwClass] = (counts[skill.hwClass] || 0) + 1;
+      }
+    });
+
+    return Object.entries(counts)
+      .map(([value, count]) => ({
+        value,
+        label: value.toUpperCase(),
+        count,
+      }))
+      .sort((a, b) => b.count - a.count);
+  }, [skills]);
+
+  // Compute product facets from skills
+  const productOptions = useMemo(() => {
+    const counts: Record<string, number> = {};
+    skills.forEach((skill) => {
+      skill.products?.forEach((product) => {
+        counts[product] = (counts[product] || 0) + 1;
+      });
+    });
+
+    return Object.entries(counts)
+      .map(([value, count]) => ({
+        value,
+        label: value,
+        count,
+      }))
+      .sort((a, b) => b.count - a.count);
+  }, [skills]);
+
+  const displayedProductOptions = useMemo(() => {
+    if (showAllProducts || productOptions.length <= 8) {
+      return productOptions;
+    }
+    return productOptions.slice(0, 8);
+  }, [productOptions, showAllProducts]);
 
   const shown = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
     return skills.filter((skill) => {
-      if (!selected.includes(skill.category)) {
-        return false;
+      if (selectedHw.length > 0) {
+        if (!skill.hwClass || !selectedHw.includes(skill.hwClass)) {
+          return false;
+        }
+      }
+
+      if (selectedProducts.length > 0) {
+        const hasProduct = skill.products?.some((p) =>
+          selectedProducts.includes(p)
+        );
+        if (!hasProduct) {
+          return false;
+        }
       }
 
       if (!normalizedQuery) {
@@ -34,34 +82,30 @@ export default function SkillCatalog() {
       }
 
       const haystack =
-        `${skill.name} ${skill.description} ${skill.category} ${skill.labels.join(" ")}`.toLowerCase();
+        `${skill.name} ${skill.summary} ${skill.description} ${skill.hwClass || ""} ${(skill.products || []).join(" ")}`.toLowerCase();
       return haystack.includes(normalizedQuery);
     });
-  }, [query, selected]);
+  }, [skills, query, selectedHw, selectedProducts]);
 
-  const onToggle = (category: string): void => {
-    setSelected((current) =>
-      current.includes(category)
-        ? current.filter((value) => value !== category)
-        : [...current, category],
+  const toggleHw = (hw: string) => {
+    setSelectedHw((prev) =>
+      prev.includes(hw) ? prev.filter((v) => v !== hw) : [...prev, hw]
     );
   };
 
+  const toggleProduct = (prod: string) => {
+    setSelectedProducts((prev) =>
+      prev.includes(prod) ? prev.filter((v) => v !== prod) : [...prev, prod]
+    );
+  };
+
+  const hasActiveFilters =
+    selectedHw.length > 0 || selectedProducts.length > 0 || query.trim() !== "";
+
   const clearAll = () => {
-    setSelected([]);
-  };
-
-  const selectAll = () => {
-    setSelected(SECTIONS);
-  };
-
-  const handleToggleSelected = () => {
-    if (allSelected) {
-      clearAll();
-      return;
-    }
-
-    selectAll();
+    setSelectedHw([]);
+    setSelectedProducts([]);
+    setQuery("");
   };
 
   return (
@@ -70,9 +114,11 @@ export default function SkillCatalog() {
         <aside className={styles.panel} aria-label="Skill filters">
           <div className={styles.filterHeader}>
             <span className={styles.filterLabel}>Filter by</span>
-            <button onClick={handleToggleSelected} className={styles.clearAll}>
-              {allSelected ? "Clear All" : "Select All"}
-            </button>
+            {hasActiveFilters && (
+              <button onClick={clearAll} className={styles.clearAll}>
+                Clear All
+              </button>
+            )}
           </div>
 
           <SearchBox
@@ -81,16 +127,50 @@ export default function SkillCatalog() {
             onChange={({ target }) => setQuery(target.value)}
           />
 
-          <div className={styles.filterList}>
-            {SECTIONS.map((category) => (
-              <CheckboxItem
-                key={category}
-                label={category}
-                checked={selected.includes(category)}
-                onChange={() => onToggle(category)}
-              />
-            ))}
-          </div>
+          {hwOptions.length > 0 && (
+            <div className={styles.filterSection}>
+              <h4 className={styles.sectionTitle}>Hardware</h4>
+              <div className={styles.filterList}>
+                {hwOptions.map((hw) => (
+                  <CheckboxItem
+                    key={hw.value}
+                    label={hw.label}
+                    count={hw.count}
+                    checked={selectedHw.includes(hw.value)}
+                    onChange={() => toggleHw(hw.value)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {productOptions.length > 0 && (
+            <div className={styles.filterSection}>
+              <h4 className={styles.sectionTitle}>Products</h4>
+              <div className={styles.filterList}>
+                {displayedProductOptions.map((prod) => (
+                  <CheckboxItem
+                    key={prod.value}
+                    label={prod.label}
+                    count={prod.count}
+                    checked={selectedProducts.includes(prod.value)}
+                    onChange={() => toggleProduct(prod.value)}
+                  />
+                ))}
+              </div>
+              {productOptions.length > 8 && (
+                <button
+                  type="button"
+                  className={styles.showMoreBtn}
+                  onClick={() => setShowAllProducts(!showAllProducts)}
+                >
+                  {showAllProducts
+                    ? "Show less"
+                    : `+${productOptions.length - 8} more`}
+                </button>
+              )}
+            </div>
+          )}
         </aside>
 
         <div>

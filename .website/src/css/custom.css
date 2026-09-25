@@ -39,6 +39,10 @@ html {
   --ifm-tabs-color-active: var(--ifm-link-color);
   --ifm-heading-margin-bottom: 0.75rem;
 
+  --ifm-navbar-height: 90px;
+  --ifm-navbar-padding-vertical: 8px;
+  --ifm-navbar-padding-horizontal: 16px;
+  --ifm-navbar-background-color: #1c223b;
   --ifm-navbar-link-hover-color: var(--geti-navbar-link-active-color);
   --ifm-footer-link-hover-color: var(--geti-color-link-hover);
 
@@ -143,40 +147,123 @@ samp {
   color: var(--geti-clean-btn-color);
 }
 
+/* ── Unified Top Bar (aligned with Sphinx developer docs) ── */
 .navbar {
   width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(
+  height: 90px;
+  background-color: #1c223b !important;
+  border-top: 10px solid !important;
+  border-image: linear-gradient(
     90deg,
-    var(--geti-nav-gradient-1) 6.98%,
-    var(--geti-nav-gradient-2) 46.6%,
-    var(--geti-nav-gradient-3) 79.11%
-  );
+    #5400c0 5%,
+    #057aff 50%,
+    #16cfb1 98.99%
+  ) 1 !important;
+  border-bottom: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  padding: 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: none;
 }
 
-.navbarGlass .navbar {
-  top: 0;
-  width: 100%;
-  position: absolute;
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+.navbar__inner {
+  height: 80px;
+  max-width: 100%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__brand {
+  margin-right: 28px !important;
+  padding: 8px 20px 8px 0 !important;
+  text-decoration: none;
+}
+
+.navbar__title {
+  font-family: "IntelOne Display", "IntelOne-Display-Regular", Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 33px;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.navbar__brand:hover .navbar__title {
+  color: #9c5ffd;
+  text-decoration: none;
+}
+
+.navbar__items {
+  align-items: center;
+}
+
+.navbar__link {
+  font-family: "IntelOne Display", "IntelOne-Display-Regular", Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26.4px;
+  color: #ffffff;
+  padding: 4px 6px !important;
+  margin: 0 2px;
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: #9c5ffd;
+  text-decoration: none;
+}
+
+.navbar__link.navbar__link--active {
+  color: #9c5ffd;
 }
 
 .navbar .clean-btn {
-  color: var(--geti-header-color-reverse);
+  color: #ffffff;
   background: transparent;
 }
 
 .navbar .clean-btn:hover {
-  color: var(--ifm-navbar-link-hover-color);
+  color: #9c5ffd;
   background: transparent;
 }
 
-.navbar__link {
-  font-size: 0.875rem;
-  font-weight: normal;
+/* Mobile sidebar drawer */
+.navbar-sidebar {
+  background-color: #1c223b;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 10px solid;
+  border-image: linear-gradient(
+    90deg,
+    #5400c0 5%,
+    #057aff 50%,
+    #16cfb1 98.99%
+  ) 1;
+}
+
+.navbar-sidebar__brand {
+  background-color: #1c223b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-sidebar .navbar__item {
+  color: #ffffff;
+  font-family: "IntelOne Display", "IntelOne-Display-Regular", Roboto, sans-serif;
+}
+
+.navbar-sidebar .navbar__item:hover,
+.navbar-sidebar .navbar__item.navbar__link--active {
+  color: var(--geti-color-aqua);
+}
+
+.navbar__toggle {
+  color: #ffffff;
+}
+
+.navbar__toggle:hover {
+  color: var(--geti-color-aqua);
 }
 
 .navbar__search-input {
@@ -255,7 +342,7 @@ samp {
 }
 
 /* ── SearchBar overrides ── */
-.navbarGlass .navbar__search .navbar__search-input {
+.navbar .navbar__search .navbar__search-input {
   border: 0.0625rem solid;
   border-radius: 0.1875rem;
   background: #ffffff0f

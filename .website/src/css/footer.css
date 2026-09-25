@@ -10,6 +10,12 @@
   margin-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+  .footer__links {
+    padding: 0 16px;
+  }
+}
+
 .footer__col {
   display: grid;
   justify-content: center;
@@ -28,6 +34,14 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .legal-footer {
+    gap: 16px;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .legal-footer :is(a, span) {

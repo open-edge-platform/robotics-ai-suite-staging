@@ -35,7 +35,7 @@ Detect and follow a person using LiDAR or RealSense point clouds.
 :::
 
 :::{grid-item-card} **ITS Path Planner**
-:link: its-path-planner-plugin
+:link: ../navigation/its-path-planner-plugin
 :link-type: doc
 :link-alt: clickable cards
 
@@ -43,7 +43,7 @@ Configure the ITS global planner for ROS 2 Navigation.
 :::
 
 :::{grid-item-card} **Robot Re-localization**
-:link: navigation-relocalization
+:link: ../navigation/navigation-relocalization
 :link-type: doc
 :link-alt: clickable cards
 
@@ -76,14 +76,14 @@ entry to help you find relevant material for your application.
 | [Collaborative Visual SLAM](./components/optimized_solutions/collaborative-slam.md) | Autonomous Mobile Robot, SLAM | Multi-robot visual SLAM optimized with SSE/AVX2 instruction sets for map building and merging on Intel® CPUs and GPUs. |
 | [FastMapping Algorithm](./components/optimized_solutions/run-fastmapping-algorithm.md) | Autonomous Mobile Robot, Sensors | Intel-optimized octomap implementation that builds 3D voxel maps from RealSense depth camera data for efficient environment representation. |
 | [ADBSCAN Follow-me](./components/optimized_solutions/adbscan-follow-me.md) | Autonomous Mobile Robot, AI, Sensors | Adaptive DBSCAN person detection and tracking from 2D/3D LiDAR or RealSense point clouds, with Gazebo simulation and real-robot deployment examples. |
-| [ITS Path Planner ROS 2 Navigation Plugin](./components/optimized_solutions/its-path-planner-plugin.md) | Autonomous Mobile Robot, Navigation | Intel patented global path planner delivering 20-30x speedup over A* for the ROS 2 Navigation2 stack. |
-| [Robot Re-localization Package for ROS 2 Navigation](./components/optimized_solutions/navigation-relocalization.md) | Autonomous Mobile Robot, Navigation | Re-localization algorithm that rapidly recovers robot pose in Nav2 after sensor glitches or environment disturbances. |
+| [ITS Path Planner ROS 2 Navigation Plugin](../navigation/its-path-planner-plugin.md) | Autonomous Mobile Robot, Navigation | Intel patented global path planner delivering 20-30x speedup over A* for the ROS 2 Navigation2 stack. |
+| [Robot Re-localization Package for ROS 2 Navigation](../navigation/navigation-relocalization.md) | Autonomous Mobile Robot, Navigation | Re-localization algorithm that rapidly recovers robot pose in Nav2 after sensor glitches or environment disturbances. |
 | [GPU ORB Extractor](./components/optimized_solutions/orb-extractor.md) | Autonomous Mobile Robot, SLAM | GPU-accelerated keypoint and descriptor extraction for Visual SLAM front-ends, with OpenCV and OpenCV-free APIs. |
 | [Deploy Robot Teleop Using a Keyboard](./software_references/amr/deployment/teleop_deploy.md) | Autonomous Mobile Robot | Validates motor control on a deployed robot using keyboard teleoperation before running autonomous workloads. |
 | [Deploying `wandering`](./software_references/amr/deployment/wandering_deploy.md) | Autonomous Mobile Robot, Navigation | Deploys the Wandering autonomous exploration pipeline on a physical robot using RTAB-Map and Nav2. |
 | [Simulated Robotics with Gazebo](./software_references/amr/simulation/basic_sim.md) | Autonomous Mobile Robot, Simulation | Introduces simulating robots as digital twins in Gazebo to test robotics applications before real-world deployment. |
 | [Simulating `wandering` in Gazebo](./software_references/amr/simulation/wandering_sim.md) | Autonomous Mobile Robot, Simulation, Navigation | Simulates the full Wandering pipeline in Gazebo with mapping, frontier exploration, and Nav2-based navigation. |
-| [Gazebo Pick & Place Demo](./components/middleware/gazebo/reference_applications/picknplace.md) | Middleware, Manipulation, Simulation | Coordinates two UR5 arms and a TurtleBot3 AMR on a conveyor line using MoveIt2 and Nav2 in Gazebo Classic. |
+| [Gazebo Pick & Place Demo](../../software_references/stationary_arm/simulation/picknplace.md) | Middleware, Manipulation, Simulation | Coordinates two UR5 arms and a TurtleBot3 AMR on a conveyor line using MoveIt2 and Nav2 in Gazebo Classic. |
 | [Imitation Learning - ACT](./software_references/humanoid/sample_pipelines/imitation_learning_act.md) | Humanoid, AI, OpenVINO, Manipulation | Imitation learning pipeline using Action Chunking with Transformers, optimized with OpenVINO™, for fine manipulation in simulation and on real ALOHA robots. |
 | [Model Predictive Control Demo](./software_references/humanoid/sample_pipelines/mpc_demo.md) | Humanoid, AI, Manipulation | Combines ACT imitation learning with OCS2 model predictive control and MuJoCo simulation for perception-action manipulation control. |
 | [Diffusion Policy](./software_references/humanoid/sample_pipelines/diffusion_policy.md) | Humanoid, AI, OpenVINO, Manipulation | Visuomotor diffusion-policy pipeline for the Push-T manipulation task, with Transformer- and CNN-based variants optimized by OpenVINO™. |
@@ -114,8 +114,6 @@ entry to help you find relevant material for your application.
 collaborative-slam
 run-fastmapping-algorithm
 adbscan-follow-me
-its-path-planner-plugin
-navigation-relocalization
 orb-extractor
 
 :::

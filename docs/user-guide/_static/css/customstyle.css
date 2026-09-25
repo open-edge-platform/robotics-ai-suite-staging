@@ -23,35 +23,40 @@ html[data-theme='dark'] {
     --pst-color-on-background:  var(--spark-color-highlight-background) !important;
 }
 
+@import url("../fonts/intel-one-display/intel-one-display.css");
+@import url("../fonts/intel-one-text/intel-one-text.css");
+@import url("../fonts/intel-one-mono/intel-one-mono.css");
+
+/* Map legacy custom font-family names to actual loaded font */
 @font-face {
-  font-family: 'IntelOne-Display-Regular', sans-serif;
-  /*src: url('./fonts/INTELONE-DISPLAY-REGULAR.TTF') format('truetype');*/
-  font-weight: normal;
+  font-family: 'IntelOne-Display-Regular';
+  src: url('../fonts/intel-one-display/intelone-display-regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'IntelOne-Display-Light', sans-serif;
-  /*src: url('./fonts/INTELONE-DISPLAY-LIGHT.TTF') format('truetype');*/
-  font-weight:lighter;
+  font-family: 'IntelOne-Display-Light';
+  src: url('../fonts/intel-one-display/intelone-display-light.woff') format('woff');
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: 'IntelOne-Display-Mono', monospace;
-  /*src: url('./fonts/INTELONE-MONO-FONT-FAMILY-REGULAR.TTF') format('truetype');*/
-  font-weight: normal;
+  font-family: 'IntelOne-Display-Mono';
+  src: url('../fonts/intel-one-mono/IntelOneMono-Regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
 }
 
 
 /* GENERAL =============================================================================== */
-html, body, html * {font-family: 'IntelOne-Display-Regular','Roboto', sans-serif;}
+html, body, html * {font-family: 'IntelOne Display', 'IntelOne-Display-Regular', 'Roboto', sans-serif;}
 .bd-container {
   background-color: var(--spark-color-page-background) !important;
 }
 h1, h2, h3, h4, h5, h6 {
     color: var(--spark-color-primary);
-    font-family: 'IntelOne-Display-Light','Roboto', sans-serif;
-    font-weight: normal;
+    font-family: 'IntelOne Display', 'IntelOne-Display-Light', 'Roboto', sans-serif;
+    font-weight: 300;
 }
 h1 {font-size: 2.5rem}
 h2 {font-size: 1.9rem}
@@ -244,6 +249,12 @@ div.col-lg-3.navbar-header-items__start {
 .navbar-header-items__center ul li a,
 .navbar-item button {
     color: #ffffff !important;
+}
+
+.navbar-header-items__center ul li a:hover,
+.navbar-header-items__center ul li a.active {
+    color: var(--pst-color-secondary) !important;
+    text-decoration: none;
 }
 
 .navbar-brand .logo__title {

@@ -33,3 +33,26 @@ SLAM-based mapping and autonomous navigation on a mobile robot using Nav2, FastM
 Collect teleoperation data, train an ACT policy, convert it with OpenVINO, and run inference on-device.
 :::
 ::::
+
+## Operating System & Hardware Requirements
+
+Before deploying a blueprint, ensure your system meets the platform and middleware specifications and is configured with the required drivers, real-time kernel optimizations, and base software packages.
+
+::::{grid} 2
+
+:::{grid-item-card} **System Requirements**
+:link: ../platform_foundation/system_requirements
+:link-type: doc
+:link-alt: clickable cards
+
+Review supported Intel® Core™ and Core™ Ultra processors, validated Ubuntu OS distributions, supported [development kits](../platform_foundation/development_kits/index.md), and baseline hardware specifications.
+:::
+
+:::{grid-item-card} **Getting Started**
+:link: ../platform_foundation/getting_started
+:link-type: doc
+:link-alt: clickable cards
+
+Follow step-by-step or express installation guides to configure drivers, platform packages, and the ROS 2 environment on your target hardware.
+:::
+::::

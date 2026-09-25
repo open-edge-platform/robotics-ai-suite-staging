@@ -21,7 +21,7 @@ with a live-reloading site:
 
 ```bash
 cd .website
-npm install      # first time only; requires Node >= 18
+npm install      # first time only; requires Node >= 20
 npm start        # live preview at http://localhost:3000
 ```
 

@@ -13,7 +13,7 @@ configuration.
 
 ## 2. Install and Configure ROS 2
 
-Follow the [ROS 2 Runtime](../../components/middleware/ros2.md) guide to install ROS 2
+Follow the [ROS 2 Runtime](../../components/runtime/index.md) guide to install ROS 2
 Jazzy and configure the environment.
 
 ## 3. Set up Robotics AI Suite, oneAPI, and Graphics APT Repositories

@@ -1,14 +1,9 @@
+import { useHistory, useLocation } from "@docusaurus/router";
 import { type HfConfig } from "@site/src/data/models/api";
-import { useUrlQueryParam } from "@site/src/hooks/useUrlQueryParam.hook";
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 const ALL_DOMAINS = "__all__";
 const CHIPSETS_NONE = "__none__";
-
-type DomainOption = {
-  label: string;
-  value: string;
-};
 
 export type UseModelFiltersResult = {
   searchQuery: string;
@@ -19,27 +14,33 @@ export type UseModelFiltersResult = {
   allSelected: boolean;
   setSearchQuery: (query: string) => void;
   setSelectedDomain: (domain: string | undefined) => void;
-  setSelectedCategory: (category: string | undefined) => void;
+  setSelectedCategory: (category: string | undefined, domain?: string) => void;
   toggleChipset: (chipset: string) => void;
   handleToggleSelected: () => void;
 };
 
 export const useModelFilters = (cfg: HfConfig): UseModelFiltersResult => {
-  const { value: searchQueryParam, setValue: setSearchQueryParam } =
-    useUrlQueryParam("search");
+  const location = useLocation();
+  const history = useHistory();
 
-  const { value: selectedDomainParam, setValue: setSelectedDomainParam } =
-    useUrlQueryParam("domain");
+  const queryParams = useMemo(
+    () => new URLSearchParams(location.search),
+    [location.search],
+  );
 
-  const { value: selectedChipsetsParam, setValue: setSelectedChipsetsParam } =
-    useUrlQueryParam("chipsets");
+  const searchQuery = queryParams.get("search") ?? "";
+  const selectedDomainParam = queryParams.get("domain");
+  const selectedChipsetsParam = queryParams.get("chipsets");
+  const selectedCategoryParam = queryParams.get("category");
 
-  const { value: selectedCategoryParam, setValue: setSelectedCategoryParam } =
-    useUrlQueryParam("category");
-
-  const searchQuery = searchQueryParam ?? "";
-  const allChipsetAliases = cfg.chipsets.map(({ alias }) => alias);
-  const allChipsetAliasSet = new Set(allChipsetAliases);
+  const allChipsetAliases = useMemo(
+    () => cfg.chipsets.map(({ alias }) => alias),
+    [cfg.chipsets],
+  );
+  const allChipsetAliasSet = useMemo(
+    () => new Set(allChipsetAliases),
+    [allChipsetAliases],
+  );
 
   const selectedDomain =
     selectedDomainParam && selectedDomainParam !== ALL_DOMAINS
@@ -66,65 +67,112 @@ export const useModelFilters = (cfg: HfConfig): UseModelFiltersResult => {
   const allSelected =
     selectedDomain === ALL_DOMAINS &&
     allChipsetsSelected &&
-    !searchQuery.trim();
+    !searchQuery.trim() &&
+    !selectedCategoryParam;
 
-  const encodeChipsets = (chipsets: string[]): string | undefined => {
-    if (chipsets.length === 0) {
-      return CHIPSETS_NONE;
-    }
-    const isAll =
-      chipsets.length === allChipsetAliases.length &&
-      allChipsetAliases.every((alias) => chipsets.includes(alias));
-    if (isAll) {
-      return undefined;
-    }
-    return allChipsetAliases
-      .filter((alias) => chipsets.includes(alias))
-      .join(",");
-  };
+  const encodeChipsets = useCallback(
+    (chipsets: string[]): string | undefined => {
+      if (chipsets.length === 0) {
+        return CHIPSETS_NONE;
+      }
+      const isAll =
+        chipsets.length === allChipsetAliases.length &&
+        allChipsetAliases.every((alias) => chipsets.includes(alias));
+      if (isAll) {
+        return undefined;
+      }
+      return allChipsetAliases
+        .filter((alias) => chipsets.includes(alias))
+        .join(",");
+    },
+    [allChipsetAliases],
+  );
+
+  const updateParams = useCallback(
+    (updates: Record<string, string | undefined>) => {
+      const params = new URLSearchParams(location.search);
+      for (const [key, val] of Object.entries(updates)) {
+        if (!val) {
+          params.delete(key);
+        } else {
+          params.set(key, val);
+        }
+      }
+      history.replace({
+        pathname: location.pathname,
+        search: params.toString(),
+      });
+    },
+    [history, location.pathname, location.search],
+  );
 
   const selectedCategory = selectedCategoryParam ?? undefined;
 
-  const setSelectedCategory = (category: string | undefined) => {
-    setSelectedCategoryParam(category ?? undefined);
-  };
+  const setSelectedCategory = useCallback(
+    (category: string | undefined, domain?: string) => {
+      const updates: Record<string, string | undefined> = {
+        category: category || undefined,
+      };
+      if (domain !== undefined) {
+        updates.domain = domain === ALL_DOMAINS ? undefined : domain;
+      }
+      updateParams(updates);
+    },
+    [updateParams],
+  );
 
-  const setSearchQuery = (query: string) => {
-    setSearchQueryParam(query.trim() ? query : undefined);
-  };
+  const setSearchQuery = useCallback(
+    (query: string) => {
+      updateParams({ search: query.trim() || undefined });
+    },
+    [updateParams],
+  );
 
-  const setSelectedDomain = (domain: string | undefined) => {
-    setSelectedDomainParam(domain === ALL_DOMAINS ? undefined : domain);
-  };
+  const setSelectedDomain = useCallback(
+    (domain: string | undefined) => {
+      updateParams({
+        domain: domain === ALL_DOMAINS ? undefined : domain,
+        category: undefined,
+      });
+    },
+    [updateParams],
+  );
 
-  const toggleChipset = (chipset: string) => {
-    const next = selectedChipsets.includes(chipset)
-      ? selectedChipsets.filter((v) => v !== chipset)
-      : [...selectedChipsets, chipset];
-    setSelectedChipsetsParam(encodeChipsets(next));
-  };
+  const toggleChipset = useCallback(
+    (chipset: string) => {
+      const next = selectedChipsets.includes(chipset)
+        ? selectedChipsets.filter((v) => v !== chipset)
+        : [...selectedChipsets, chipset];
+      updateParams({ chipsets: encodeChipsets(next) });
+    },
+    [encodeChipsets, selectedChipsets, updateParams],
+  );
 
-  const clearAll = () => {
-    setSelectedDomainParam(undefined);
-    setSelectedChipsetsParam(CHIPSETS_NONE);
-    setSelectedCategoryParam(undefined);
-    setSearchQueryParam(undefined);
-  };
+  const clearAll = useCallback(() => {
+    updateParams({
+      domain: undefined,
+      chipsets: CHIPSETS_NONE,
+      category: undefined,
+      search: undefined,
+    });
+  }, [updateParams]);
 
-  const selectAll = () => {
-    setSelectedDomainParam(undefined);
-    setSelectedChipsetsParam(undefined);
-    setSelectedCategoryParam(undefined);
-    setSearchQueryParam(undefined);
-  };
+  const selectAll = useCallback(() => {
+    updateParams({
+      domain: undefined,
+      chipsets: undefined,
+      category: undefined,
+      search: undefined,
+    });
+  }, [updateParams]);
 
-  const handleToggleSelected = () => {
+  const handleToggleSelected = useCallback(() => {
     if (allSelected) {
       clearAll();
       return;
     }
     selectAll();
-  };
+  }, [allSelected, clearAll, selectAll]);
 
   return {
     searchQuery,

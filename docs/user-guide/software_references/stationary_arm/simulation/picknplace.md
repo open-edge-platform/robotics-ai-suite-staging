@@ -7,13 +7,13 @@ simulated environment.  The aim is to harness the capabilities of both the Nav2
 and MoveIt2 stacks, presenting a comprehensive demonstration of multi-robot
 coordination in a simulation environment.
 
-![picknplace](../../../../hardware_blueprints/amr/images/picknplace.png)
+![picknplace](../images/picknplace1.png)
 
 ## Getting Started
 
 ### Prerequisites
 
-Complete the [Getting Started](../../../../platform_foundation/getting_started.md) guide before continuing.
+Complete the [Getting Started](../../../platform_foundation/getting_started.md) guide before continuing.
 
 ### Install Debian Package
 
@@ -158,7 +158,7 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 Robots are spawned in Gazebo, as illustrated in the diagram.
 
-![picknplace_sequence](../../../../hardware_blueprints/amr/images/picknplace_sequence.png)
+![picknplace_sequence](../images/picknplace2.png)
 
 ## Sending Nav2 Pose to AMR
 

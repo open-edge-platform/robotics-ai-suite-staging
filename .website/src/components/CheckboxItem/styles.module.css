@@ -28,3 +28,11 @@
   line-height: var(--size-16);
   user-select: none;
 }
+
+.checkboxCount {
+  margin-left: auto;
+  font-size: var(--size-12);
+  color: #ffffff80;
+  padding-left: var(--size-8);
+  font-weight: 500;
+}

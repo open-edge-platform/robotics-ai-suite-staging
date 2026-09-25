@@ -79,7 +79,9 @@ Intel® Optimized Robotics Components <components/optimized_solutions/index>
 Real-time Determinism <components/realtime_determinism/index>
 Benchmarking <components/benchmarking/index>
 Security <components/security/index>
-Middleware <components/middleware/index>
+Navigation <components/navigation/index>
+Runtime <components/runtime/index>
+Simulation <components/simulation/index>
 Virtualization <components/virtualization/index>
 Sensors <components/sensors/index>
 :::
@@ -91,18 +93,19 @@ Sensors <components/sensors/index>
 
 Intel® Powered AI <ai_resources/intel_powered_ai>
 OpenVINO <ai_resources/openvino/index>
+PyTorch XPU <ai_resources/developer_tools/pytorch-xpu>
 OpenVINO™ Physical AI <ai_resources/openvino/openvino_physical_ai_runtime>
 Physical AI Studio  <ai_resources/physical_ai_studio>
 Geti <ai_resources/developer_tools/geti>
+Intel® oneAPI <ai_resources/developer_tools/oneapi>
 AI Skills <ai_resources/skills/index>
-Developer Tools <ai_resources/developer_tools/index>
 :::
 
 :::{toctree}
 :caption: Hardware Blueprints
 :hidden:
 
-Hardware Blueprints <hardware_blueprints/index>
+Blueprints and Requirements <hardware_blueprints/index>
 Autonomous Mobile Robot <hardware_blueprints/amr/index>
 Humanoid Robot <hardware_blueprints/humanoid/index>
 Stationary Arm <hardware_blueprints/stationary_arm/index>

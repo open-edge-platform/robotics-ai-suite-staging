@@ -2,12 +2,14 @@ import styles from "./styles.module.css";
 
 type CheckboxItemProps = {
   label: string;
+  count?: number;
   checked: boolean;
   onChange: () => void;
 };
 
 export const CheckboxItem = ({
   label,
+  count,
   checked,
   onChange,
 }: CheckboxItemProps) => {
@@ -29,6 +31,9 @@ export const CheckboxItem = ({
         )}
       </span>
       <span className={styles.checkboxLabel}>{label}</span>
+      {typeof count === "number" && (
+        <span className={styles.checkboxCount}>{count}</span>
+      )}
     </label>
   );
 };

@@ -20,6 +20,14 @@
   align-items: stretch;
 }
 
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    margin-top: var(--size-32);
+    gap: var(--size-16);
+  }
+}
+
 .humanoidIcon {
   transform: scaleX(-1);
 }

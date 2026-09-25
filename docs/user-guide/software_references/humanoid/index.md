@@ -46,6 +46,6 @@ Find supported Humanoid runtime, middleware, sensor, and pipeline packages.
 :maxdepth: 2
 :hidden:
 Humanoid Packages <packages_list>
-Sample Pipelines <sample_pipelines>
+Software Tutorials <sample_pipelines>
 :::
 

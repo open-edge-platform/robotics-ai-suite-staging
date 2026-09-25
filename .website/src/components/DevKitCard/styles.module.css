@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 
-@media (min-width: var(--size-768)) {
+@media (min-width: 768px) {
   .cardHorizontal {
     flex-direction: row;
     align-items: stretch;
@@ -18,7 +18,7 @@
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
-@media (min-width: var(--size-768)) {
+@media (min-width: 768px) {
   .imageContainer {
     flex: 0 0 var(--size-300);
     border-right: 1px solid var(--ifm-color-emphasis-200);

@@ -24,7 +24,7 @@ have been validated for its workflows.
 ```{include} getting_started/fragment_configurations.md
 ```
 
-Use the [Middleware](../components/middleware/index.md) guidance to configure
+Use the [Runtime](../components/runtime/index.md) guidance to configure
 the ROS 2 distribution for the selected system profile. Before installing a
 robot application, review its Blueprint for compatible hardware, sensor,
 firmware, and package requirements.

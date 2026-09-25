@@ -55,5 +55,5 @@ Process 3D point cloud data to segment ground surfaces and detect traversable re
 
 Cameras <cameras/index>
 LiDAR <lidar>
-Software Solutions <reference_applications/index>
+Software Tutorials <reference_applications/index>
 :::

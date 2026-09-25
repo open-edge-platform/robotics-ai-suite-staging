@@ -27,6 +27,7 @@ export const PlatformCategories = ({
       <div className={styles.list}>
         {items.map((item) => {
           const isSelected = selectedItems.includes(item.value);
+          const label = getTierLabel(item.value) || item.label;
 
           return (
             <button
@@ -39,8 +40,7 @@ export const PlatformCategories = ({
               <span className={styles.leadingIcon}>
                 {isSelected ? <CheckMark /> : <ChipsetIcon />}
               </span>
-              {getTierLabel(item.value)}{" "}
-              <span className={styles.label}>{item.label}</span>
+              <span className={styles.label}>{label}</span>
             </button>
           );
         })}

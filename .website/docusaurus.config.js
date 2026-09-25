@@ -38,12 +38,12 @@ const config = {
   // read token used ONLY to reach a private staging org during testing; it is
   // baked into the client bundle, so never set HF_TOKEN for a public/prod build.
   customFields: {
-    hfOrg: process.env.HF_ORG || "modelapi",
+    hfOrg: process.env.HF_ORG || "OpenVINO",
     hfToken: process.env.HF_TOKEN || null,
     // Catalog membership marker. Only repos carrying this tag are listed; it is
     // ANDed into every models API query so experimental repos in the org are
     // excluded. Every catalog model must carry this tag.
-    hfCatalogTag: process.env.HF_CATALOG_TAG || "robotics-ai-suite",
+    hfCatalogTag: process.env.HF_CATALOG_TAG || "",
     // Domain filter options. `label` is shown in the UI; `tag` is the Hugging
     // Face collection tag sent as the models API `filter` value.
     hfDomains: [
@@ -99,7 +99,7 @@ const config = {
           {
             // `pathname://` links to the staged static Sphinx site directly,
             // bypassing the SPA router and broken-link checks.
-            to: "pathname:///development-stack/ai-suite-robotics.html",
+            to: "pathname:///development-stack/ai-suite-robotics/",
             label: "Development Stack",
             target: "_self",
             position: "left",
@@ -112,7 +112,7 @@ const config = {
           {
             // `pathname://` links to the staged static Sphinx site directly,
             // bypassing the SPA router and broken-link checks.
-            to: "pathname:///development-stack/hardware_blueprints/index.html",
+            to: "pathname:///development-stack/hardware_blueprints/",
             label: "Blueprints",
             target: "_self",
             position: "left",
@@ -137,6 +137,11 @@ const config = {
       prism: {
         theme: require("prism-react-renderer").themes.github,
         darkTheme: require("prism-react-renderer").themes.dracula,
+      },
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
       },
     }),
 };
