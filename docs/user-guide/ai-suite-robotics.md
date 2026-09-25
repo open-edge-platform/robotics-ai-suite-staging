@@ -17,18 +17,12 @@ integrating sensors and actuators, or optimizing an AI workload with Intel -
 these documents help you find compatible ingredients and pipelines for your
 robotics application and guidance for deploying on Intel hardware.
 
-:::{image} ./images/architecture/Robotics-AI-Suite-Architecture-light.svg
+:::{image} ./images/intro-light.png
 :class: only-light
-:alt: Robotics AI Suite Reference Architecture
-:align: center
-:target: _images/Robotics-AI-Suite-Architecture-light.svg
 :::
 
-:::{image} ./images/architecture/Robotics-AI-Suite-Architecture-dark.svg
+:::{image} ./images/intro-dark.png
 :class: only-dark
-:alt: Robotics AI Suite Reference Architecture
-:align: center
-:target: _images/Robotics-AI-Suite-Architecture-dark.svg
 :::
 
 ## Robot Form Factors
