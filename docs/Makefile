@@ -87,7 +87,7 @@ sphinx-spelling: $(VENV_DIR)
 	set +u; . ./$</bin/activate; set -u ;\
     sphinx-build -b spelling "$(SOURCEDIR)" "$(OUT_DIR)/spelling"
 
-build: index sphinx-html index_ ## Build all documentation
+build: index sphinx-dirhtml index_ ## Build all documentation
 
 serve: index sphinx-serve index_ ## Serve documentation locally
 
@@ -113,7 +113,7 @@ sphinx-%: $(VENV_DIR) $(OUT_DIR)
 
 listrefs: $(VENV_DIR) $(OUT_DIR) ## list all sphinx references
 	set +u;	. ./$</bin/activate; set -u ;\
-	python -m sphinx.ext.intersphinx $(OUT_DIR)/html/objects.inv
+	python -m sphinx.ext.intersphinx $$(find $(OUT_DIR) -name objects.inv | head -n 1)
 
 ### help target ###
 help: ## Print help for each target

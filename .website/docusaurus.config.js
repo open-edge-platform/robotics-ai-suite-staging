@@ -99,7 +99,7 @@ const config = {
           {
             // `pathname://` links to the staged static Sphinx site directly,
             // bypassing the SPA router and broken-link checks.
-            to: "pathname:///development-stack/ai-suite-robotics.html",
+            to: "pathname:///development-stack/ai-suite-robotics/",
             label: "Development Stack",
             target: "_self",
             position: "left",
@@ -112,7 +112,7 @@ const config = {
           {
             // `pathname://` links to the staged static Sphinx site directly,
             // bypassing the SPA router and broken-link checks.
-            to: "pathname:///development-stack/hardware_blueprints/index.html",
+            to: "pathname:///development-stack/hardware_blueprints/",
             label: "Blueprints",
             target: "_self",
             position: "left",
