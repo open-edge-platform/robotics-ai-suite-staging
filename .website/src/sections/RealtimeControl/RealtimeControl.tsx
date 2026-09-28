@@ -38,7 +38,7 @@ export const RealtimeControl = () => {
         <RealtimeControlCard
           icon={shieldCheckIcon}
           title="Safety"
-          subtitle="Intel® Functional Safety"
+          subtitle="Intel Functional Safety"
           className={styles.cardTwo}
           description={[
             "Isolates the safety workload on dedicated low-power processor cores.",

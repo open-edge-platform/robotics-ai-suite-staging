@@ -141,6 +141,7 @@ html_favicon = "_static/logo.svg"
 html_show_sphinx = False  # Hide "Built with Sphinx"
 html_static_path = ["_static"]
 html_css_files = ["./css/customstyle.css", "./css/menu-position-rules.css"]
+html_js_files = ["external-links.js"]
 
 # Omit the language segment from sitemap URLs (default scheme is "{lang}{version}{link}")
 sitemap_url_scheme = "{version}{link}"

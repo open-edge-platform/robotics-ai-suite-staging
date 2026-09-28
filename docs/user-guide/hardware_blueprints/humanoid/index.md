@@ -121,7 +121,7 @@ additional model, sensor, firmware, or package setup.
 
 ### Not Yet Validated
 
-PTL 358H with Ubuntu 24.04, ROS 2 Jazzy, and the 6.17.11 real-time kernel is
+Intel® Core™ Ultra Series 3 358H with Ubuntu 24.04, ROS 2 Jazzy, and the 6.17.11 real-time kernel is
 not currently validated for this Blueprint. Do not apply that platform baseline
 to Humanoid workflows until it is documented here as a validated configuration.
 

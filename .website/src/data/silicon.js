@@ -1,11 +1,11 @@
 // Intel silicon shown on docs/hardware/index.md. Two static entries:
-// the on-robot SoC (Panther Lake) and the discrete inference GPU
+// the on-robot SoC (Intel® Core™ Ultra Series 3) and the discrete inference GPU
 // (Crescent Island). Facts only, no fabricated figures.
 
 const silicon = [
   {
     id: 'panther-lake',
-    name: 'Intel® Core™ Ultra (Panther Lake)',
+    name: 'Intel® Core™ Ultra Series 3',
     tier: 'On-robot compute',
     description:
       'A single SoC that combines CPU, GPU, and NPU, so perception, control, and AI inference run on the same chip in a power envelope that fits on a robot.',

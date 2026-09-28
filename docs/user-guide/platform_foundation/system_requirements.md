@@ -6,11 +6,11 @@ have been validated for its workflows.
 
 ## Supported Intel® Processors
 
-| Code Name | Intel Processor
-| --- | --- |
-| Panther Lake | Series 3 Intel® Core™ Ultra Processor |
-| Wildcat Lake | Series 3 Intel® Core™ Processor |
-| Arrow Lake | Series 2 Intel® Core™ Ultra Processor |
+| Intel Processor |
+| --- |
+| Intel® Core™ Ultra Series 3 |
+| Intel® Core™ Series 3 |
+| Intel® Core™ Ultra Series 2 |
 
 ## Supported Operating Systems
 
