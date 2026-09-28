@@ -64,7 +64,7 @@ Before deploying the pipeline:
 1. **Hardware Setup**: Follow the [Clearpath Robotics Jackal setup](../../../hardware_blueprints/amr/clearpath-jackal.md) guide to install the Intel® Core™ Ultra Series 3 onboard compute board, mount and connect the Intel RealSense camera (e.g. D435i), and configure the robot network and MCU firmware.
 2. **Clearpath Base Services**: Verify that the Clearpath systemd services (`clearpath-platform.service`, `clearpath-sensors.service`, `clearpath-robot.service`) are active and publishing topics under the robot's namespace.
 3. **Motor Control**: Verify motor control and drive commands following the [Validate Motor Control](../../../hardware_blueprints/amr/clearpath-jackal.md#validate-motor-control) section.
-4. **Target Environment**: Ensure Ubuntu 24.04 LTS with ROS 2 Jazzy (or Ubuntu 22.04 LTS with ROS 2 Humble) is installed on the Intel® Core™ Ultra Series 3 board along with OpenVINO™ packages and Intel® NPU drivers (if applicable for Intel Core Ultra).
+4. **Target Environment**: Ensure Ubuntu 24.04 LTS with ROS 2 Jazzy (or Ubuntu 22.04 LTS with ROS 2 Humble) is installed on the Intel® Core™ Ultra Series 3 board along with OpenVINO™ packages and Intel NPU drivers (if applicable for Intel® Core™ Ultra).
 
 ## Install the Application
 

@@ -2,16 +2,16 @@
 
 SONIC is a humanoid behavior foundation model that gives robots a core set of motor skills learned from large-scale human motion data. Rather than building a separate controller for each predefined motion, SONIC treats motion tracking as a scalable training task, enabling a single unified policy to produce natural, whole-body movement and to support a wide range of behaviors — from walking and crawling to teleoperation and multi-modal control.
 
-This repository extends the open-source [GR00T-WholeBodyControl](https://github.com/NVlabs/GR00T-WholeBodyControl.git) and implements a comprehensive optimization of the SONIC whole-body-control (WBC) inference pipeline on the Intel® Core™ Ultra Series 3 platform, including OpenVINO inference acceleration, a real-time control thread design, and priority-based NPU scheduling. It demonstrates that the Intel® Core™ Ultra Series 3 platform can meet SONIC WBC's determinism requirements while achieving substantial power savings compared to GPU execution.
+This repository extends the open-source [GR00T-WholeBodyControl](https://github.com/NVlabs/GR00T-WholeBodyControl.git) and implements a comprehensive optimization of the SONIC whole-body-control (WBC) inference pipeline on the Intel® Core™ Ultra Series 3 platform, including OpenVINO inference acceleration, a real-time control thread design, and priority-based Intel NPU scheduling. It demonstrates that the Intel® Core™ Ultra Series 3 platform can meet SONIC WBC's determinism requirements while achieving substantial power savings compared to GPU execution.
 
 ## Prerequisites
 
 - Follow the [Getting Started guide](../../../platform_foundation/getting_started.md) to set up the base system.
-- NPU driver (> v1.32.0)
+- Intel NPU driver (> v1.32.0)
 - Ubuntu 24.04 RT release
 - OpenVINO 2026.3, ROS2 Jazzy
 
-For optimal NPU inference performance, it is recommended to use the latest NPU driver(e.g. v1.35.0) available from the [linux-npu-driver](https://github.com/intel/linux-npu-driver/releases) repository.
+For optimal Intel NPU inference performance, it is recommended to use the latest Intel NPU driver(e.g. v1.35.0) available from the [linux-npu-driver](https://github.com/intel/linux-npu-driver/releases) repository.
 
 For OpenVINO, this project recommends installing from the archive file. Follow [Install OpenVINO from an Archive File (Linux)](https://docs.openvino.ai/2026/get-started/install-openvino/install-openvino-archive-linux.html), download the latest OpenVINO package, and extract it to the `/opt/intel/<openvino_version>` folder, e.g. `/opt/intel/openvino_2026.3.0`.
 
@@ -134,7 +134,7 @@ Use these numbers to confirm real-time deadlines are met and to compare latency 
 
 ## NPU Inference Configuration
 
-The `inference:` section of file gear_sonic_deploy/policy/release/observation_config.yaml controls how the encoder, policy, and planner models are scheduled on the NPU:
+The `inference:` section of file gear_sonic_deploy/policy/release/observation_config.yaml controls how the encoder, policy, and planner models are scheduled on the Intel NPU:
 
 - **NPU priority** (`encoder_priority` / `policy_priority` / `planner_priority`): `HIGH`, `NORMAL`, or `LOW`. Controls how the OpenVINO scheduler arbitrates models that share the same NPU device (mapped to `ov::hint::model_priority`). Encoder and policy default to `HIGH` since they run on the real-time control thread; the planner defaults to `NORMAL`.
 - **NPU turbo mode** (`npu_turbo`): when `true`, applies `NPU_TURBO=YES` to all NPU models, trading power efficiency for lower inference latency. Recommended on for real-time control; set to `false` to save power/thermal headroom. This is an NPU-only hint and is ignored on CPU/GPU.

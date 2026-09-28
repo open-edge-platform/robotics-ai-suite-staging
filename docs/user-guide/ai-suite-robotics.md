@@ -91,7 +91,7 @@ Sensors <components/sensors/index>
 :caption: AI Toolkits 
 :hidden:
 
-Intel® Powered AI <ai_resources/intel_powered_ai>
+AI Developer Tools and Frameworks <ai_resources/intel_powered_ai>
 OpenVINO <ai_resources/openvino/index>
 PyTorch XPU <ai_resources/developer_tools/pytorch-xpu>
 OpenVINO™ Physical AI <ai_resources/openvino/openvino_physical_ai_runtime>

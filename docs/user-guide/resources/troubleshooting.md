@@ -35,13 +35,13 @@
    sudo apt install mesa-utils libgl1-mesa-dri libglx-mesa0 libigc2
    ```
 
-3. **IPEX workloads are incompatible with the NPU driver**
+3. **IPEX workloads are incompatible with the Intel NPU driver**
 
    ```console
    RuntimeError: Native API failed. Native API returns: -1102 (PI_ERROR_UNINITIALIZED) -1102 (PI_ERROR_UNINITIALIZED)
    ```
 
-   To run IPEX workloads, uninstall the NPU deb packages.
+   To run IPEX workloads, uninstall the Intel NPU deb packages.
 
    ```bash
    sudo dpkg --purge --force-remove-reinstreq intel-driver-compiler-npu intel-fw-npu intel-level-zero-npu

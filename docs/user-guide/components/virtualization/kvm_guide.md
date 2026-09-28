@@ -9,9 +9,9 @@ The following diagram shows the overall architecture of the Robotics KVM solutio
 
 ![kvm_solution](./assets/kvm/kvm_arch.png)
 
-- **(Hardware, Intel® Core™ Ultra Series 3 platform)** — Using Intel® Core™ Ultra Series 3 X7 358H as an example: dedicated to the RT domain (4x LPE cores + a NIC), shared by the non-RT domain and Guest OS (4x P cores, 8x E cores, NIC, USB, and NVMe), and passed through to the Guest OS (iGPU, NPU, USB controller)
+- **(Hardware, Intel® Core™ Ultra Series 3 platform)** — Using Intel® Core™ Ultra Series 3 X7 358H as an example: dedicated to the RT domain (4x LPE cores + a NIC), shared by the non-RT domain and Guest OS (4x P cores, 8x E cores, NIC, USB, and NVMe), and passed through to the Guest OS (Intel® Arc™ graphics, Intel NPU, USB controller)
 - **(Host OS)** — Ubuntu 24.04 with a 6.17 RT kernel. Its RT domain maps to the L1 RT hardware and runs motion control, using the RT NIC to drive external motors over EtherCAT. Its non-RT domain maps to the L1 non-RT hardware and provides KVM + QEMU virtualization services.
-- **(Guest OS)** — Ubuntu 24.04 with a 6.17 kernel. It receives the iGPU, NPU, and USB controller via KVM passthrough from the Host, and shares net and NVMe with the Host through virtio.
+- **(Guest OS)** — Ubuntu 24.04 with a 6.17 kernel. It receives Intel® Arc™ graphics, Intel NPU, and USB controller via KVM passthrough from the Host, and shares net and NVMe with the Host through virtio.
 
 ## Basic Environment Setup
 

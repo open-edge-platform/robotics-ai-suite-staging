@@ -3,6 +3,13 @@
 This documentation covers supported interfaces, configuration, and validated
 camera modules.
 
+> [!NOTE]
+> The cameras listed on this page are those that have been tested with the
+> Robotics AI Suite. For a comprehensive list of Verified Supported Edge Cameras,
+> see [Verified Supported Edge Cameras](https://builders.intel.com/solutionslibrary/verified-supported-edge-camera).
+
+
+
 ## Camera Catalog
 
 The following cameras are supported.
@@ -20,12 +27,6 @@ See **[USB Camera Guide](./usb/index.md)** for instructions on setting up a GMSL
 
 ```{include} ./usb/fragment_camera_table_usb.md
 ```
-
-> [!NOTE]
-> The cameras listed on this page are those that have been tested with the
-> Robotics AI Suite. For a comprehensive list of Verified Supported Edge Cameras,
-> see [Verified Supported Edge Cameras](https://builders.intel.com/solutionslibrary/verified-supported-edge-camera).
-
 
 :::{toctree}
 :hidden:

@@ -78,7 +78,7 @@ for you to install an operating system.
 
 ## Next Steps
 
-- **[BIOS Configuration](./bios-configuration.md)** — enable the IPU, NPU, and MIPI
+- **[BIOS Configuration](./bios-configuration.md)** — enable the Intel® IPU, Intel NPU, and MIPI
   cameras, and tune fan behavior.
 
 For product details, see the [manufacturer website](https://www.aaeon.com/en/article/detail/accelerate-robotics-development-aaeon-intel).

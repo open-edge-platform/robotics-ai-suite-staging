@@ -17,7 +17,7 @@ This demo showcases:
 
 - **OpenClaw**: AI agent framework providing natural language interface and tool execution
 - **AgenticROS**: AI agent framework that bridges LLM/VLM capabilities with ROS2 robot control
-- **OpenVINO™ Model Server (OVMS)**: Serving Qwen3-VL-8B-Instruct multimodal LLM/VLM on Intel® Core™ Ultra Series 3 GPU
+- **OpenVINO™ Model Server (OVMS)**: Serving Qwen3-VL-8B-Instruct multimodal LLM/VLM on Intel® Core™ Ultra Series 3 Intel® Arc™ graphics
 - **Intel® Core™ Ultra Series 3**: Hardware platform providing XPU acceleration for AI inference
 - **JAKA Kargo Robot**: 6-DOF collaborative robot arm simulation
 - **AWS Small Warehouse**: Gazebo simulation environment
@@ -33,7 +33,7 @@ The system enables natural language control of the robot, including:
 ### System Requirements
 
 - Ubuntu 24.04 LTS (tested on Ubuntu 24.04 LTS)
-- Intel GPU with OpenVINO™ support (Intel® Core™ Ultra Series 3 iGPU, Intel Arc dGPU)
+- Intel's GPUs with OpenVINO™ support (Intel® Core™ Ultra Series 3 Intel® Arc™ graphics, Intel® Arc™ discrete GPUs)
 - Docker installed and running
 - At least 32GB RAM
 - 100GB free disk space for models and environments

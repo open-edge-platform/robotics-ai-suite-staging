@@ -1,7 +1,7 @@
 # Collaborative Visual SLAM
 
 Collaborative Visual SLAM is compiled natively for both Intel® Core™ and Intel Atom® processor-based systems.
-In addition, GPU acceleration may be enabled on selected Intel® Core™ processor-based system.
+In addition, Intel® Arc™ graphics acceleration may be enabled on selected Intel® Core™ processor-based systems.
 The default installation of Collaborative Visual SLAM is designed to run on the widest range of processors.
 
 ## Source Code

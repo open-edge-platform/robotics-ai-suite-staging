@@ -19,7 +19,7 @@ flowchart LR
 
 The Stationary Robot Toolkit architecture isolates perception into interchangeable components so developers can substitute algorithms to match specific application demands:
 
-* **Rotated 2D Object Detection & 3D Pose Estimation**: Uses YOLO inference optimized via Intel OpenVINO on the RGB stream, followed by PointCloud alignment (PCL RANSAC / ICP) to estimate 6-DoF poses of moving objects.
+* **Rotated 2D Object Detection & 3D Pose Estimation**: Uses YOLO inference optimized via  on the RGB stream, followed by PointCloud alignment (PCL RANSAC / ICP) to estimate 6-DoF poses of moving objects.
 * **2.5D Planar Feature Extraction**: Employs ORB feature matching and homography projection to calculate 3D object poses on flat surfaces directly from single RGB images.
 * **ADBSCAN Point Cloud Clustering (Roadmap)**: An upcoming clustering component leveraging the Adaptive Density-Based Spatial Clustering of Applications with Noise (ADBSCAN) algorithm for 3D segmenting of unmodeled objects and novel geometries directly from depth point clouds.
 * **Vision-Language-Action (VLA) Model Controller (Roadmap)**: An upcoming end-to-end Physical AI model integrating multimodal sensory inputs and natural language instructions directly into robot action policies, replacing discrete perception and planning nodes.

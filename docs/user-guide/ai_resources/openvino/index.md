@@ -4,7 +4,7 @@
 deploying deep-learning inference in Robotics AI Suite applications. It supports
 models from common frameworks and can target available Intel compute devices.
 
-Use the current [OpenVINO installation documentation](https://docs.openvino.ai/latest/get-started/install-openvino.html) for the selected environment.
+Use the current [OpenVINO installation documentation](https://docs.openvino.ai/).
 
 ## Software Solutions
 
