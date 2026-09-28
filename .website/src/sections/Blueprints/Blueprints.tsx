@@ -16,7 +16,7 @@ export const Blueprints = () => {
     <Section className={styles.container} id={sectionIds.blueprints}>
       <Section.Title>Blueprints</Section.Title>
       <Section.Subtitle>
-        Explore concrete reference implementation
+        Explore real-world reference implementation
       </Section.Subtitle>
 
       <Section.Description>

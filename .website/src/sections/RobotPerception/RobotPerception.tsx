@@ -13,7 +13,7 @@ export const RobotPerception = () => {
       <Section.Description>
         Cameras and sensors enable robots to see and understand their
         environment, supporting perception, navigation, inspection, and
-        AI‑driven decision making. + Powered by Intel Image Processing Unit
+        AI‑driven decision making.
       </Section.Description>
 
       <Tabs className={styles.tabs}>

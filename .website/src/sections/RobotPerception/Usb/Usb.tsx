@@ -16,11 +16,11 @@ export const Usb = () => {
 
           <ul className={styles.items}>
             <li>
-              Flexible and easy to connect to the developer kit via USB
+              Flexible and easy to connect.
             </li>
-            <li>Wide range of USB cameras supported, making USB versatile for different use cases</li>
+            <li>Wide range of USB cameras supported for diverse use cases.</li>
             <li>
-              Easy to configure and use without requiring specialized software
+              Easy to configure and use without requiring specialized software.
             </li>
           </ul>
 
@@ -33,17 +33,6 @@ export const Usb = () => {
 
         <img src={Sensor} alt="USB Sensor" />
       </div>
-
-      <ul className={styles.list}>
-        <li>
-          Pre-integrated with over 60 ready-to-deploy camera modules from 11
-          imaging partners.
-        </li>
-        <li>
-          Validated on 20+ industrial edge boards built by 9 leading
-          manufacturers.
-        </li>
-      </ul>
     </>
   );
 };
