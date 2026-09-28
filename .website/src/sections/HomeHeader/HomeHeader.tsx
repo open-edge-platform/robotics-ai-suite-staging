@@ -25,18 +25,15 @@ export const HomeHeader = (): React.JSX.Element => {
       <div className={styles.cardsContainer}>
         <ItemCard
           icon={robotIcon}
-          title="Physical AI"
-          description="Sample apps, frameworks, and tools for building and deploying adaptive robotics - powering the full Physical AI stack."
-        />
-        <ItemCard
-          icon={optimizeIcon}
-          title="Real-Time"
-          description="Benefit from integrated, optimized hardware - from silicon to systems - delivering low-latency, scalable AI acceleration."
+          title="Accelerate development for all kinds of robotics"
         />
         <ItemCard
           icon={gitHubIcon}
-          title="Open Ecosystem"
-          description="Leverage Intel’s open-source sample apps, frameworks, and tools develop and deploy AI robotics solutions at the edge."
+          title="Innovate and scale fast with an open ecosystem"
+        />
+        <ItemCard
+          icon={optimizeIcon}
+          title="Reduce Complexity, Improve TCO"
         />
       </div>
     </Section>
