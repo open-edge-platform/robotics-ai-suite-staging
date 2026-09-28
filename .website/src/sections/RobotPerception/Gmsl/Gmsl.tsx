@@ -16,7 +16,7 @@ export const Gmsl = () => {
 
           <ul className={styles.items}>
             <li>
-              Sends full-quality video over one cable across several meters
+              Sends full-quality video over one cable across several meters.
             </li>
             <li>One connector on the kit runs up to four cameras.</li>
             <li>

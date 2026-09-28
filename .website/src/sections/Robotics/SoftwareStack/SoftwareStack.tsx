@@ -69,7 +69,7 @@ export const SoftwareStack = ({ className }: SoftwareStackProps) => {
           >
             <ul>
               <li>USB and GMSL cameras</li>
-              <li>Intel Image Processing Unit</li>
+              <li>Intel® Image Processing Unit (Intel® IPU)</li>
             </ul>
           </CollapsibleCard>
 
