@@ -12,10 +12,10 @@ interact, and make decisions at the edge. Built on a unified Intel platform, the
 Suite combines modular tools for vision, control, and AI inference, accelerating
 integration and deployment.
 
-Whatever your robotics workload - if you are bringing up a new platform,
-integrating sensors and actuators, or optimizing an AI workload with Intel -
-these documents help you find compatible ingredients and pipelines for your
-robotics application and guidance for deploying on Intel hardware.
+Whether you're bringing up a new robotics platform, integrating sensors and
+actuators, or optimizing an AI workload on Intel hardware, these documents help
+you find compatible components and pipelines—and guide deployment on Intel
+hardware.
 
 :::{image} ./images/intro-light.png
 :class: only-light
