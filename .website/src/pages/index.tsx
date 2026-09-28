@@ -8,6 +8,7 @@ import { Blueprints } from "../sections/Blueprints/Blueprints";
 import { FeaturedAIModels } from "../sections/FeaturedAIModels/FeaturedAIModels";
 import { RobotPerception } from "../sections/RobotPerception/RobotPerception";
 import { RealtimeControl } from "../sections/RealtimeControl/RealtimeControl";
+import { RoboticsEcosystem } from "../sections/RoboticsEcosystem/RoboticsEcosystem";
 
 export default function Home(): React.JSX.Element {
   const { siteConfig } = useDocusaurusContext();
@@ -23,6 +24,7 @@ export default function Home(): React.JSX.Element {
       {/* <AiToolKits /> */}
       <RobotPerception />
       <RealtimeControl />
+      <RoboticsEcosystem />
     </Layout>
   );
 }
