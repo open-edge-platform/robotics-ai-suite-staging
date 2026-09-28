@@ -19,7 +19,7 @@ const LLMS_SIDEBARS_CONFIG = {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Intel Robotics AI Suite",
+  title: "Robotics AI Suite",
   tagline: "One x86 box that senses, thinks, and moves in real time.",
   favicon: "img/favicon.ico",
 

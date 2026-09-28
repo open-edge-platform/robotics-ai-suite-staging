@@ -1,4 +1,4 @@
-# Intel Robotics AI Suite
+# Robotics AI Suite
 
 A platform for building robots on Intel hardware, organized as the layers of the
 Intel robotics stack, from hardware to a running robot. It includes optimized AI

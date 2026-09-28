@@ -8,14 +8,14 @@ The following [software stack](https://amrdocs.intel.com/downloads/hackathon_ins
 
 # Intel® Edge AI / Robotics Stack — Script-Based Installation & Verification
 
-**Target:** Ubuntu 24.04 LTS (HWE kernel) · Intel Core Ultra / Arc (NPU + iGPU)
-**Stack:** NPU Driver → iGPU Driver → Miniforge3 (`intel_dev_env`) → Physical AI Studio → OpenVINO 2026.3 → Anomalib v2.6.0 → LeRobot (PyTorch XPU) → VS Code
+**Target:** Ubuntu 24.04 LTS (HWE kernel) · Intel® Core™ Ultra with Intel® Arc™ graphics (NPU + GPU)
+**Stack:** NPU Driver → Intel® Arc™ graphics driver → Miniforge3 (`intel_dev_env`) → Physical AI Studio → OpenVINO 2026.3 → Anomalib v2.6.0 → LeRobot (PyTorch XPU) → VS Code
 
 ## Package Contents
 
 | File | Purpose |
 |---|---|
-| `1_install_drivers.sh` | Installs Intel NPU + iGPU drivers (**reboot required after**) |
+| `1_install_drivers.sh` | Installs Intel NPU + Intel® Arc™ graphics drivers (**reboot required after**) |
 | `2_install_software.sh` | Installs Miniforge3, `intel_dev_env`, Physical AI Studio, OpenVINO, Anomalib, LeRobot (+PyTorch XPU swap), VS Code |
 | `verify_stack.py` | Python script that functionally tests every installed component |
 | `intel-edge-ai-stack-installation-guide.md` | Full manual step-by-step guide (reference / troubleshooting) |
@@ -50,7 +50,7 @@ uname -r          # expect kernel >= 6.8 (HWE); NPU needs >= 6.6
 
 What it does:
 - **Intel NPU driver** — purges old NPU packages, installs dependencies (`libtbb12`), downloads the release tarball from `github.com/intel/linux-npu-driver`, installs the `.deb` packages, ensures the Level Zero loader (`libze1`), and adds you to the `render` group.
-- **Intel iGPU driver** — adds the `ppa:kobuk-team/intel-graphics` PPA, installs the compute runtime (OpenCL + Level Zero GPU) and media (VA-API) packages, and adds you to the `render` and `video` groups.
+- **Intel® Arc™ graphics driver** — adds the `ppa:kobuk-team/intel-graphics` PPA, installs the compute runtime (OpenCL + Level Zero GPU) and media (VA-API) packages, and adds you to the `render` and `video` groups.
 
 > 📝 If the NPU download fails, a newer release has likely replaced the pinned one. Check https://github.com/intel/linux-npu-driver/releases and update the `NPU_DRIVER_VERSION` / `NPU_DRIVER_TARBALL` variables at the top of `1_install_drivers.sh`.
 

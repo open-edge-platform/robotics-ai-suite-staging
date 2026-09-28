@@ -6,7 +6,7 @@
 
 Autonomous Mobile Robot has been updated to fully support ROS 2 Jazzy. This brings latest
 generation ROS support on the latest Intel silicon, enabling workloads to take the
-advantage of hardware accelerators such as the GPU and NPU.
+advantage of hardware accelerators such as Intel® Arc™ graphics and Intel NPU.
 
 **New**:
 

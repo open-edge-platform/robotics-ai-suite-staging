@@ -24,8 +24,7 @@ export const FeaturedAIModels = () => {
 
       <Section.Description>
         Explore our library of pre-trained models optimized for Intel edge
-        hardware. Browse a wide range of robotics use cases, compare performance
-        benchmarks, and quickly deploy models on your edge system. Need more
+        hardware. Browse a wide range of robotics use cases and quickly deploy models on your edge system. Need more
         customization? Fine-tune your model in just a click with Physical AI
         Studio.
       </Section.Description>

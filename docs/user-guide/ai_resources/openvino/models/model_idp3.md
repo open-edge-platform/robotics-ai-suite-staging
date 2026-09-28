@@ -133,7 +133,7 @@ convert_model.export_onnx(output_dir, ckpt_name)
 
 > [!NOTE]
 > Ensure that OpenVINO is installed. Follow the official installation guide:
-> [Install OpenVINO 2026.0.0 via pip](https://docs.openvino.ai/2026/get-started/install-openvino.html?PACKAGE=OPENVINO_BASE&VERSION=v_2026_0_0&OP_SYSTEM=LINUX&DISTRIBUTION=PIP)
+> [Install OpenVINO 2026.0.0 via pip](https://docs.openvino.ai/canonical/get-started/install-openvino.html?PACKAGE=OPENVINO_BASE&VERSION=v_2026_0_0&OP_SYSTEM=LINUX&DISTRIBUTION=PIP)
 
 ### 6. Convert ONNX to OpenVINO IR
 

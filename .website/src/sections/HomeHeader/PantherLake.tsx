@@ -1,10 +1,10 @@
 export const PantherLake = () => {
   return (
     <div>
-      <img alt="panther lake" />
+      <img alt="Intel Core Ultra Series 3" />
 
       <div>
-        <h3>Panther Lake Robotics Reference Platform</h3>
+        <h3>Intel® Core™ Ultra Series 3 Robotics Reference Platform</h3>
         <ul>
           <li>Unified AI + Control on a Single Platform</li>
           <li>Purpose-Built Robotics AI Software + Reference Board</li>

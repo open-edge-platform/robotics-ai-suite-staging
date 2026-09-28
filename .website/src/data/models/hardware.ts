@@ -10,13 +10,13 @@ export type HardwareInfo = {
 export const HARDWARE: Record<HardwareAlias, HardwareInfo> = {
   ptl: {
     alias: "ptl",
-    chipset: "Panther Lake",
-    tier: "Intel® Core™ Ultra 3",
+    chipset: "Intel® Core™ Ultra Series 3",
+    tier: "Intel® Core™ Ultra Series 3",
     color: "#63b3ed",
   },
   wcl: {
     alias: "wcl",
-    chipset: "WildCat Lake",
+    chipset: "Intel® Core™ Series 3",
     tier: "Intel® Core™ Series 3",
     color: "#ff8a3d",
   },

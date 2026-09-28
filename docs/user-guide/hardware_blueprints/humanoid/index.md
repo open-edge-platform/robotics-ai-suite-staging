@@ -16,7 +16,7 @@ Humanoid Toolkit includes the following features:
 
 - Traditional vision and motion planning acceleration on CPU,
   Reinforcement/Imitation Learning-based manipulation, AI-based vision
-  & LLM/VLM acceleration on iGPU & NPU;
+  & LLM/VLM acceleration on Intel® Arc™ graphics & Intel NPU;
 
 - Typical workflows and examples including ACT/DP-based manipulation,
   LLM task planning, Pick & Place, ORB-SLAM3, etc.
@@ -33,7 +33,7 @@ architecture:
 This software architecture is designed to power Humanoid Toolkit
 systems by integrating computer vision, AI-driven manipulation,
 locomotion, SLAM, and large models into a unified framework. Built on
-ROS2 middleware, it takes advantage of Intel's CPU, iGPU, dGPU, and NPU
+ROS2 middleware, it takes advantage of Intel's CPU, Intel® Arc™ graphics, discrete Intel® Arc™ GPUs, and Intel NPU
 to optimize performance for robotics and AI applications. The stack
 includes high-performance AI frameworks, real-time libraries, and
 system-level optimizations, making it a comprehensive solution for
@@ -69,7 +69,6 @@ At the core of the system is ROS2 middleware and acceleration
 frameworks, which provide a standardized framework for robotics
 development. The architecture is further enhanced by Intel's AI
 acceleration libraries, including OpenVINO™ for deep learning inference,
-Intel® LLM Library for PyTorch (IPEX-LLM) for optimized large model
 execution, and compatibility with TensorFlow*, PyTorch*, and ONNX*. The
 Intel® oneAPI DPC++/C++ Compiler and libraries offer
 high-performance computing capabilities, leveraging oneMKL for
@@ -105,7 +104,7 @@ preparing a system for Humanoid workflows.
 | --- | --- |
 | Processor | Intel Core Ultra 7 255H processor; 2.0 GHz base frequency, 5.1 GHz maximum turbo frequency, and 28 W base power |
 | Memory | 64 GB dual-channel LPDDR5X memory, 7467 MT/s |
-| Discrete GPU | Intel Arc B580 discrete GPU with 12 GB GDDR6 memory; 2.3 GHz base frequency, MXM 3.1 Type B PCIe Gen4 x8 interface, and 150 W TDP |
+| Discrete GPU | Intel® Arc™ B580 discrete GPU with 12 GB GDDR6 memory; 2.3 GHz base frequency, MXM 3.1 Type B PCIe Gen4 x8 interface, and 150 W TDP |
 | Operating system | Canonical Ubuntu 22.04 LTS (Jammy Jellyfish), 64-bit Desktop |
 | ROS 2 | Humble Hawksbill |
 | Kernel | Intel ECI 6.12.8 real-time kernel with PREEMPT_RT support |
@@ -121,7 +120,7 @@ additional model, sensor, firmware, or package setup.
 
 ### Not Yet Validated
 
-PTL 358H with Ubuntu 24.04, ROS 2 Jazzy, and the 6.17.11 real-time kernel is
+Intel® Core™ Ultra Series 3 358H with Ubuntu 24.04, ROS 2 Jazzy, and the 6.17.11 real-time kernel is
 not currently validated for this Blueprint. Do not apply that platform baseline
 to Humanoid workflows until it is documented here as a validated configuration.
 

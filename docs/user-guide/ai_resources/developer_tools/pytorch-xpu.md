@@ -1,6 +1,6 @@
 # PyTorch* on Intel® GPU (XPU)
 
-PyTorch* includes upstreamed support for Intel® graphics processing units (GPUs) via the `xpu` device backend. This integration enables out-of-the-box hardware acceleration across Intel® Core™ Ultra processors with integrated Intel® Arc™ GPUs, discrete Intel® Arc™ GPUs, and Intel® Data Center GPUs. This implementation replaces legacy PyTorch-specific tools like IPEX and IPEX-LLM by providing a unified frontend for quick development and inference on Intel hardware.
+PyTorch* includes upstreamed support for Intel® graphics processing units (GPUs) via the `xpu` device backend. This integration enables out-of-the-box hardware acceleration across Intel® Core™ Ultra processors with integrated Intel® Arc™ graphics, discrete Intel® Arc™ GPUs, and Intel® Data Center GPU Flex Series. This implementation replaces legacy PyTorch-specific tools like IPEX and IPEX-LLM by providing a unified frontend for quick development and inference on Intel hardware.
 
 You can find more information at [PyTorch XPU Documentation](https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html).
 
@@ -29,9 +29,9 @@ flowchart TD
     end
 
     subgraph Hardware["Intel® Compute Hardware"]
-        H1["Intel® Core™ Ultra Processors (Integrated Arc™ GPU)"]
+        H1["Intel® Core™ Ultra Processors (Intel® Arc™ graphics)"]
         H2["Intel® Arc™ Discrete GPUs"]
-        H3["Intel® Data Center GPUs"]
+        H3["Intel® Data Center GPU Flex Series"]
     end
 
     Apps --> PyTorch
@@ -46,7 +46,7 @@ In robotics workflows, development cycles demand rapid iteration between algorit
 - **Frictionless Prototyping:** Developers can write standard PyTorch code using `device = torch.device("xpu")` or `.to("xpu")`. Community models, Hugging Face pipelines, and PyTorch-based robotics frameworks run directly on Intel hardware with minimal or no code modification.
 - **Immediate Inner-Loop Feedback:** Training, fine-tuning, and evaluating models—such as imitation learning policies (e.g., Action Chunking with Transformers, Diffusion Policy), vision-language-action (VLA) models, and real-time vision pipelines—can execute directly on the robot's onboard compute or edge developer kit. This eliminates the friction of ahead-of-time model conversion while iterating on designs.
 - **Native Debugging and Dynamic Shapes:** Native execution on XPU supports eager mode, dynamic tensor shapes, interactive Python debugging, and PyTorch autograd inspection. Roboticists can troubleshoot unexpected sensor inputs and edge cases interactively within ROS 2 nodes without graph compilation hurdles.
-- **Seamless Transition to Optimized Deployment:** Once a perception or control model is validated using PyTorch on XPU, developers can either run it directly in production via PyTorch or export it to [Intel® OpenVINO™](openvino.md) for ultra-low latency, optimized runtime execution across heterogeneous hardware.
+- **Seamless Transition to Optimized Deployment:** Once a perception or control model is validated using PyTorch on XPU, developers can either run it directly in production via PyTorch or export it to [OpenVINO™](openvino.md) for ultra-low latency, optimized runtime execution across heterogeneous hardware.
 
 ## Installation and Target Versions
 
@@ -66,7 +66,7 @@ While standard ATen operators and widespread deep learning primitives are implem
 
 - Offload the unsupported sub-operation or fallback layer to CPU using `.to("cpu")` before returning tensors to `xpu`.
 - Verify if a nightly or preview PyTorch XPU wheel implements the newly upstreamed kernel.
-- For inference workloads, export the model to [Intel® OpenVINO™](openvino.md), which provides comprehensive operator coverage and optimized kernel implementations across Intel GPUs and accelerators.
+- For inference workloads, export the model to [OpenVINO™](openvino.md), which provides comprehensive operator coverage and optimized kernel implementations across Intel GPUs and accelerators.
 :::
 
 ## Robotics Pipelines and Workflows
@@ -88,8 +88,8 @@ While PyTorch XPU provides an agile inner loop for rapid prototyping, interactiv
 Once your policy, perception pipeline, or foundation model is verified in PyTorch, transition it to [Intel® OpenVINO™](openvino.md) for production deployment:
 
 - **Model Optimization and Compression:** Apply graph-level operator fusions and post-training quantization (such as 8-bit or 4-bit weight compression via Neural Network Compression Framework / NNCF) to minimize latency and memory bandwidth consumption.
-- **Heterogeneous Hardware Scheduling:** Target onboard Intel® Core™ Ultra CPUs, integrated Arc™ GPUs, discrete GPUs, or low-power NPUs using a unified inference engine and dynamic workload scheduling.
-- **Robotics Runtime Integration:** Deploy optimized OpenVINO Intermediate Representation (IR) models into production ROS 2 nodes, standalone C++ or Python execution pipelines, or through the [OpenVINO Physical AI Runtime](https://github.com/openvinotoolkit/physicalai) for deterministic sensor-to-action loops.
+- **Heterogeneous Hardware Scheduling:** Target onboard Intel® Core™ Ultra CPUs, integrated Intel® Arc™ graphics, discrete Intel® Arc™ GPUs, or low-power NPUs using a unified inference engine and dynamic workload scheduling.
+- **Robotics Runtime Integration:** Deploy optimized OpenVINO Intermediate Representation (IR) models into production ROS 2 nodes, standalone C++ or Python execution pipelines, or through the [OpenVINO Physical AI](https://github.com/openvinotoolkit/physicalai) for deterministic sensor-to-action loops.
 
 Refer to the [OpenVINO™ Model Guidance](../openvino/models/index.md) for step-by-step conversion instructions for models commonly used across the Robotics AI Suite.
 

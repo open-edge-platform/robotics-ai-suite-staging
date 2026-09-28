@@ -10,7 +10,7 @@
 This guide describes how to set up the AAEON CEXD-INTRBL Development Kit hardware and confirm
 that it powers on and boots correctly.
 
-The kit is powered by the **Intel® Core™ Ultra X7 358H (Panther Lake)** processor. It
+The kit is powered by the **Intel® Core™ Ultra X7 358H** processor. It
 consists of a compute module that hosts the processor, memory, and boot components in a
 100 × 87 mm footprint, paired with a carrier card that breaks out the I/O, MIPI CSI,
 GMSL, and SerDes connectivity.
@@ -78,7 +78,7 @@ for you to install an operating system.
 
 ## Next Steps
 
-- **[BIOS Configuration](./bios-configuration.md)** — enable the IPU, NPU, and MIPI
+- **[BIOS Configuration](./bios-configuration.md)** — enable the Intel® IPU, Intel NPU, and MIPI
   cameras, and tune fan behavior.
 
 For product details, see the [manufacturer website](https://www.aaeon.com/en/article/detail/accelerate-robotics-development-aaeon-intel).

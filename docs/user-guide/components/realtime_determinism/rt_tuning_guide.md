@@ -72,7 +72,7 @@ To achieve real-time determinism and utilize the available Intel® silicon featu
    :::
    ::::
 
-   **Note<sup>*</sup>**: Active SOC-North Efficient-cores can be enabled **all** on Intel® Core™ Ultra Series 3 (Panther Lake) processor, while still **0** on Intel® Core™ Ultra Series 2 (Arrow Lake) processor under Real-time Optimization.
+   **Note<sup>*</sup>**: Active SOC-North Efficient-cores can be enabled **all** on Intel® Core™ Ultra Series 3 processor, while still **0** on Intel® Core™ Ultra Series 2 processor under Real-time Optimization.
 
 ## Modify Boot Parameters
 
@@ -139,7 +139,7 @@ To achieve optimum real-time performance on a target system, specific runtime co
 :::{tab-item} **Ubuntu 24.04**
 :sync: jazzy
 
-![PTL RT setup diagram](../../ai_resources/developer_tools/assets/images/ptl_rt_setup.png)
+![Intel® Core™ Ultra Series 3 RT setup diagram](../../ai_resources/developer_tools/assets/images/ptl_rt_setup.png)
 
 :::
 :::{tab-item} **Ubuntu 22.04**

@@ -103,7 +103,7 @@ The following steps will add the OpenVINO™ APT repository to your package mana
 3. Run the following commands to create the file ``/etc/apt/preferences.d/intel-openvino``.
 
    This will pin the OpenVINO™ version to 2025.3.0. Earlier versions of OpenVINO™
-   might not support inferencing on the NPU of Intel® Core™ Ultra processors.
+   might not support inferencing on the Intel NPU of Intel® Core™ Ultra processors.
 
    ::::{tab-set}
    :::{tab-item} **Jazzy**
@@ -488,14 +488,14 @@ This section details steps to install Robotics AI Suite Deb packages.
      |``gen11``|Products formerly Ice Lake|
      |``gen9``|Products formerly Skylake|
 
-## 7. Install the Intel® NPU Driver on Intel® Core™ Ultra Processors
+## 7. Install the Intel NPU Driver on Intel® Core™ Ultra Processors
 
-If you want to run OpenVINO™ inferencing applications on the NPU device
-of Intel® Core™ Ultra processors, you need to install the Intel® NPU driver.
+If you want to run OpenVINO™ inferencing applications on the Intel NPU device
+of Intel® Core™ Ultra processors, you need to install the Intel NPU driver.
 If your system does not have an Intel® Core™ Ultra Processor, you should skip
 this step.
 
-General information on the Intel® NPU driver can be found on the
+General information on the Intel NPU driver can be found on the
 [Linux NPU Driver](https://github.com/intel/linux-npu-driver/releases)
 website. The driver consists of the following packages:
 
@@ -516,7 +516,7 @@ website. The driver consists of the following packages:
 > and install the packages from the downloaded files. Installation through this method
 > will not include automatic updating through `apt-get`.
 
-To install the Intel® NPU driver, complete the following steps:
+To install the Intel NPU driver, complete the following steps:
 
 1. Install the NPU packages:
 
