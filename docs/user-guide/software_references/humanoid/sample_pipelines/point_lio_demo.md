@@ -129,7 +129,7 @@ SSH is impractical.
 ### Reference: running on Intel® Core™ Ultra Series 3
 
 `run_ulhk.sh` ships a reference core-pinning + frequency-locking setup for
-Intel® Core™ Ultra Series 3 (validated on Core Ultra X7 358H: 4 P-cores `cpu0-3` up to 4700
+Intel® Core™ Ultra Series 3 (validated on Core™ Ultra X7 358H: 4 P-cores `cpu0-3` up to 4700
 MHz, 8 E-cores `cpu4-11` up to 3500 MHz, 4 LP-E-cores `cpu12-15` up to 3300
 MHz). Core numbering is specific to this SKU — re-check `lscpu -e` before
 reusing these defaults on a different Intel® Core™ Ultra Series 3 SKU or platform.
@@ -460,7 +460,7 @@ paper's own number.
 
 ## Limitations / non-goals
 
-- **Validated end-to-end on Intel® Core™ Ultra Series 3** (Core Ultra X7 358H): a full
+- **Validated end-to-end on Intel® Core™ Ultra Series 3** (Core™ Ultra X7 358H): a full
   `reproduce_all.sh`-equivalent run (patch → build → run → evaluate)
   produced a measured RMSE of **1.859 m** on `ulhk_4`, comfortably passing
   the ≤2.604 m (baseline × 1.20) gate against the documented 2.17 m

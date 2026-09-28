@@ -36,9 +36,9 @@ Each of these workloads represents a unique challenge and requires specialized a
 
 ## Heterogeneous Computing for the Humanoid Toolkit
 
-The Intel Core Ultra 7 255H processor, part of Intel's Core Ultra processor series 2, is engineered to deliver high performance and efficiency for mobile computing platforms. Building upon previous information, here's a more detailed exploration of its features and capabilities:
+The Intel® Core™ Ultra 7 255H processor, part of Intel's Core™ Ultra processor series 2, is engineered to deliver high performance and efficiency for mobile computing platforms. Building upon previous information, here's a more detailed exploration of its features and capabilities:
 
-- Advanced Hybrid **CPU** Architecture: the Core Ultra 7 255H utilizes a sophisticated hybrid architecture, combining different core types to optimize performance across various workloads.
+- Advanced Hybrid **CPU** Architecture: the Core™ Ultra 7 255H utilizes a sophisticated hybrid architecture, combining different core types to optimize performance across various workloads.
 
   > [!NOTE]
   > **CPU Architecture**
@@ -49,7 +49,7 @@ The Intel Core Ultra 7 255H processor, part of Intel's Core Ultra processor seri
   >
   > **Low Power Efficient Cores (LP E-cores):** 2 additional Skymont cores, operating up to 2.5 GHz, dedicated to handling low-power background tasks.
 
-  With this advanced hybrid CPU architecture, 255H achieved significant performance improvement on single-threaded computing and multi-threaded computing over its predecessor, the Core Ultra 7 155H, with PassMark test.
+  With this advanced hybrid CPU architecture, 255H achieved significant performance improvement on single-threaded computing and multi-threaded computing over its predecessor, the Core™ Ultra 7 155H, with PassMark test.
 
 - **Integrated GPU (Intel® Arc™ graphics)**
 

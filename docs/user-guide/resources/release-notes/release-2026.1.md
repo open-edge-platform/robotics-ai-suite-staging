@@ -40,7 +40,7 @@
 
 **Version 2026.1**:
 
-Embodied Intelligence SDK v26.1 introduces new sample pipeline - OpenClaw + AgenticROS and Intel Core Ultra 3 Platform support of below pipelines:
+Embodied Intelligence SDK v26.1 introduces new sample pipeline - OpenClaw + AgenticROS and Intel® Core™ Ultra 3 Platform support of below pipelines:
 
 - Pi0.5 with RTC
 - LLM Robotics Demo

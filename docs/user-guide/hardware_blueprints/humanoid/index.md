@@ -98,11 +98,11 @@ The Humanoid Blueprint supports the validated configuration below. It defines
 the hardware and software baseline for the Humanoid Toolkit; use it when
 preparing a system for Humanoid workflows.
 
-### Intel® Core Ultra Series 2
+### Intel® Core™ Ultra Series 2
 
 | Component | Validated configuration |
 | --- | --- |
-| Processor | Intel Core Ultra 7 255H processor; 2.0 GHz base frequency, 5.1 GHz maximum turbo frequency, and 28 W base power |
+| Processor | Intel® Core™ Ultra 7 255H processor; 2.0 GHz base frequency, 5.1 GHz maximum turbo frequency, and 28 W base power |
 | Memory | 64 GB dual-channel LPDDR5X memory, 7467 MT/s |
 | Discrete GPU | Intel® Arc™ B580 discrete GPU with 12 GB GDDR6 memory; 2.3 GHz base frequency, MXM 3.1 Type B PCIe Gen4 x8 interface, and 150 W TDP |
 | Operating system | Canonical Ubuntu 22.04 LTS (Jammy Jellyfish), 64-bit Desktop |
