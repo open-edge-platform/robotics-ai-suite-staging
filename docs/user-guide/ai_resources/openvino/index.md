@@ -71,6 +71,7 @@ Convert, compress, benchmark, and validate the Pi0.5 vision-language-action mode
 Software Solutions <reference_applications/index>
 models/index
 pi05-optimization
+OpenVINO™ Physical AI <openvino_physical_ai_runtime>
 :::
 
 

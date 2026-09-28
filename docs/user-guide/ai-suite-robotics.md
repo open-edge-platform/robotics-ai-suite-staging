@@ -94,7 +94,6 @@ Sensors <components/sensors/index>
 AI Developer Tools and Frameworks <ai_resources/intel_powered_ai>
 OpenVINO <ai_resources/openvino/index>
 PyTorch XPU <ai_resources/developer_tools/pytorch-xpu>
-OpenVINO™ Physical AI <ai_resources/openvino/openvino_physical_ai_runtime>
 Physical AI Studio  <ai_resources/physical_ai_studio>
 Geti <ai_resources/developer_tools/geti>
 Intel® oneAPI <ai_resources/developer_tools/oneapi>
