@@ -15,10 +15,11 @@ export const HomeHeader = (): React.JSX.Element => {
       </h1>
 
       <p className={styles.description}>
-        The Robotics AI Suite brings together curated hardware, real-time
-        software, and on-device AI, connected end to end from sensing to motion,
-        so the platform engineering is handled for you and your team can focus
-        on the robot.
+        Build intelligent robots faster with Robotics AI Suite. Pre-validated
+        components, specialized reference applications, and hardware-aware
+        optimizations help you integrate AI perception with deterministic
+        control, optimize workloads across Intel® CPUs, GPUs, and NPUs, and
+        scale from prototype to production.
       </p>
 
       <div className={styles.cardsContainer}>
