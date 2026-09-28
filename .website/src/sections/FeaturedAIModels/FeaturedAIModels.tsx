@@ -23,8 +23,8 @@ export const FeaturedAIModels = () => {
       <Section.Title>Featured AI Models</Section.Title>
 
       <Section.Description>
-        Explore our library of pre-trained models optimized for Intel edge
-        hardware. Browse a wide range of robotics use cases and quickly deploy models on your edge system. Need more
+        Explore our library of pre-trained models optimized for edge
+        deployments on Intel hardware. Browse a wide range of robotics use cases and quickly deploy models on your edge system. Need more
         customization? Fine-tune your model in just a click with Physical AI
         Studio.
       </Section.Description>
