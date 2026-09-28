@@ -48,7 +48,7 @@ The Robotics AI Suite targets the following robot form factors:
 
 [Scale Enablement - Robotics Builders Community | Intel(R) Industry Solution Builders](https://builders.intel.com/communities/robotics/scale)
 
-Explore robotics Scale Enablement and discover how Intel's ecosystem and experts help accelerate robotics solutions from design to deployment.
+Explore how Intel's ecosystem partners help accelerate robotics solutions from design to deployment.
 
 [Edge AI Partner Spotlight - Solution Hub | Intel(R) Industry Solution Builders](https://builders.intel.com/ecosystem-engagement/solution-hub/edge-ai-catalog/partner-spotlight?cp=53&cid=202&type=system)
 
