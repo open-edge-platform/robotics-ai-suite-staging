@@ -1,9 +1,10 @@
+import React from "react";
 import styles from "./ItemCard.module.css";
 
 type ItemCardProps = {
   title: string;
   icon: string;
-  description: string;
+  description?: React.ReactNode;
 };
 
 export const ItemCard = ({ title, icon, description }: ItemCardProps) => {
@@ -13,7 +14,7 @@ export const ItemCard = ({ title, icon, description }: ItemCardProps) => {
         <img src={icon} alt={title} />
       </div>
       <h3>{title}</h3>
-      <p>{description}</p>
+      {description ? <p>{description}</p> : null}
     </div>
   );
 };

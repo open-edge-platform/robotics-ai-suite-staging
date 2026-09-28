@@ -1,5 +1,10 @@
 .card {
-  padding: var(--size-36) var(--size-44);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--size-32) var(--size-28);
   position: relative;
   border-radius: var(--size-7);
   background: #03123361;
