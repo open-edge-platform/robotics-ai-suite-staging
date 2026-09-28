@@ -20,8 +20,8 @@ export const Gmsl = () => {
             </li>
             <li>One connector on the kit runs up to four cameras.</li>
             <li>
-              A dedicated Intel image-processing unit (IPU) handles the imaging
-              in hardware, keeping the CPU and GPU free.
+              A dedicated Intel® Image Processing Unit (Intel® IPU) handles the imaging
+              in hardware, keeping the CPU and Intel® Arc™ graphics free.
             </li>
           </ul>
 

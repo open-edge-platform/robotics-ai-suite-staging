@@ -23,7 +23,7 @@ export default function Models(): React.JSX.Element {
   return (
     <Layout
       title="AI Models"
-      description="AI models for the Intel Robotics AI Suite."
+      description="AI models for the Robotics AI Suite."
     >
       <div className={styles.page}>
         <SuiteHero>

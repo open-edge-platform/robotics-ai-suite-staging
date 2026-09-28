@@ -42,7 +42,7 @@ export const RealtimeControl = () => {
           className={styles.cardTwo}
           description={[
             "Isolates the safety workload on dedicated low-power processor cores.",
-            "Keeps demanding AI workloads on the P-cores, GPU, and NPU without disrupting the safety path.",
+            "Keeps demanding AI workloads on the P-cores, Intel® Arc™ graphics, and Intel NPU without disrupting the safety path.",
             "Intel® Silicon Integrity Technology detects hardware faults and reports error conditions.",
           ]}
         />

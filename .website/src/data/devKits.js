@@ -36,7 +36,7 @@ const devKits = [
     description:
       'Modular form factor supporting a wide range of robotics with integrated GMSL camera connectivity, EtherCAT for real-time controls, and additional capabilities to address diverse robotic requirements.',
     specs: {
-      ai: 'CPU, GPU (12 Xe Cores), and NPU 5.0 (up to 180 TOPS)',
+      ai: 'CPU, Intel® Arc™ graphics (12 Xe Cores), and Intel NPU 5.0 (up to 180 TOPS)',
       memory: '64GB LPDDR5 (up to 8533MT/s)',
       vision: '8x GMSL camera interfaces, 4x USB Type-C',
       control: '4x 2.5GbE LAN (IEEE 1588 PTP), CANBus, 40-pin GPIO HAT',
