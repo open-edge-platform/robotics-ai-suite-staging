@@ -4,7 +4,7 @@
 deploying deep-learning inference in Robotics AI Suite applications. It supports
 models from common frameworks and can target available Intel compute devices.
 
-Use the current [OpenVINO installation documentation](https://docs.openvino.ai/).
+Use the current [OpenVINO installation documentation](https://docs.openvino.ai/canonical/get-started/install-openvino.html) for the selected environment.
 
 ## Software Solutions
 
@@ -83,9 +83,9 @@ pi05-optimization
 
 ## Benchmarking
 
-Use the upstream [OpenVINO Benchmark Tool](https://docs.openvino.ai/2026/get-started/learn-openvino/openvino-samples/benchmark-tool.html)
+Use the upstream [OpenVINO Benchmark Tool](https://docs.openvino.ai/canonical/get-started/learn-openvino/openvino-samples/benchmark-tool.html)
 to estimate deep-learning inference throughput and latency on supported Intel®
-devices. Install OpenVINO and its samples with the [OpenVINO sample guidance](https://docs.openvino.ai/2026/get-started/learn-openvino/openvino-samples/get-started-demos.html)
+devices. Install OpenVINO and its samples with the [OpenVINO sample guidance](https://docs.openvino.ai/canonical/get-started/learn-openvino/openvino-samples/get-started-demos.html)
 before benchmarking.
 
 Use the same OpenVINO version to convert a model and to run inference unless the

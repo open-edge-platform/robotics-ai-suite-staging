@@ -13,7 +13,7 @@ This repository extends the open-source [GR00T-WholeBodyControl](https://github.
 
 For optimal Intel NPU inference performance, it is recommended to use the latest Intel NPU driver(e.g. v1.35.0) available from the [linux-npu-driver](https://github.com/intel/linux-npu-driver/releases) repository.
 
-For OpenVINO, this project recommends installing from the archive file. Follow [Install OpenVINO from an Archive File (Linux)](https://docs.openvino.ai/2026/get-started/install-openvino/install-openvino-archive-linux.html), download the latest OpenVINO package, and extract it to the `/opt/intel/<openvino_version>` folder, e.g. `/opt/intel/openvino_2026.3.0`.
+For OpenVINO, this project recommends installing from the archive file. Follow [Install OpenVINO from an Archive File (Linux)](https://docs.openvino.ai/canonical/get-started/install-openvino/install-openvino-archive-linux.html), download the latest OpenVINO package, and extract it to the `/opt/intel/<openvino_version>` folder, e.g. `/opt/intel/openvino_2026.3.0`.
 
 ## Installation
 

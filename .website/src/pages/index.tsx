@@ -18,13 +18,13 @@ export default function Home(): React.JSX.Element {
       description={`${siteConfig.title} — documentation for the OpenVINO ecosystem.`}
     >
       <HomeHeader />
+      <RoboticsEcosystem />
       <Robotics />
       <Blueprints />
       <FeaturedAIModels />
       {/* <AiToolKits /> */}
       <RobotPerception />
       <RealtimeControl />
-      <RoboticsEcosystem />
     </Layout>
   );
 }
