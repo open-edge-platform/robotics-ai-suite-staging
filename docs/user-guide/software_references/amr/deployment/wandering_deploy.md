@@ -1,6 +1,6 @@
 # Deploying `wandering` on Clearpath Jackal
 
-This software reference details how to deploy and run the `wandering` mobile robot application on a Clearpath Robotics Jackal robot upgraded with an Intel® Core™ Ultra Series 3 onboard compute board (e.g., Intel Core Ultra X7 358H reference platform).
+This software reference details how to deploy and run the `wandering` mobile robot application on a Clearpath Robotics Jackal robot upgraded with an Intel® Core™ Ultra Series 3 onboard compute board (e.g., Intel® Core™ Ultra X7 358H reference platform).
 
 The pipeline combines Intel® RealSense™ depth camera sensing, RTAB-Map visual SLAM, multi-sensor point cloud fusion (`adbscan_sensor_fusion`), fast 3D clustering obstacle perception (`adbscan_ros2`), Nav2 navigation with custom costmap layers (`nav2_adbscan_layer`), and autonomous frontier exploration (`wandering_app`).
 

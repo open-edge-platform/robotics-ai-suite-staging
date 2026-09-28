@@ -46,7 +46,7 @@ Process multiple camera streams in a single OpenVINO-powered demo pipeline.
 Use a YOLOv8 model with OpenVINO for accelerated object detection on robotics systems.
 :::
 
-:::{grid-item-card} **OpenVINO Model Guidance**
+:::{grid-item-card} **OpenVINO Supported Models**
 :link: models/index
 :link-type: doc
 :link-alt: clickable cards
@@ -71,12 +71,13 @@ Convert, compress, benchmark, and validate the Pi0.5 vision-language-action mode
 Software Solutions <reference_applications/index>
 models/index
 pi05-optimization
+OpenVINO™ Physical AI <openvino_physical_ai_runtime>
 :::
 
 
 ## Additional Guidance
 
-- [OpenVINO model guidance](models/index.md) includes reusable perception,
+- [OpenVINO Supported Models](models/index.md) includes reusable perception,
   manipulation, and foundation-model guidance. The workflows require the
     [platform getting-started guide](../../platform_foundation/getting_started.md)
     when used with the Humanoid Toolkit.

@@ -5,7 +5,7 @@ Find the right skills to accelerate your development project, from proof-of-conc
 > [!NOTE]
 > These skills are used by AI agents. AI may produce undesired results. These are offered as learning and experimental tools only. Always verify your robotics solution follows acceptable guidance for safety and reliability.
 
-## robotics-ai-suite focus
+## Robotics AI Suite Repo
 
 For the robotics-ai-suite repository, open the repository root in VS Code so the coding agent can discover the local skill definitions in `.github/skills/`.
 

@@ -12,10 +12,10 @@ interact, and make decisions at the edge. Built on a unified Intel platform, the
 Suite combines modular tools for vision, control, and AI inference, accelerating
 integration and deployment.
 
-Whatever your robotics workload - if you are bringing up a new platform,
-integrating sensors and actuators, or optimizing an AI workload with Intel -
-these documents help you find compatible ingredients and pipelines for your
-robotics application and guidance for deploying on Intel hardware.
+Whether you're bringing up a new robotics platform, integrating sensors and
+actuators, or optimizing an AI workload on Intel hardware, these documents help
+you find compatible components and pipelines—and guide deployment on Intel
+hardware.
 
 :::{image} ./images/intro-light.png
 :class: only-light
@@ -48,11 +48,11 @@ The Robotics AI Suite targets the following robot form factors:
 
 [Scale Enablement - Robotics Builders Community | Intel(R) Industry Solution Builders](https://builders.intel.com/communities/robotics/scale)
 
-Explore robotics Scale Enablement and discover how Intel's ecosystem and experts help accelerate robotics solutions from design to deployment.
+Explore how Intel's ecosystem partners help accelerate robotics solutions from design to deployment.
 
 [Edge AI Partner Spotlight - Solution Hub | Intel(R) Industry Solution Builders](https://builders.intel.com/ecosystem-engagement/solution-hub/edge-ai-catalog/partner-spotlight?cp=53&cid=202&type=system)
 
-Browse our curated catalog of Intel-powered Edge AI systems and applications, delivering real-time innovation, efficiency, and intelligence to your business.
+Browse our curated catalog of Intel-powered edge AI systems and applications for your next robotics project.
 
 ## Next Steps
 
@@ -94,7 +94,6 @@ Sensors <components/sensors/index>
 AI Developer Tools and Frameworks <ai_resources/intel_powered_ai>
 OpenVINO <ai_resources/openvino/index>
 PyTorch XPU <ai_resources/developer_tools/pytorch-xpu>
-OpenVINO™ Physical AI <ai_resources/openvino/openvino_physical_ai_runtime>
 Physical AI Studio  <ai_resources/physical_ai_studio>
 Geti <ai_resources/developer_tools/geti>
 Intel® oneAPI <ai_resources/developer_tools/oneapi>
