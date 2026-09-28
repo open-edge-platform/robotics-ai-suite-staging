@@ -52,7 +52,7 @@ Explore how Intel's ecosystem partners help accelerate robotics solutions from d
 
 [Edge AI Partner Spotlight - Solution Hub | Intel(R) Industry Solution Builders](https://builders.intel.com/ecosystem-engagement/solution-hub/edge-ai-catalog/partner-spotlight?cp=53&cid=202&type=system)
 
-Browse our curated catalog of Intel-powered Edge AI systems and applications, delivering real-time innovation, efficiency, and intelligence to your business.
+Browse our curated catalog of Intel-powered edge AI systems and applications for your next robotics project.
 
 ## Next Steps
 
