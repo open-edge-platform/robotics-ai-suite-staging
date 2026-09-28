@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import styles from "./styles.module.css";
 
 type CollapsibleCardProps = {
-  href: string;
+  href?: string;
   title: string;
   isOpen: boolean;
   children?: ReactNode;

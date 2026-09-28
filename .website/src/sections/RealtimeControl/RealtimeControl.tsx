@@ -1,5 +1,4 @@
 import lockIcon from "../../../static/img/realtime-control/lock.png";
-import shieldCheckIcon from "../../../static/img/realtime-control/shield-check.png";
 import timeIcon from "../../../static/img/realtime-control/time.png";
 import { Section } from "../../components/Section";
 import { sectionIds } from "../Robotics/util";
@@ -33,18 +32,6 @@ export const RealtimeControl = () => {
             "PTP synchronization, EtherCAT, and CAN support coordinated sensing and robot control.",
           ]}
           href={realTimeSetupHref}
-        />
-
-        <RealtimeControlCard
-          icon={shieldCheckIcon}
-          title="Safety"
-          subtitle="Intel Functional Safety"
-          className={styles.cardTwo}
-          description={[
-            "Isolates the safety workload on dedicated low-power processor cores.",
-            "Keeps demanding AI workloads on the P-cores, Intel® Arc™ graphics, and Intel NPU without disrupting the safety path.",
-            "Intel® Silicon Integrity Technology detects hardware faults and reports error conditions.",
-          ]}
         />
 
         <RealtimeControlCard
