@@ -12,7 +12,7 @@ const resources = [
   {
     title: "Open Edge Platform",
     description: "Discover the modular AI software stack behind the Robotics AI Suite",
-    href: "https://www.intel.com/content/www/us/en/developer/tools/tiber/edge-platform/overview.html",
+    href: "https://builders.intel.com/intel-technologies/software/edge-ai-suites",
     icon: CircuitBoard,
   },
   {
