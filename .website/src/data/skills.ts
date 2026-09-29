@@ -369,7 +369,7 @@ export const FALLBACK_SKILLS: Skill[] = [
     "id": "torch-xpu-run",
     "name": "torch-xpu-run",
     "summary": "Run an arbitrary Hugging Face safetensors model on an Intel GPU using <strong>upstream PyTorch</strong> (>= 2.8) with the built-in <code>torch.xpu</code> device.",
-    "description": "Run an arbitrary Hugging Face safetensors model on an Intel GPU using <strong>upstream PyTorch</strong> (>= 2.8) with the built-in <code>torch.xpu</code> device. Covers loading from the Hub, picking the right dtype, autocast, multi-GPU with accelerate's <code>device_map</code>, and the CUDA -> XPU code translation a user has to do once. Use for the Transformers / Accelerate / Diffusers path. Not for OpenAI-compatible serving (use vllm-xpu-run); explicitly not via intel-extension-for-pytorch (ipex) or ipex-llm — those paths are end-of-life and upstream PyTorch supersedes them.",
+    "description": "Run an arbitrary Hugging Face safetensors model on an Intel GPU using <strong>upstream PyTorch</strong> (>= 2.8) with the built-in <code>torch.xpu</code> device. Covers loading from the Hub, picking the right dtype, autocast, multi-GPU with accelerate's <code>device_map</code>, and the CUDA -> XPU code translation a user has to do once. Use for the Transformers / Accelerate / Diffusers path. Not for OpenAI-compatible serving (use vllm-xpu-run); explicitly not via intel-extension-for-pytorch (ipex) — that path is end-of-life and upstream PyTorch supersedes it.",
     "hwClass": "gpu",
     "products": [
       "Intel GPU"

@@ -1,5 +1,5 @@
 .container {
-  padding: var(--size-70) 0;
+  padding: calc(var(--size-70) / 2) 0;
 }
 
 .resources {
@@ -22,7 +22,10 @@
   color: inherit;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .resource:hover,
@@ -30,6 +33,8 @@
   background: #03123391;
   color: inherit;
   text-decoration: none;
+  transform: translateY(calc(-1 * var(--size-8)));
+  box-shadow: 0 var(--size-16) var(--size-32) rgba(0, 163, 255, 0.25);
 }
 
 .resource::before {
@@ -56,6 +61,12 @@
   height: var(--size-48);
   color: #00a3ff;
   margin-bottom: var(--size-24);
+  transition: transform 0.2s ease;
+}
+
+.resource:hover .icon,
+.resource:focus-visible .icon {
+  transform: scale(1.1);
 }
 
 .resource h3 {

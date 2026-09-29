@@ -1,5 +1,5 @@
 .container {
-  padding: var(--size-70) 0;
+  padding: calc(var(--size-70) / 2) 0;
   background:
     url("../../../static/img/blueprints/blueprints-bk.png"),
     linear-gradient(90deg, #031233 0%, #091c46 50%, #031233 100%),
