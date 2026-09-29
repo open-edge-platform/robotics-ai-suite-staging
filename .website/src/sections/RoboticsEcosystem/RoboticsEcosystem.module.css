@@ -5,27 +5,44 @@
 .resources {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--size-32);
   margin-top: var(--size-32);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--size-7);
-  background: rgba(255, 255, 255, 0.06);
 }
 
 .resource {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: var(--size-32);
+  align-items: center;
+  text-align: center;
+  padding: var(--size-32) var(--size-28);
   min-width: 0;
+  position: relative;
+  border-radius: var(--size-7);
+  background: #03123361;
 }
 
-.resource + .resource {
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+.resource::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--size-1);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    transparent 100%
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  filter: blur(var(--size-2));
+  pointer-events: none;
 }
 
 .icon {
-  width: var(--size-36);
-  height: var(--size-36);
+  width: var(--size-48);
+  height: var(--size-48);
   color: #00a3ff;
   margin-bottom: var(--size-24);
 }
@@ -51,10 +68,5 @@
 
   .resource {
     padding: var(--size-24) var(--size-20);
-  }
-
-  .resource + .resource {
-    border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
