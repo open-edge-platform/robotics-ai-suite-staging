@@ -356,7 +356,7 @@ This section details steps to install Robotics AI Suite Deb packages.
       The standard version of the Autonomous Mobile Robot. This package includes almost everything except for a handful of tutorials and bag files.
 
    **ros-jazzy-robotics-sdk-complete**
-      The complete version of the Autonomous Mobile Robot. It also includes those items excluded from the standard version. Please note that the complete SDK downloads approximately 20GB of additional files.
+      The complete version of the Autonomous Mobile Robot. It includes everything in the standard package plus the excluded items. The complete SDK downloads approximately 20 GB of additional files.
 
    :::
    :::{tab-item} **Humble**
@@ -366,7 +366,7 @@ This section details steps to install Robotics AI Suite Deb packages.
       The standard version of the Autonomous Mobile Robot. This package includes almost everything except for a handful of tutorials and bag files.
 
    **ros-humble-robotics-sdk-complete**
-      The complete version of the Autonomous Mobile Robot. It also includes those items excluded from the standard version. Please note that the complete SDK downloads approximately 20GB of additional files.
+      The complete version of the Autonomous Mobile Robot. It includes everything in the standard package plus the excluded items. The complete SDK downloads approximately 20 GB of additional files.
 
    :::
    ::::
