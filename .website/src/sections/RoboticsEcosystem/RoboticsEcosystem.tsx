@@ -10,7 +10,7 @@ const resources = [
     icon: Cpu,
   },
   {
-    title: "AI Builders",
+    title: "Edge AI Systems",
     description: "Explore validated edge AI systems to scale robotics deployments",
     href: "https://builders.intel.com/communities/robotics/scale#hardware",
     icon: Handshake,
