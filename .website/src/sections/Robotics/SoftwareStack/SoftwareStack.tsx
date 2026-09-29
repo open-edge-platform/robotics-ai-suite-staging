@@ -51,12 +51,11 @@ export const SoftwareStack = ({ className }: SoftwareStackProps) => {
 
           <CollapsibleCard
             title="Inference Backends"
-            href={`#${sectionIds.aiToolkits}`}
             isOpen={openCard === "Inference Backends"}
             onToggle={() => toggleCard("Inference Backends")}
           >
             <ul>
-              <li>OpenVINO</li>
+              <li>OpenVINO™</li>
               <li>PyTorch XPU</li>
             </ul>
           </CollapsibleCard>
@@ -86,13 +85,14 @@ export const SoftwareStack = ({ className }: SoftwareStackProps) => {
           </CollapsibleCard>
 
           <CollapsibleCard
-            title="Safety"
+            title="Trusted Robotics"
             href={`#${sectionIds.realtimeControl}`}
-            isOpen={openCard === "Safety"}
-            onToggle={() => toggleCard("Safety")}
+            isOpen={openCard === "Trusted Robotics"}
+            onToggle={() => toggleCard("Trusted Robotics")}
           >
             <ul>
-              <li>Intel FuSa</li>
+              <li>Realtime Control</li>
+              <li>Security</li>
             </ul>
           </CollapsibleCard>
         </div>
