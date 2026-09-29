@@ -1,6 +1,6 @@
 # PyTorch* on Intel® GPU (XPU)
 
-PyTorch* includes upstreamed support for Intel® graphics processing units (GPUs) via the `xpu` device backend. This integration enables out-of-the-box hardware acceleration across Intel® Core™ Ultra processors with integrated Intel® Arc™ graphics, discrete Intel® Arc™ GPUs, and Intel® Data Center GPU Flex Series. This implementation replaces legacy PyTorch-specific tools like IPEX and IPEX-LLM by providing a unified frontend for quick development and inference on Intel hardware.
+PyTorch* includes upstreamed support for Intel® graphics processing units (GPUs) via the `xpu` device backend. This integration enables out-of-the-box hardware acceleration across Intel® Core™ Ultra processors with integrated Intel® Arc™ graphics, discrete Intel® Arc™ GPUs, and Intel® Data Center GPU Flex Series. This implementation replaces legacy PyTorch-specific tools like IPEX by providing a unified frontend for quick development and inference on Intel hardware.
 
 You can find more information at [PyTorch XPU Documentation](https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html).
 
