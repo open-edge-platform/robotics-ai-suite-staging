@@ -102,27 +102,27 @@ RVC focuses on demonstrating consolidation of the following functionalities:
 | Package | Deb Package | Description |
 | --- | --- | --- |
 | gui-settings | `ros-humble-gui-settings_2.0.0jammy_amd64.deb` | Custom message for GUI to RVC communication Package. |
-| moveit2-servo-motion-controller | `ros-humble-moveit2-servo-motion-controller_1.0.0jammy_amd64.deb` | RVC Motion controller interface-based plugin implemented using moveit2 servo. |
-| non-oriented-grasp | `ros-humble-non-oriented-grasp_2.0.0jammy_amd64.deb` | Non oriented grasp plugin. |
-| openvino-inference-plugin | `ros-humble-openvino-inference-plugin_2.0.0jammy_amd64.deb` | RVC AI interface-based Plugin implementing yolo V5, v6 and V8 using openvino inferencing. |
-| oriented-grasp | `ros-humble-oriented-grasp_2.0.0jammy_amd64.deb` | Non oriented grasp plugin. |
-| robotiq-controllers | `ros-humble-robotiq-controllers_2.0.0jammy_amd64.deb` | Provides controllers for robotiq 2f gripper. |
-| robotiq-driver-plugin | `ros-humble-robotiq-driver-plugin_2.0.0jammy_amd64.deb` | Robotiq 2f driver. |
-| rvc-ai-interface | `ros-humble-rvc-ai-interface_2.0.0jammy_amd64.deb` | Interface every 2.5D AI plugin shall inmplement. |
+| moveit2-servo-motion-controller | `ros-humble-moveit2-servo-motion-controller_1.0.0jammy_amd64.deb` | RVC motion controller interface-based plugin implemented using MoveIt 2 Servo. |
+| non-oriented-grasp | `ros-humble-non-oriented-grasp_2.0.0jammy_amd64.deb` | Non-oriented grasp plugin. |
+| openvino-inference-plugin | `ros-humble-openvino-inference-plugin_2.0.0jammy_amd64.deb` | RVC AI interface-based plugin implementing YOLOv5, YOLOv6, and YOLOv8 using OpenVINO inference. |
+| oriented-grasp | `ros-humble-oriented-grasp_2.0.0jammy_amd64.deb` | Oriented grasp plugin. |
+| robotiq-controllers | `ros-humble-robotiq-controllers_2.0.0jammy_amd64.deb` | Provides controllers for the Robotiq 2F gripper. |
+| robotiq-driver-plugin | `ros-humble-robotiq-driver-plugin_2.0.0jammy_amd64.deb` | Robotiq 2F driver. |
+| rvc-ai-interface | `ros-humble-rvc-ai-interface_2.0.0jammy_amd64.deb` | Interface that every 2.5D AI plugin shall implement. |
 | rvc-dynamic-motion-controller-use-case | `ros-humble-rvc-dynamic-motion-controller-use-case_2.0.0jammy_amd64.deb` | Main package for RVC motion controller. |
-| rvc-grasp-interface | `ros-humble-rvc-grasp-interface_2.0.0jammy_amd64.deb` | Pluginlib interface that a pose to grasp plugin has to implement. |
+| rvc-grasp-interface | `ros-humble-rvc-grasp-interface_2.0.0jammy_amd64.deb` | Pluginlib interface that a pose-to-grasp plugin has to implement. |
 | rvc-messages | `ros-humble-rvc-messages_2.0.0jammy_amd64.deb` | RVC vision interface messages. |
 | rvc-motion-controller-interface | `ros-humble-rvc-motion-controller-interface_2.0.0jammy_amd64.deb` | Interface defining how motion controller plugins shall be implemented. |
-| rvc-object-detection-engine | `ros-humble-rvc-object-detection-engine_2.0.0jammy_amd64.deb` | AI inference pipeling Stage 1 object detection engine, plugin based to allow different AI models, and devices. |
-| rvc-packages-all | `ros-humble-rvc-packages-all_2.0.0jammy_amd64.deb` | Metapackage aggreating all RVC packages. |
+| rvc-object-detection-engine | `ros-humble-rvc-object-detection-engine_2.0.0jammy_amd64.deb` | AI inference pipeline stage 1 object detection engine, plugin-based to allow different AI models and devices. |
+| rvc-packages-all | `ros-humble-rvc-packages-all_2.0.0jammy_amd64.deb` | Metapackage aggregating all RVC packages. |
 | rvc-panel-rviz2-plugin | `ros-humble-rvc-panel-rviz2-plugin_2.0.0jammy_amd64.deb` | RVC controls for RViz. |
-| rvc-pose-detector | `ros-humble-rvc-pose-detector_2.0.0jammy_amd64.deb` | AI pose alignment stage Package. |
+| rvc-pose-detector | `ros-humble-rvc-pose-detector_2.0.0jammy_amd64.deb` | AI pose alignment stage package. |
 | rvc-profiler | `ros-humble-rvc-profiler_2.0.0jammy_amd64.deb` | Node to gather various statistics of RVC. |
 | rvc-rotated-object-detection | `ros-humble-rvc-rotated-object-detection_2.0.0jammy_amd64.deb` | Rotated object detection using ORB features. |
 | rvc-static-motion-controller-use-case | `ros-humble-rvc-static-motion-controller-use-case_2.0.0jammy_amd64.deb` | Main package for RVC motion controller. |
-| rvc-vision-main | `ros-humble-rvc-vision-main_2.0.0jammy_amd64.deb` | Start up and configuration files for the whole vision component. |
-| rvc-vision-messages | `ros-humble-rvc-vision-messages_2.0.0jammy_amd64.deb` | Custom message between AI and motion controller. |
-| state-machine-msgs | `ros-humble-state-machine-msgs_2.0.0jammy_amd64.deb` | Custom message for state machines communication Package. |
+| rvc-vision-main | `ros-humble-rvc-vision-main_2.0.0jammy_amd64.deb` | Startup and configuration files for the whole vision component. |
+| rvc-vision-messages | `ros-humble-rvc-vision-messages_2.0.0jammy_amd64.deb` | Custom messages between AI and motion controller. |
+| state-machine-msgs | `ros-humble-state-machine-msgs_2.0.0jammy_amd64.deb` | Custom messages for state machine communication package. |
 | trac-ik-kinematics-plugin | `ros-humble-trac-ik-kinematics-plugin_1.6.6jammy_amd64.deb` | A MoveIt! Kinematics plugin using TRAC-IK. |
 | trac-ik-lib | `ros-humble-trac-ik-lib_0.1.0jammy_amd64.deb` | TRAC-IK is a faster, significantly more reliable drop-in replacement for KDL's pseudoinverse Jacobian solver. |
 | ur-pendant-motion-controller | `ros-humble-ur-pendant-motion-controller_1.0.0jammy_amd64.deb` | Direct Universal Robot pendant controller. |

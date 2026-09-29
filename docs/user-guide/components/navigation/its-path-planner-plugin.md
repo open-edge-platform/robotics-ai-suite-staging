@@ -210,11 +210,10 @@ ros2 launch its_planner its_ackermann_launch.py use_sim_time:=true
 :::{tab-item} **Jazzy**
 :sync: jazzy
 
-The ROS 2 navigation bring-up application is started using
-the TurtleBot 3 Gazebo simulation
-and it receives as input parameter `nav2_params_jazzy.yaml`.
+The ROS 2 navigation bring-up application starts in the TurtleBot 3 Gazebo
+simulation and receives `nav2_params_jazzy.yaml` as an input parameter.
 
-To use the ITS path planner plugin, the following parameters are added in
+To use the ITS path planner plugin, add the following parameters to
 `nav2_params_jazzy.yaml`:
 
 > ```yaml
@@ -233,7 +232,7 @@ To use the ITS path planner plugin, the following parameters are added in
 >       build_road_map_once: True
 >       enable_k: False
 >       min_samples: 250
->       roadmap: "PROBABLISTIC"
+>       roadmap: "PROBABILISTIC"
 >       w: 32
 >       h: 32
 >       n: 2
@@ -243,11 +242,10 @@ To use the ITS path planner plugin, the following parameters are added in
 :::{tab-item} **Humble**
 :sync: humble
 
-The ROS 2 navigation bring-up application is started using
-the TurtleBot 3 Gazebo simulation
-and it receives as input parameter `nav2_params_humble.yaml`.
+The ROS 2 navigation bring-up application starts in the TurtleBot 3 Gazebo
+simulation and receives `nav2_params_humble.yaml` as an input parameter.
 
-To use the ITS path planner plugin, the following parameters are added in
+To use the ITS path planner plugin, add the following parameters to
 `nav2_params_humble.yaml`:
 
 > ```yaml
@@ -265,7 +263,7 @@ To use the ITS path planner plugin, the following parameters are added in
 >       build_road_map_once: True
 >       enable_k: False
 >       min_samples: 250
->       roadmap: "PROBABLISTIC"
+>       roadmap: "PROBABILISTIC"
 >       w: 32
 >       h: 32
 >       n: 2
