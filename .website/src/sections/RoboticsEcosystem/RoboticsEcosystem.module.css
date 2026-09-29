@@ -19,6 +19,17 @@
   position: relative;
   border-radius: var(--size-7);
   background: #03123361;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.resource:hover,
+.resource:focus-visible {
+  background: #03123391;
+  color: inherit;
+  text-decoration: none;
 }
 
 .resource::before {
