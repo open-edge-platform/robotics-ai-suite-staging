@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # USB Cameras
 
 USB cameras are ubiquitous in computer vision use cases.

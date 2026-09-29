@@ -1,4 +1,4 @@
-import { Cpu, Handshake } from "lucide-react";
+import { Cpu, Handshake, CircuitBoard } from "lucide-react";
 import { Section } from "../../components/Section";
 import styles from "./RoboticsEcosystem.module.css";
 
@@ -8,6 +8,12 @@ const resources = [
     description: "See how Intel enables intelligent robotics solutions",
     href: "https://www.intel.com/robotics",
     icon: Cpu,
+  },
+  {
+    title: "Open Edge Platform",
+    description: "Discover the modular AI software stack behind the Robotics AI Suite",
+    href: "https://www.intel.com/content/www/us/en/developer/tools/tiber/edge-platform/overview.html",
+    icon: CircuitBoard,
   },
   {
     title: "Edge AI Systems",
