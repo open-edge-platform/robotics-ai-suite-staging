@@ -11,7 +11,7 @@ const LLMS_SITE_DESCRIPTION =
 // Per-sidebar title/description blocks for llms.txt. Keys match sidebars.js.
 const LLMS_SIDEBARS_CONFIG = {
   docsSidebar: {
-    title: "Development Stack",
+    title: "Robotics AI Suite",
     description:
       "The layered bring-up stack: development kits, OS setup, real-time, middleware, sensors, models, and frameworks.",
   },
@@ -19,7 +19,7 @@ const LLMS_SIDEBARS_CONFIG = {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Robotics AI Suite",
+  title: "Robotics Developer Resources",
   tagline: "One x86 box that senses, thinks, and moves in real time.",
   favicon: "img/favicon.ico",
 
@@ -94,13 +94,13 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Robotics AI Suite",
+        title: "Robotics Developer Resources",
         items: [
           {
             // `pathname://` links to the staged static Sphinx site directly,
             // bypassing the SPA router and broken-link checks.
             to: "pathname:///development-stack/ai-suite-robotics/",
-            label: "Development Stack",
+            label: "Robotics AI Suite",
             target: "_self",
             position: "left",
           },
