@@ -42,7 +42,7 @@ The system enables natural language control of the robot, including:
 
 - ROS2 Jazzy
 - Python 3.12+
-- Intel oneAPI Base Toolkit (for XPU support)
+- Intel oneAPI Toolkit (for XPU support)
 - Gazebo simulation environment
 - Node.js 22.19.0+ (for OpenClaw)
 

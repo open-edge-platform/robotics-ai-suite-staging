@@ -27,9 +27,9 @@ It includes:
 | Intel® oneAPI Data Analytics Library | Boost machine learning and data analytics performance. |
 | Intel® oneAPI Deep Neural Network Library | Develop fast neural networks on Intel CPUs and GPUs with performance-optimized building blocks. |
 | Intel® oneAPI Collective Communications Library | Implement optimized communication patterns to distribute deep learning model training across multiple nodes. |
-| FPGA Support Package for the Intel® oneAPI DCP++/C++ Compiler (separate download required) | Accelerate your register transfer level (RTL) development with SYCL high-level synthesis (HLS), or program FPGA accelerators to speed up specialized, data-centric workloads. Requires installation of the Base Kit. |
+| FPGA Support Package for the Intel® oneAPI DCP++/C++ Compiler (separate download required) | Accelerate your register transfer level (RTL) development with SYCL high-level synthesis (HLS), or program FPGA accelerators to speed up specialized, data-centric workloads. Requires installation of the Intel® oneAPI Toolkit. |
 
-[Intel® oneAPI Base Toolkit Overview](https://www.intel.com/content/www/us/en/develop/tools/oneapi/base-toolkit.html) page for more information.
+[Intel® oneAPI Toolkit Overview](https://www.intel.com/content/www/us/en/develop/tools/oneapi/base-toolkit.html) page for more information.
 
 Install Intel® oneAPI Toolkit **2024.2.1**:
 
@@ -70,6 +70,6 @@ It includes:
 | Intel® oneAPI Data Analytics Library (oneDAL) | Boost machine learning and data analytics performance. |
 | Intel® oneAPI Deep Neural Network Library (oneDNN) | Develop fast neural networks on Intel CPUs and GPUs with performance-optimized building blocks. |
 | Intel® oneAPI Collective Communications Library (oneCCL) | Implement optimized communication patterns to distribute deep learning model training across multiple nodes. |
-| FPGA Support Package for the Intel® oneAPI DCP++/C++ Compiler (separate download required) | Accelerate your register transfer level (RTL) development with SYCL high-level synthesis (HLS), or program FPGA accelerators to speed up specialized, data-centric workloads. Requires installation of the Base Kit. |
+| FPGA Support Package for the Intel® oneAPI DCP++/C++ Compiler (separate download required) | Accelerate your register transfer level (RTL) development with SYCL high-level synthesis (HLS), or program FPGA accelerators to speed up specialized, data-centric workloads. Requires installation of the Intel® oneAPI Toolkit. |
 
 [Intel® oneAPI HPC Toolkit Overview](https://www.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit.html) page for more information.

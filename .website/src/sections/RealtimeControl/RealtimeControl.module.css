@@ -1,5 +1,5 @@
 .container {
-  padding: var(--size-70) 0;
+  padding: calc(var(--size-70) / 2) 0;
 }
 
 .cards {

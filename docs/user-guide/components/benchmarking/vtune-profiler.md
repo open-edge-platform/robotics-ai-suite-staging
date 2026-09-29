@@ -16,7 +16,7 @@ Follow the
 [VTune™ Profiler installation guide](https://www.intel.com/content/www/us/en/docs/vtune-profiler/installation-guide/2023-1/overview.html)
 to install VTune™ Profiler by choosing one of the following two options:
 
-- [Get the Intel® oneAPI Base Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html)
+- [Get the Intel® oneAPI Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html)
 - [Get the VTune™ Profiler](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler-download.html)
 
 ## Additional System Setup for CPU and GPU Profiling
