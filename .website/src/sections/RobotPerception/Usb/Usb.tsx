@@ -3,7 +3,7 @@ import Link from "../../../components/Link";
 import styles from "./Usb.module.css";
 
 export const Usb = () => {
-  const camerasHref = "/development-stack/components/sensors/cameras/index.html";
+  const camerasHref = "https://builders.intel.com/solutionslibrary/verified-supported-edge-camera";
 
   return (
     <>
