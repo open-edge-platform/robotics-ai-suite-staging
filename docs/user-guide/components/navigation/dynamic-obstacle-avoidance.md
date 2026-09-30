@@ -51,7 +51,7 @@ flowchart TD
 ```
 
 
-## Intel® ADBScan: Adaptive Spatial Clustering
+## ADBScan: Adaptive Spatial Clustering
 
 Density-Based Spatial Clustering of Applications with Noise (DBSCAN) is an unsupervised clustering algorithm that groups points closely packed together while marking points in low-density regions as outliers. Standard DBSCAN requires fixed distance parameters ($\epsilon$), which leads to poor performance on LiDAR and depth camera point clouds where point density decreases quadratically with distance.
 

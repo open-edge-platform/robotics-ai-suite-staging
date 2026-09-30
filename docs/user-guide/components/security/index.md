@@ -68,7 +68,7 @@ Deploy a secure video analytics pipeline (DL Streamer Pipeline Server) within a 
 Deploy an Agentic AI application with Vision Language Models (VLMs) in an isolated Trusted Compute environment.
 :::
 
-:::{grid-item-card} **Intel® HW Key Generation & Cryptography with OpenSSL**
+:::{grid-item-card} **Intel HW Key Generation & Cryptography with OpenSSL**
 :link: https://docs.openedgeplatform.intel.com/dev/OEP-articles/application-security/hw_key_gen_crypto.html
 :link-type: url
 :link-alt: clickable cards

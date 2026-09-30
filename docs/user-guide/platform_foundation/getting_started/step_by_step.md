@@ -411,7 +411,7 @@ This section details steps to install Robotics AI Suite Deb packages.
      :sync: jazzy
 
      ```bash
-     # Required for Intel® Atom® processor-based systems
+     # Required for Intel Atom® processor-based systems
      sudo apt-get install ros-jazzy-collab-slam-sse
      ```
 
@@ -420,7 +420,7 @@ This section details steps to install Robotics AI Suite Deb packages.
      :sync: humble
 
      ```bash
-     # Required for Intel® Atom® processor-based systems
+     # Required for Intel Atom® processor-based systems
      sudo apt-get install ros-humble-collab-slam-sse
      ```
 

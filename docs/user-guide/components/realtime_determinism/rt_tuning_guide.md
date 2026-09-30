@@ -4,7 +4,7 @@ To improve real-time performance, follow this guide to adjust boot parameters an
 
 ## UEFI Setup
 
-To achieve real-time determinism and utilize the available Intel® silicon features, you need to configure certain BIOS settings. Reboot the target system and access the BIOS (press the `Delete` or `F2` keys while booting to open the BIOS menu).
+To achieve real-time determinism and utilize the available Intel silicon features, you need to configure certain BIOS settings. Reboot the target system and access the BIOS (press the `Delete` or `F2` keys while booting to open the BIOS menu).
 
 1. Select **Restore Defaults** or **Load Defaults**, and then select **Save Changes and Reset**. As the target system boots, access the BIOS again.
 

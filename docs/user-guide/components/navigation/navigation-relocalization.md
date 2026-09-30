@@ -23,7 +23,7 @@ Complete the [Getting Started](../../platform_foundation/getting_started.md) gui
 ### Install Deb package
 
 Install the `ros-jazzy-its-relocalization-bringup` Deb package from the
-Intel® Autonomous Mobile Robot APT repository
+Intel Autonomous Mobile Robot APT repository
 
 ::::{tab-set}
 :::{tab-item} **Jazzy**

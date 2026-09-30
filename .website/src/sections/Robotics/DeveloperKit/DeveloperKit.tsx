@@ -29,7 +29,7 @@ export const DeveloperKit = ({ className }: DeveloperKitProps) => {
             readModeLink="/"
             className={styles.dottedCard}
           >
-            Intel® IPU + Intel® Arc™ graphics + Intel NPU + CPU for nextgen robotics
+            Intel IPU + Intel® Arc™ graphics + Intel NPU + CPU for nextgen robotics
           </DottedCardDetails>
 
           <DottedCardDetails

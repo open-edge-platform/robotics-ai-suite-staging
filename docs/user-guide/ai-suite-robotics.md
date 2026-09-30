@@ -44,7 +44,7 @@ The Robotics AI Suite targets the following robot form factors:
   within a defined workspace. Typical applications include pick-and-place,
   assembly, welding, and machine tending on production lines.
 
-## Explore Intel® Robotics Ecosystem
+## Explore Intel Robotics Ecosystem
 
 [Robotics Builders Community | Intel® Industry Solution Builders](https://builders.intel.com/communities/robotics/scale)
 

@@ -32,7 +32,7 @@ flowchart TD
 
     subgraph Planning_Control["Nav2 Navigation & Motion Planning"]
         BT["Nav2 Behavior Tree Navigator\n(bt_navigator & Action Execution)"]
-        ITS["Intel® ITS Global Path Planner\n(20-30x Acceleration over A*)"]
+        ITS["ITS Global Path Planner\n(20-30x Acceleration over A*)"]
         Controller["Nav2 Controller Server\n(DWB / MPPI Dynamic Tracking)"]
         Wandering["Autonomous Frontier Exploration\n(wandering_app Pipeline)"]
     end
@@ -77,7 +77,7 @@ Explore the guides below to learn how each navigation component is configured, o
 Architecture, lifecycle management, action servers, behavior trees, and standard parameters for Nav2 on ROS 2 Jazzy.
 :::
 
-:::{grid-item-card} **Intel® ITS Global Path Planner**
+:::{grid-item-card} **ITS Global Path Planner**
 :link: its-path-planner-plugin
 :link-type: doc
 :link-alt: clickable cards
@@ -138,7 +138,7 @@ Simulate and deploy the autonomous Wandering pipeline combining RTAB-Map SLAM, A
 
 ## Dynamic & Autonomous Navigation Capabilities
 
-### 1. High-Performance Global Path Planning: Intel® ITS Planner
+### 1. High-Performance Global Path Planning: ITS Planner
 In large warehouse layouts or crowded factory floors with thousands of navigation nodes, traditional grid-search algorithms such as $A^*$ or Dijkstra can exhibit severe calculation latency when planning complex routes. The **Intelligent Sampling and Two-Way Search (ITS)** global path planner accelerates route calculation by **20–30x** over $A^*$ on 1,000-node maps. It builds reusable Probabilistic Road Maps (PRM) or Deterministic Road Maps (DRM) and applies smoothing filters or Catmull-Rom spline interpolation to output dynamically feasible paths.
 
 ### 2. Rapid Re-localization & Kidnapped Robot Recovery
@@ -167,7 +167,7 @@ The following table indexes navigation packages, tutorials, and end-to-end refer
 | Solution / Ingredient | Category | Key Hardware & Algorithms | Documentation |
 | --- | --- | --- | --- |
 | **Nav2 Core Integration** | Middleware / Planning | ROS 2 Jazzy/Humble, BT Navigator, Costmap 2D, DWB, MPPI | [ROS 2 Nav2 Core Integration](nav2-integration.md) |
-| **Intel® ITS Path Planner** | Global Planning | Patented two-way search, PRM/DRM roadmaps, spline smoothing | [ITS Path Planner ROS 2 Navigation Plugin](its-path-planner-plugin.md) |
+| **ITS Path Planner** | Global Planning | Patented two-way search, PRM/DRM roadmaps, spline smoothing | [ITS Path Planner ROS 2 Navigation Plugin](its-path-planner-plugin.md) |
 | **Robot Re-localization** | Localization Recovery | Low-memory candidate pose scoring, recovery behavior | [Robot Re-localization Package for ROS 2 Navigation](navigation-relocalization.md) |
 | **Dynamic Obstacle Avoidance** | Costmaps / Perception | Adaptive DBSCAN (`nav2_adbscan_layer`), RealSense, LiDAR | [Dynamic Obstacle Avoidance and Costmap Layers](dynamic-obstacle-avoidance.md) |
 | **LIO & LIVO Pipelines** | Odometry / State Estimation | FAST-LIO2, FAST-LIVO2, Point-LIO, Livox Mid-360, IMU | [LiDAR and Visual Odometry Pipelines (LIO & LIVO)](lio-livo-pipelines.md) |

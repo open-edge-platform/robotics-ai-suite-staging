@@ -31,7 +31,7 @@ export default function Models(): React.JSX.Element {
             <h1 className={styles.heroTitle}>AI Models</h1>
             <p className={styles.heroText}>
               Build with PyTorch, Physical AI Studio, or your tooling of
-              choice—then deploy with OpenVINO™ across Intel® CPUs, GPUs, and
+              choice—then deploy with OpenVINO™ across Intel CPUs, GPUs, and
               NPUs. Browse the catalog below for models available on Hugging
               Face, pre-optimized and ready for fine-tuning or edge deployment.
             </p>
