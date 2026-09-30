@@ -30,12 +30,12 @@ Communication in ROS 2 relies on Data Distribution Service (DDS) middleware impl
 - **Composable Nodes & Component Containers**: Packages multiple functional nodes into dynamic shared libraries loaded inside a single runtime process container (`rclcpp_components`), eliminating process boundaries while preserving modular code organization.
 
 
-## Suite Integration
+## Robotics AI Suite Integration
 
 ROS 2 serves as the central orchestration bus connecting all components in the Robotics AI Suite:
 
 - **AI Perception & Inference**: Interconnects camera feeds with the [OpenVINO™ Toolkit](../../ai_resources/openvino/index.md) inference engine. Vision nodes publish inference bounding boxes, segmented masks, and classification outputs onto standard ROS 2 topics for downstream planning.
-- **Sensors**: Interfaces with [Sensors](../sensors/index.md) including Intel® RealSense™ depth cameras (`realsense2_camera`), industrial USB/GMSL vision sensors, and 2D/3D LiDARs.
+- **Sensors**: Interfaces with [Sensors](../sensors/index.md) including RealSense depth cameras (`realsense2_camera`), industrial USB/GMSL vision sensors, and 2D/3D LiDARs.
 - **Navigation**: Powers the Nav2 stack, augmented by Intel-optimized components such as the [ITS Path Planner](../navigation/its-path-planner-plugin.md), [Fast Mapping](../optimized_solutions/run-fastmapping-algorithm.md), and [Robot Re-localization](../navigation/navigation-relocalization.md).
 - **Manipulation**: Integrates MoveIt 2 and MoveIt 2 Servo for Cartesian velocity jog and trajectory execution on multi-axis robotic arms.
 - **Real-Time Determinism**: Operates alongside [Real-time Linux PREEMPT_RT](../realtime_determinism/realtime_linux.md) kernels and fieldbuses such as the [IgH EtherCAT Master Stack](../realtime_determinism/ethercat.md) to execute hard real-time control loops.
@@ -141,7 +141,7 @@ Run Agentic ROS frameworks, model predictive control (MPC), and high-frequency L
 :link-type: doc
 :link-alt: clickable cards
 
-Stream color, depth, and point cloud data from Intel® RealSense™ cameras to ROS 2 topics and RViz2.
+Stream color, depth, and point cloud data from RealSense cameras to ROS 2 topics and RViz2.
 :::
 
 ::::

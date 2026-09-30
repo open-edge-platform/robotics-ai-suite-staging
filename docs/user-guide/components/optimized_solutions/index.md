@@ -1,4 +1,4 @@
-# Intel® Optimized Robotics Solutions and Ingredients
+# Robotics Components optimized for Intel
 
 Prerequisite: Complete the [Getting Started](../../platform_foundation/getting_started.md) guide.
 

@@ -84,7 +84,7 @@ Robotics AI Suite simulation packages support decoupling backend physics executi
 ### Synthetic Sensor Streams
 
 Simulated robots in the suite publish synthetic sensor feeds matching real hardware interfaces:
-- **Intel® RealSense™ Depth Cameras**: Color video (`/camera/color/image_raw`), depth images (`/camera/depth/image_rect_raw`), camera intrinsics, and aligned 3D point clouds (`/camera/depth/color/points`).
+- **RealSense Depth Cameras**: Color video (`/camera/color/image_raw`), depth images (`/camera/depth/image_rect_raw`), camera intrinsics, and aligned 3D point clouds (`/camera/depth/color/points`).
 - **2D/3D LiDAR**: Planar scans (`sensor_msgs/LaserScan`) and full volumetric point clouds (`sensor_msgs/PointCloud2`) for mapping and obstacle detection.
 - **Odometry and Joint Feedback**: Wheel encoders (`nav_msgs/Odometry`) and manipulator joint positions (`sensor_msgs/JointState`).
 

@@ -1,19 +1,19 @@
-(up-wcl-edge-devkit)=
-# AAEON UP WCL Edge Development Kit
+(asus-nuc-16-devkit)=
+# ASUS NUC 16 Development Kit
 
 ## Product Link
 
-**Product link**: [AAEON UP WCL Edge](https://builders.intel.com/ecosystem-engagement/solution-hub/edge-ai-catalog/partner-spotlight/asus-nuc-16-338)
+**Product link**: [ASUS NUC 16](https://builders.intel.com/ecosystem-engagement/solution-hub/edge-ai-catalog/partner-spotlight/asus-nuc-16-338)
 
 ## Overview
 
-This guide describes how to set up the AAEON UP WCL Edge (UP-WCL01-SYS) development kit
-hardware and confirm that it powers on and boots correctly.
+This guide describes how to set up the ASUS NUC 16 development kit hardware and
+confirm that it powers on and boots correctly.
 
-The kit is powered by an **Intel® Core™ 7 processor 350**, **Intel® Core™ 5 processor
-320**, or **Intel® Core™ 3 processor 304** (Wildcat Lake). It ships as a single,
-actively-cooled unit with onboard LPDDR5 memory and UFS storage in a compact
-95 × 70 × 42.3 mm footprint.
+The kit is powered by **Intel® Core™ Series 3 processors** and combines CPU, GPU,
+and an integrated NPU to deliver up to 40 total platform TOPS. It ships as an
+ultra-compact, tool-less, upgradeable unit with up to 64 GB of DDR5-6400 memory
+and support for up to three 4K displays.
 
 > [!NOTE]
 > This kit does not include GMSL or MIPI CSI camera connectivity. Connect
@@ -27,7 +27,7 @@ actively-cooled unit with onboard LPDDR5 memory and UFS storage in a compact
 
 - A monitor with an **HDMI** input.
 - A **USB keyboard and mouse**.
-- The bundled **12 V DC power adapter**.
+- The bundled **DC power adapter**.
 
 ## Overall Flow
 
@@ -55,7 +55,7 @@ ports.
 
 ### Step 3: Power on
 
-Plug the supplied 12 V DC power adapter into the **DC-in connector** and press the power
+Plug the supplied DC power adapter into the **DC-in connector** and press the power
 button.
 
 :::caution
@@ -76,7 +76,7 @@ The system reboots and is ready for you to install an operating system.
 - **[Supported Operating Systems](./supported-operating-systems.md)** — review the operating
   systems validated for this kit before installing your OS.
 
-For product details, see the [manufacturer website](https://www.aaeon.com/en/product/detail/up-systems-up-wcl-edge).
+For product details, see the [manufacturer website](https://www.asus.com/displays-desktops/nucs/nuc-mini-pcs/asus-nuc-16/).
 
 :::{toctree}
 :caption: Components

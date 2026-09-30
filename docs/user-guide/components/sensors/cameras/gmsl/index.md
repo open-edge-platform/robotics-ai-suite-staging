@@ -1,7 +1,3 @@
----
-orphan: true
----
-
 # GMSL Cameras
 
 Gigabit Multimedia Serial Link (GMSL) is a high-speed serial interface for

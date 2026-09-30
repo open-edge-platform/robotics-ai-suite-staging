@@ -12,7 +12,7 @@ The navigation stack integrates sensor feeds, high-rate state estimation, multi-
 ```{mermaid}
 flowchart TD
     subgraph Sensors["Sensor Acquisition"]
-        RS["Intel® RealSense™ Depth Cameras\n(D435i / D455 / D415)"]
+        RS["RealSense Depth Cameras\n(D435i / D455 / D415)"]
         LiDAR["2D / 3D LiDAR Scanners\n(Livox Mid-360 / Velodyne / Ouster)"]
         IMU["Inertial Measurement Units\n(High-Rate 6-Axis / 9-Axis IMU)"]
     end

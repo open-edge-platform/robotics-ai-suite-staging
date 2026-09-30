@@ -75,7 +75,7 @@ Getting Started <platform_foundation/getting_started.md>
 :hidden:
 
 
-Intel® Optimized Robotics Components <components/optimized_solutions/index>
+Robotics Components optimized for Intel <components/optimized_solutions/index>
 Real-time Determinism <components/realtime_determinism/index>
 Benchmarking <components/benchmarking/index>
 Security <components/security/index>

@@ -3,7 +3,7 @@
 
 ## Product Link
 
-**Product link**: [AAEON UP Nexus WCL Edge](https://www.aaeon.com/en/product/detail/up-systems-up-nexus-wcl-edge)
+**Product link**: [AAEON UP Nexus WCL Edge](https://www.aaeon.com/en/product/detail/up-systems-up-wcl-edge)
 
 ## Overview
 

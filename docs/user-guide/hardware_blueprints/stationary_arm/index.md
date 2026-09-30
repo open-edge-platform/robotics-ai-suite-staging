@@ -33,7 +33,7 @@ flowchart LR
 ```
 
 Our demonstration pipeline is set up for deployment with a Universal
-Robots UR5e arm, Robotiq 2F-85 gripper, and Intel RealSense camera running Robotics AI Suite. Together, they provide a baseline for
+Robots UR5e arm, Robotiq 2F-85 gripper, and RealSense camera running Robotics AI Suite. Together, they provide a baseline for
 perception-to-motion integration in fixed, structured workspaces.
 Configure the robot network connection, camera-to-world transform, controller,
 gripper, and collision environment for the target workspace. 
@@ -63,7 +63,7 @@ effector, and workspace, running the Stationary Robotics Toolkit.
 :link-alt: clickable cards
 
 Intel® Core™ Ultra Series 3 with a Universal Robots UR5e, Robotiq 2F-85 gripper,
-Intel RealSense camera, and the Stationary Robotics Toolkit.
+RealSense camera, and the Stationary Robotics Toolkit.
 :::
 ::::
 

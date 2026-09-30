@@ -7,7 +7,8 @@ Robotics AI Suite applications.
 ::::{grid} 2
 
 :::{grid-item-card} **Cameras**
-:link: https://builders.intel.com/solutionslibrary/verified-supported-edge-camera
+:link: cameras/index
+:link-type: doc
 :link-alt: clickable cards
 
 Connect and stream uncompressed video and volumetric depth for computer vision and manipulation.
@@ -52,7 +53,7 @@ Process 3D point cloud data to segment ground surfaces and detect traversable re
 :::{toctree}
 :hidden:
 
-Cameras <https://builders.intel.com/solutionslibrary/verified-supported-edge-camera>
+Cameras <cameras/index>
 LiDAR <lidar>
 Software Tutorials <reference_applications/index>
 :::

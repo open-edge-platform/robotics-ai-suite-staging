@@ -77,9 +77,9 @@ This Demo uses EUROC dataset to test ORB-SLAM3 monocular mode.
    > [!NOTE]
    > If you use other datasets other than MH_04_difficult, you should make sure you update the command above with the correct name of dataset you use.
 
-### Demo-2: VSLAM Demo with Intel® Realsense Camera
+### Demo-2: VSLAM Demo with Realsense Camera
 
-This Demo uses Intel Realsense Camera as stereo inputs.
+This Demo uses Realsense Camera as stereo inputs.
 
 ![ORB-SLAM3 realsense](assets/images/orb-slam3-realsense.gif)
 
