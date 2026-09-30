@@ -12,7 +12,7 @@ For practical application examples, see [ADBSCAN Follow-me](../optimized_solutio
 ```{mermaid}
 flowchart TD
     subgraph Sensors["Perception Sensors"]
-        RS["Intel® RealSense™ Depth Camera\n(/camera/depth/color/points)"]
+        RS["RealSense Depth Camera\n(/camera/depth/color/points)"]
         LiDAR["2D / 3D LiDAR Scanner\n(/scan or /lidar_points)"]
     end
 

@@ -1,7 +1,3 @@
----
-orphan: true
----
-
 # GMSL Cameras
 
 Gigabit Multimedia Serial Link (GMSL) is a high-speed serial interface for
@@ -93,7 +89,7 @@ If you are configuring both D3 and RealSense cameras on the same system, you mus
   :sync: realsense
 
 
-  The following scripts are used for Realsense D457.
+  The following scripts are used for RealSense D457.
   Execute both in the order given below:
 
   ```sh

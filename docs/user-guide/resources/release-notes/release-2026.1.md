@@ -8,7 +8,7 @@
 
 **New**:
 
-- Added automated one-command ROS 2 environment setup scripts (setup-robotics-humble.sh and setup-robotics-jazzy.sh) that install the full AMR stack (ROS 2, OpenVINO, Intel RealSense SDK, Robotics SDK, Collaborative SLAM) for Ubuntu Humble and Jazzy respectively.
+- Added automated one-command ROS 2 environment setup scripts (setup-robotics-humble.sh and setup-robotics-jazzy.sh) that install the full AMR stack (ROS 2, OpenVINO, RealSense SDK, Robotics SDK, Collaborative SLAM) for Ubuntu Humble and Jazzy respectively.
 - Added ISX031 industrial camera support in multicam-demo with a new config/config_isx031_4cameras.js configuration file and extended CameraCapWrapper to accept Linux device paths (e.g. /dev/video-isx031-a-0) in addition to integer camera indices.
 - Added Level 2 end-to-end pipeline KPI analysis to ros-kpi via a new analyze_pipeline_latency.py tool that computes per-stage latency, throughput, and drop rate across the full AMR processing pipeline.
 - Added Grafana live metrics dashboard integration for ros-kpi, including a new demo_interactive_heatmap.py script for interactive visualization of KPI data and a GRAFANA_QUICKSTART.md guide for rapid dashboard setup.
@@ -63,7 +63,7 @@ Click each tab to learn about the new and updated features in each release of St
 
 RVC v2.1 release includes bug and security updates as well as Intel Lab's Histodepth Pointcloud Segmentation algorithm in a Virtual Fence application.
 
-- **Intel Lab's Histodepth Pointcloud Segmentation Virtual Fence**: Now part of the RVC package, this virtual fence application running on ROS uses depth information from an Intel RealSense camera to create dynamic and static scene segmentation maps to enable live robotic virtual fencing and safety bounding. The use of this segmentation algorithm enables a drop-in approach to virtual fencing, requiring no training or learning before deployment.
+- **Intel Lab's Histodepth Pointcloud Segmentation Virtual Fence**: Now part of the RVC package, this virtual fence application running on ROS uses depth information from a RealSense camera to create dynamic and static scene segmentation maps to enable live robotic virtual fencing and safety bounding. The use of this segmentation algorithm enables a drop-in approach to virtual fencing, requiring no training or learning before deployment.
 
 **Features**:
 
@@ -142,7 +142,7 @@ RVC allows closed loop automatic object recognition and robot manipulation of a 
 
 - The object set must be known prior, that is, the objects need to be present on file system in the pointcloud format, matching the real objects
 - Camera position must be accurate by either adjusting the camera in a particular position or changing the position in a configuration file
-- Only the Universal Robots™ family has been tested (more specifically, UR5e), the Robotiq 2F-85 Gripper and D415 Intel® RealSense™ Camera.
+- Only the Universal Robots™ family has been tested (more specifically, UR5e), the Robotiq 2F-85 Gripper and D415 RealSense Camera.
 - Only one object can be placed under the camera. Multiple objects could work, however there are known issues. For this release, make sure that there is only one object under the camera or none.
 
 :::

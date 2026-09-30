@@ -60,7 +60,7 @@ const cameras = [
   },
   {
     id: 'gmsl-d457',
-    name: 'Intel RealSense D457',
+    name: 'RealSense D457',
     capabilities: [CAPABILITY.DEPTH, CAPABILITY.COLOR],
     interface: INTERFACE.GMSL,
     phy: null,

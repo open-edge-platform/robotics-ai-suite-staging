@@ -3,7 +3,7 @@
 
 ## Product Link
 
-**Product link**: [AAEON CEXD-INTRBL](https://eshop.aaeon.com/robotics-development-system-intel-core-ultra-x7-358h-cexd-intrbl.html)
+**Product link**: [AAEON CEXD-INTRBL](https://builders.intel.com/ecosystem-engagement/solution-hub/edge-ai-catalog/partner-spotlight/cexd-intrbl-141)
 
 ## Overview
 

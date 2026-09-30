@@ -1,6 +1,6 @@
 # ITS Path Planner ROS 2 Navigation Plugin
 
-Intelligent Sampling and Two-Way Search (ITS) global path planner is an Intel®
+Intelligent Sampling and Two-Way Search (ITS) global path planner is Intel's
 patented algorithm.
 
 The ITS Plugin for the ROS 2 Navigation 2 application plugin is a global path
