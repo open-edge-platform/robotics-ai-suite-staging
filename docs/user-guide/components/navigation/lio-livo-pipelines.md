@@ -2,7 +2,7 @@
 
 Accurate and low-latency state estimation is the foundation of dynamic and autonomous navigation. In demanding environments—such as uneven industrial floors, stairs, ramps, outdoor construction zones, or long featureless corridors—traditional wheel odometry and planar 2D scan matchers often suffer from severe drift, slippage, and degradation.
 
-The Robotics AI Suite integrates high-performance **LiDAR-Inertial Odometry (LIO)** and **LiDAR-Inertial-Visual Odometry (LIVO)** pipelines to deliver real-time, 6-DoF pose estimation and high-density 3D mapping on Intel® platforms.
+The Robotics AI Suite integrates high-performance **LiDAR-Inertial Odometry (LIO)** and **LiDAR-Inertial-Visual Odometry (LIVO)** pipelines to deliver real-time, 6-DoF pose estimation and high-density 3D mapping on Intel platforms.
 
 For detailed deployment tutorials and pipeline source code, refer to [LIO SLAM: FAST-LIO2](../../software_references/humanoid/sample_pipelines/fast_lio2_demo.md), [LIVO SLAM: FAST-LIVO2](../../software_references/humanoid/sample_pipelines/fast_livo2_demo.md), and [LIO SLAM: Point-LIO](../../software_references/humanoid/sample_pipelines/point_lio_demo.md).
 
@@ -33,7 +33,7 @@ flowchart TD
     subgraph Nav2_Stack["ROS 2 Navigation (Nav2)"]
         Costmap["Costmap 2D (Voxel / Obstacle Layer)"]
         Controller["Nav2 Controller Server (DWB / MPPI)"]
-        Planner["Nav2 Planner Server / Intel® ITS Planner"]
+        Planner["Nav2 Planner Server / ITS Planner"]
     end
 
     LiDAR --> FAST_LIO
@@ -128,7 +128,7 @@ local_costmap:
 ```
 
 
-## Intel® Hardware Optimization & Core Pinning
+## Intel Hardware Optimization & Core Pinning
 
 To prevent odometry estimation loops from stalling when the system executes heavy parallel workloads (such as OpenVINO™ neural network inference or Gazebo 3D simulation), the Robotics AI Suite utilizes thread isolation and CPU affinity on Intel hybrid architectures:
 

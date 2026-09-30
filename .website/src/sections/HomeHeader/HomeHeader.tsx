@@ -18,7 +18,7 @@ export const HomeHeader = (): React.JSX.Element => {
         Build intelligent robots faster with Robotics AI Suite. Pre-validated
         components, specialized reference applications, and hardware-aware
         optimizations help you integrate AI perception with deterministic
-        control, optimize workloads across Intel® CPUs, GPUs, and NPUs, and
+        control, optimize workloads across Intel CPUs, GPUs, and NPUs, and
         scale from prototype to production.
       </p>
 

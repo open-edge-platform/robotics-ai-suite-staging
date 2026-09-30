@@ -22,7 +22,7 @@ flowchart TD
         Lifecycle["Nav2 Lifecycle Manager\n(nav2_lifecycle_manager)"]
         
         subgraph Servers["Nav2 Functional Servers"]
-            Planner["Planner Server\n(Navfn / Smac / Intel® ITS Planner)"]
+            Planner["Planner Server\n(Navfn / Smac / ITS Planner)"]
             Controller["Controller Server\n(DWB / MPPI / FollowPath)"]
             Smoother["Smoother Server\n(Simple / Savitzky-Golay)"]
             Behaviors["Behavior Server\n(Spin / Backup / Wait / DriveOnHeading)"]
@@ -80,7 +80,7 @@ Nav2 uses a modular plugin architecture to construct costmaps by stacking indivi
 
 1. **Static Layer (`nav2_costmap_2d::StaticLayer`)**: Ingests pre-built 2D occupancy grid maps published by the map server or SLAM pipelines (such as [Collaborative Visual SLAM](../optimized_solutions/collaborative-slam.md) or RTAB-Map).
 2. **Obstacle Layer / Voxel Layer (`nav2_costmap_2d::ObstacleLayer` / `VoxelLayer`)**: Incorporates real-time 2D planar LiDAR scans or 3D depth point clouds to detect dynamic objects within sensor range.
-3. **Intel® ADBScan Layer (`nav2_adbscan_layer`)**: Clusters 3D point cloud measurements into bounding volumes to track moving pedestrians and dynamic clutter. For implementation details, see [Dynamic Obstacle Avoidance and Costmap Layers](dynamic-obstacle-avoidance.md).
+3. **ADBScan Layer (`nav2_adbscan_layer`)**: Clusters 3D point cloud measurements into bounding volumes to track moving pedestrians and dynamic clutter. For implementation details, see [Dynamic Obstacle Avoidance and Costmap Layers](dynamic-obstacle-avoidance.md).
 4. **Traversability Layer**: Incorporates ground segmentation from [3D Pointcloud Groundfloor Segmentation for RealSense Camera and 3D LiDAR](../sensors/reference_applications/pointcloud-groundfloor-segmentation.md) to separate navigable ground planes from obstacles and steep drops.
 5. **Inflation Layer (`nav2_costmap_2d::InflationLayer`)**: Expands obstacle boundaries according to the robot's footprint and safety padding using an exponential decay cost function:
 

@@ -78,7 +78,7 @@ sudo apt install ros-humble-turtlebot3-gazebo
 ::::
 
 Install the ITS Path Planner Deb package from the
-Intel® Autonomous Mobile Robot APT repository
+Intel Autonomous Mobile Robot APT repository
 
 ::::{tab-set}
 :::{tab-item} **Jazzy**

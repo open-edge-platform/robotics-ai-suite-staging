@@ -85,7 +85,7 @@ OpenVINO™ Physical AI <openvino_physical_ai_runtime>
 ## Benchmarking
 
 Use the upstream [OpenVINO™ Benchmark Tool](https://docs.openvino.ai/canonical/get-started/learn-openvino/openvino-samples/benchmark-tool.html)
-to estimate deep-learning inference throughput and latency on supported Intel®
+to estimate deep-learning inference throughput and latency on supported Intel
 devices. Install OpenVINO™ and its samples with the [OpenVINO™ sample guidance](https://docs.openvino.ai/canonical/get-started/learn-openvino/openvino-samples/get-started-demos.html)
 before benchmarking.
 

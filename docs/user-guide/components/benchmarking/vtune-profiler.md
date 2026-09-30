@@ -24,7 +24,7 @@ to install VTune™ Profiler by choosing one of the following two options:
 1. Build and Install the Sampling Drivers for Linux Targets.
 
    To do CPU and GPU profiling using driverless sampling collection on
-   processors based on Intel® Performance Hybrid Architecture, which
+   processors based on Intel Performance Hybrid Architecture, which
    has been introduced from 12th Gen Intel® Core™ processors, the
    VTune™ Profiler sampling drivers must be installed and loaded using
    root credentials. Follow the steps to

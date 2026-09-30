@@ -1,6 +1,6 @@
 # 3D Pointcloud Groundfloor Segmentation for RealSense Camera and 3D LiDAR
 
-This demo showcases an Intel® algorithm designed for the segmentation of depth sensor data,
+This demo showcases an Intel algorithm designed for the segmentation of depth sensor data,
 compatible with 3D LiDAR or RealSense camera inputs. The application processes either a 3D pointcloud
 or a depth image, producing a refined 3D pointcloud as output. Each endpoint within this pointcloud
 is classified, distinguishing between ground floor, elevated surfaces, obstacles and structures above ground level.

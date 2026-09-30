@@ -1,6 +1,6 @@
 # OpenVINO™ Supported Models
 
-The OpenVINO™ toolkit supports most TensorFlow and PyTorch models. The following table lists deep-learning models commonly used in Humanoid Toolkit solutions, and information on how to run them on Intel® platforms:
+The OpenVINO™ toolkit supports most TensorFlow and PyTorch models. The following table lists deep-learning models commonly used in Humanoid Toolkit solutions, and information on how to run them on Intel platforms:
 
 For Humanoid workflows, complete the [platform getting-started guide](../../../platform_foundation/getting_started.md) before installing model dependencies or running these tutorials.
 
