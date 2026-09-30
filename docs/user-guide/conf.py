@@ -128,7 +128,7 @@ html_theme_options = {
         }
     ],
     "logo": {
-        "text": "Robotics AI Suite",
+        "text": "Robotics Dev Resources",
         "link": "/",
         # "image_dark": "_static/logo-dark.svg",
     },

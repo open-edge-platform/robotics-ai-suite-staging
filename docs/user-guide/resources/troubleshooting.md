@@ -1,10 +1,5 @@
 # Troubleshooting
 
-## Quick Navigation
-
-- [OpenVINO Supported Models](../components/ai_resources/openvino/models/index.md)
-- [Stationary Robot Vision & Control](../hardware_blueprints/stationary_arm/ur5e-robotiq-realsense.md)
-
 (humanoid_embodied_troubleshooting)=
 ## Humanoid Imitation Learning
 
