@@ -13,9 +13,9 @@ validating the resulting environment.
 | Tool | Use |
 | --- | --- |
 | [PyTorch XPU](developer_tools/pytorch-xpu.md) | Accelerate model prototyping, training, and rapid iteration on Intel GPUs. |
-| [OpenVINO](https://docs.openvino.ai/) | Optimize and deploy deep-learning inference workloads. |
+| [OpenVINO™](https://docs.openvino.ai/) | Optimize and deploy deep-learning inference workloads. |
 | [Intel oneAPI Toolkits](https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html) | Develop and profile heterogeneous C++, SYCL, and data-parallel workloads. |
-| [OpenVINO Physical AI](https://github.com/openvinotoolkit/physicalai) | Accelerate your OpenVINO-powered deployment with a unified API for connecting cameras, robots, and policy inference. |
+| [OpenVINO™ Physical AI](https://github.com/openvinotoolkit/physicalai) | Accelerate your OpenVINO™-powered deployment with a unified API for connecting cameras, robots, and policy inference. |
 | [Intel Physical AI Studio](https://github.com/open-edge-platform/physical-ai-studio)| Train and deploy VLA models with an easy-to-use imitation learning dataset generation platform. |
 | [Geti](https://github.com/open-edge-platform/geti) | Use an end-to-end pipeline to create vision AI models optimized for Intel. |
 
@@ -24,7 +24,7 @@ For performance analysis, see [Benchmarking and Profiling](../components/benchma
 
 ::::{grid} 2
 
-:::{grid-item-card} **OpenVINO**
+:::{grid-item-card} **OpenVINO™**
 :link: openvino/index
 :link-type: doc
 :link-alt: clickable cards

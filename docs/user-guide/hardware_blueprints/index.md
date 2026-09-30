@@ -30,7 +30,7 @@ SLAM-based mapping and autonomous navigation on a mobile robot using Nav2, FastM
 :link-type: doc
 :link-alt: clickable cards
 
-Collect teleoperation data, train an ACT policy, convert it with OpenVINO, and run inference on-device.
+Collect teleoperation data, train an ACT policy, convert it with OpenVINO™, and run inference on-device.
 :::
 ::::
 
