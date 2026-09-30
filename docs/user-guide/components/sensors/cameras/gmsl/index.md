@@ -1,10 +1,10 @@
-# GMSL Cameras
+# GMSL Camera Guide
 
 Gigabit Multimedia Serial Link (GMSL) is a high-speed serial interface for
 connecting cameras to a processing platform. This guide covers supported camera
 modules, GMSL Add-in-Card design, and GMSL `SerDes` configuration.
 
-## Supported GMSL Cameras
+## Hardware Requirements
 
 ```{include} fragment_camera_table_gmsl.md
 ```
