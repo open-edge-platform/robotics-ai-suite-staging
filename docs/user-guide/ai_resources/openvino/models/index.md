@@ -1,4 +1,4 @@
-# OpenVINO Supported Models
+# OpenVINO™ Supported Models
 
 The OpenVINO™ toolkit supports most TensorFlow and PyTorch models. The following table lists deep-learning models commonly used in Humanoid Toolkit solutions, and information on how to run them on Intel® platforms:
 
@@ -12,7 +12,7 @@ For Humanoid workflows, complete the [platform getting-started guide](../../../p
 | SAM           | Transformer-based segmentation                                                                                                      | [SAM](https://github.com/openvinotoolkit/openvino_notebooks/tree/2026.2/notebooks/segment-anything)                                                                                                          |
 | SAM2          | Extends SAM to video segmentation and object tracking with cross attention to memory                                                | [SAM2](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/sam2-image-segmentation)                                                                                                  |
 | FastSAM       | Lightweight substitute to SAM                                                                                                       | [FastSAM](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/fast-segment-anything)                                                                                                 |
-| MobileSAM     | Lightweight substitute to SAM (Same model architecture as SAM. See OpenVINO SAM tutorials for model export and application)         | [MobileSAM](https://github.com/openvinotoolkit/openvino_notebooks/tree/2026.2/notebooks/segment-anything)                                                                                                    |
+| MobileSAM     | Lightweight substitute to SAM (Same model architecture as SAM. See OpenVINO™ SAM tutorials for model export and application)         | [MobileSAM](https://github.com/openvinotoolkit/openvino_notebooks/tree/2026.2/notebooks/segment-anything)                                                                                                    |
 | U-NET         | CNN-based segmentation and diffusion model                                                                                          | [U-NET](https://community.intel.com/t5/Blogs/Products-and-Solutions/Healthcare/Optimizing-Brain-Tumor-Segmentation-BTS-U-Net-model-using-Intel/post/1399037?wapkw=U-Net)                                     |
 | DETR          | Transformer-based object detection                                                                                                  | [DETR](https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/detr-resnet50)                                                                                                            |
 | GroundingDino | Transformer-based object detection                                                                                                  | [GroundingDino](https://github.com/openvinotoolkit/openvino_notebooks/tree/latest/notebooks/grounded-segment-anything)                                                                                       |
@@ -22,7 +22,7 @@ For Humanoid workflows, complete the [platform getting-started guide](../../../p
 | FunASR        | Automatic speech recognition                                                                                                        | [FunASR Setup in LLM Robotics - sample pipeline](../../../software_references/humanoid/sample_pipelines/llm_robotics.md#funasr-setup)                                                                     |
 
 > **Attention:**
-  When following these tutorials for model conversion, ensure that the OpenVINO toolkit version used for model conversion is the same as the runtime version used for inference. Otherwise, unexpected errors may occur, especially if the model is converted using a newer version and the runtime is an older version. See details in [Troubleshooting](../../../resources/troubleshooting.md).
+  When following these tutorials for model conversion, ensure that the OpenVINO™ toolkit version used for model conversion is the same as the runtime version used for inference. Otherwise, unexpected errors may occur, especially if the model is converted using a newer version and the runtime is an older version. See details in [Troubleshooting](../../../resources/troubleshooting.md).
 
 Please also find information for the models of imitation learning, grasp generation, simultaneous localization and mapping (SLAM) and bird's-eye view (BEV):
 

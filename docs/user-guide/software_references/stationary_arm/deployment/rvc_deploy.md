@@ -30,7 +30,7 @@ The Stationary Robot Toolkit architecture isolates perception into interchangeab
 | --- | --- | --- |
 | Camera Streamer | `realsense2_camera` | Publishes synchronized RGB (`sensor_msgs/Image`) and PointCloud (`sensor_msgs/PointCloud2`) streams |
 | Perception Engine | `stationary_robotics_vision_main` | Encapsulates detection and 3D pose extraction within a shared process for zero-copy efficiency |
-| Object Detection | `stationary_robotics_rotated_object_detection` | Executes OpenVINO-accelerated object detection and outputs oriented bounding boxes (`RotateBBList`) |
+| Object Detection | `stationary_robotics_rotated_object_detection` | Executes OpenVINO™-accelerated object detection and outputs oriented bounding boxes (`RotateBBList`) |
 | Grasp Planner | `stationary_robotics_oriented_grasp` | Calculates feasible gripper approach vectors and grasp points based on object class and orientation |
 | State Machine | `stationary_robotics_dynamic_demo` | Orchestrates cycle states: search, track, approach, grasp, transfer, and release |
 | Motion Controller | `stationary_robotics_moveit2_servo_motion_controller` | Translates task waypoints into Cartesian velocity commands (`delta_twist_cmds`) with collision avoidance |

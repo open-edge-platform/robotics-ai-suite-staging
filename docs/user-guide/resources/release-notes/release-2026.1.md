@@ -8,7 +8,7 @@
 
 **New**:
 
-- Added automated one-command ROS 2 environment setup scripts (setup-robotics-humble.sh and setup-robotics-jazzy.sh) that install the full AMR stack (ROS 2, OpenVINO, RealSense SDK, Robotics SDK, Collaborative SLAM) for Ubuntu Humble and Jazzy respectively.
+- Added automated one-command ROS 2 environment setup scripts (setup-robotics-humble.sh and setup-robotics-jazzy.sh) that install the full AMR stack (ROS 2, OpenVINO™, RealSense SDK, Robotics SDK, Collaborative SLAM) for Ubuntu Humble and Jazzy respectively.
 - Added ISX031 industrial camera support in multicam-demo with a new config/config_isx031_4cameras.js configuration file and extended CameraCapWrapper to accept Linux device paths (e.g. /dev/video-isx031-a-0) in addition to integer camera indices.
 - Added Level 2 end-to-end pipeline KPI analysis to ros-kpi via a new analyze_pipeline_latency.py tool that computes per-stage latency, throughput, and drop rate across the full AMR processing pipeline.
 - Added Grafana live metrics dashboard integration for ros-kpi, including a new demo_interactive_heatmap.py script for interactive visualization of KPI data and a GRAFANA_QUICKSTART.md guide for rapid dashboard setup.
@@ -47,7 +47,7 @@ Embodied Intelligence SDK v26.1 introduces new sample pipeline - OpenClaw + Agen
 
 **New**:
 
-- OpenClaw + AgenticROS: The sample pipeline demonstrates the integration of OpenClaw and AgenticROS AI agent frameworks on Intel® Core™ Ultra Series 3 platform, with LLM/VLM inference served by OpenVINO Model Server (OVMS) for controlling JAKA Kargo robot in a Gazebo simulation environment.
+- OpenClaw + AgenticROS: The sample pipeline demonstrates the integration of OpenClaw and AgenticROS AI agent frameworks on Intel® Core™ Ultra Series 3 platform, with LLM/VLM inference served by OpenVINO™ Model Server (OVMS) for controlling JAKA Kargo robot in a Gazebo simulation environment.
 
 **Enhanced**:
 
@@ -104,7 +104,7 @@ RVC focuses on demonstrating consolidation of the following functionalities:
 | gui-settings | `ros-humble-gui-settings_2.0.0jammy_amd64.deb` | Custom message for GUI to RVC communication Package. |
 | moveit2-servo-motion-controller | `ros-humble-moveit2-servo-motion-controller_1.0.0jammy_amd64.deb` | RVC motion controller interface-based plugin implemented using MoveIt 2 Servo. |
 | non-oriented-grasp | `ros-humble-non-oriented-grasp_2.0.0jammy_amd64.deb` | Non-oriented grasp plugin. |
-| openvino-inference-plugin | `ros-humble-openvino-inference-plugin_2.0.0jammy_amd64.deb` | RVC AI interface-based plugin implementing YOLOv5, YOLOv6, and YOLOv8 using OpenVINO inference. |
+| openvino-inference-plugin | `ros-humble-openvino-inference-plugin_2.0.0jammy_amd64.deb` | RVC AI interface-based plugin implementing YOLOv5, YOLOv6, and YOLOv8 using OpenVINO™ inference. |
 | oriented-grasp | `ros-humble-oriented-grasp_2.0.0jammy_amd64.deb` | Oriented grasp plugin. |
 | robotiq-controllers | `ros-humble-robotiq-controllers_2.0.0jammy_amd64.deb` | Provides controllers for the Robotiq 2F gripper. |
 | robotiq-driver-plugin | `ros-humble-robotiq-driver-plugin_2.0.0jammy_amd64.deb` | Robotiq 2F driver. |

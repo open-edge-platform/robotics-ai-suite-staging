@@ -1,5 +1,5 @@
 # OpenVINO™ Physical AI
-OpenVINO™ Physical AI is a runtime that unifies cameras, robots, and policy inference behind a single API, accelerating OpenVINO-powered physical-AI deployments.
+OpenVINO™ Physical AI is a runtime that unifies cameras, robots, and policy inference behind a single API, accelerating OpenVINO™-powered physical-AI deployments.
 
 It closes the perception-to-action loop at runtime, turning sensor and robot-state observations into actions with low latency for learned manipulation and task execution on real hardware.
 

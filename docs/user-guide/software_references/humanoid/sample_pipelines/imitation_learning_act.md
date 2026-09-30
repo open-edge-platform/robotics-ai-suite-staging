@@ -82,9 +82,9 @@ pip install -e .
 
 1. You can download our pre-trained weights from this link: [Download Link](https://eci.intel.com/embodied-sdk-docs/_downloads/sim_insertion_scripted.zip). The command of training is the same as above, but you need to set the argument `--ckpt_dir` to the path of the pre-trained weights.
 
-2. Convert the model checkpoint to OpenVINO IR.
+2. Convert the model checkpoint to OpenVINO™ IR.
 
-   `ov_convert.py` is a script provided to convert the PyTorch model to OpenVINO IR. You can find the script in the `act-ov` directory, and see the usage with the following command:
+   `ov_convert.py` is a script provided to convert the PyTorch model to OpenVINO™ IR. You can find the script in the `act-ov` directory, and see the usage with the following command:
 
    ```bash
    cd <act_SOURCE_CODE_PATH>

@@ -3,7 +3,7 @@
 (humanoid_embodied_troubleshooting)=
 ## Humanoid Imitation Learning
 
-1. **OpenVINO can't detect GPU device**
+1. **OpenVINO™ can't detect GPU device**
 
    ```bash
    python3 -c "from openvino import Core; ie = Core(); print(ie.available_devices)"
@@ -55,13 +55,13 @@
    },
    ```
 
-5. **OpenVINO inference failed**
+5. **OpenVINO™ inference failed**
 
    (ov_inference_troubleshooting)=
 
-   If you encounter errors when running OpenVINO inference of models from [OpenVINO Supported Models](../components/ai_resources/openvino/models/index.md), check the OpenVINO version used for model conversion and the runtime version used for inference. The OpenVINO version used for model conversion should be the same as the runtime version used for inference. Otherwise, unexpected errors may occur, especially if the model is converted using a newer version and the runtime is an older version.
+   If you encounter errors when running OpenVINO™ inference of models from [OpenVINO™ Supported Models](../components/ai_resources/openvino/models/index.md), check the OpenVINO™ version used for model conversion and the runtime version used for inference. The OpenVINO™ version used for model conversion should be the same as the runtime version used for inference. Otherwise, unexpected errors may occur, especially if the model is converted using a newer version and the runtime is an older version.
 
-   You can check the OpenVINO version used for model conversion at the end of the OpenVINO IR file `*.xml`. For example:
+   You can check the OpenVINO™ version used for model conversion at the end of the OpenVINO™ IR file `*.xml`. For example:
 
    ```xml
    ...
