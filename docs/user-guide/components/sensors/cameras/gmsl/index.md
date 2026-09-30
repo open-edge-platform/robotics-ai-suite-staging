@@ -1,10 +1,10 @@
-# GMSL Cameras
+# GMSL Camera Guide
 
 Gigabit Multimedia Serial Link (GMSL) is a high-speed serial interface for
 connecting cameras to a processing platform. This guide covers supported camera
 modules, GMSL Add-in-Card design, and GMSL `SerDes` configuration.
 
-## Supported GMSL Cameras
+## Hardware Requirements
 
 ```{include} fragment_camera_table_gmsl.md
 ```
@@ -39,10 +39,10 @@ During installation, `intel-mipi-gmsl-dkms` presents a configuration dialog prom
 
 Select the appropriate deserializer based on the your system's IPU below. Unlisted platforms may be unsupported:
 
-| Code Name | Intel Processor | IPU Version | Deserializer |
-| --- | --- | --- | --- |
-| Panther Lake | Series 3 Intel® Core™ Ultra Processor | IPU7 | `max96724` |
-| Arrow Lake | Series 2 Intel® Core™ Ultra Processor | IPU6 | `max9296` 
+| Intel Processor | IPU Version | Deserializer |
+| --- | --- | --- |
+| Series 3 Intel® Core™ Ultra Processor | IPU7 | `max96724` |
+| Series 2 Intel® Core™ Ultra Processor | IPU6 | `max9296` 
 
 ![GMSL deserializer selection dialog](../../../../images/gmsl/gmsl-dkms-select.png "gmsl deserializer selection dialog")
 

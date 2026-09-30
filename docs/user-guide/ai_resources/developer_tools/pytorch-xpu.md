@@ -87,7 +87,7 @@ While PyTorch XPU provides an agile inner loop for rapid prototyping, interactiv
 
 Once your policy, perception pipeline, or foundation model is verified in PyTorch, transition it to [Intel® OpenVINO™](openvino.md) for production deployment:
 
-- **Model Optimization and Compression:** Apply graph-level operator fusions and post-training quantization (such as 8-bit or 4-bit weight compression via Neural Network Compression Framework / NNCF) to minimize latency and memory bandwidth consumption.
+- **Model Optimization and Compression:** Apply graph-level operator fusions and post-training quantization (such as 8-bit or 4-bit weight compression via Neural Network Compression Framework) to minimize latency and memory bandwidth consumption.
 - **Heterogeneous Hardware Scheduling:** Target onboard Intel® Core™ Ultra CPUs, integrated Intel® Arc™ graphics, discrete Intel® Arc™ GPUs, or low-power NPUs using a unified inference engine and dynamic workload scheduling.
 - **Robotics Runtime Integration:** Deploy optimized OpenVINO™ Intermediate Representation (IR) models into production ROS 2 nodes, standalone C++ or Python execution pipelines, or through the [OpenVINO™ Physical AI](https://github.com/openvinotoolkit/physicalai) for deterministic sensor-to-action loops.
 

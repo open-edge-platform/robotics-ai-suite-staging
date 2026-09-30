@@ -87,6 +87,10 @@ sphinx-spelling: $(VENV_DIR)
 	set +u; . ./$</bin/activate; set -u ;\
     sphinx-build -b spelling "$(SOURCEDIR)" "$(OUT_DIR)/spelling"
 
+sphinx-linkcheck: $(VENV_DIR)  ## Check URL validity
+	set +u; . ./$</bin/activate; set -u ;\
+    sphinx-build -b linkcheck "$(SOURCEDIR)" "$(OUT_DIR)/linkcheck"
+
 build: index sphinx-dirhtml index_ ## Build all documentation
 
 serve: index sphinx-serve index_ ## Serve documentation locally

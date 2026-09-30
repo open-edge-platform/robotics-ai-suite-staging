@@ -1,3 +1,7 @@
+---
+:orphan:
+---
+
 # Cameras
 
 This documentation covers supported interfaces, configuration, and validated
