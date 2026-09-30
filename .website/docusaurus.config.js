@@ -94,13 +94,13 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Robotics AI Suite",
+        title: "Robotics Dev Resources",
         items: [
           {
             // `pathname://` links to the staged static Sphinx site directly,
             // bypassing the SPA router and broken-link checks.
             to: "pathname:///development-stack/ai-suite-robotics/",
-            label: "Development Stack",
+            label: "Robotics AI Suite",
             target: "_self",
             position: "left",
           },
