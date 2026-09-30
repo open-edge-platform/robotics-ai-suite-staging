@@ -78,6 +78,7 @@ const config = {
 
   plugins: [
     sphinxDocs,
+    require.resolve("./plugins/site-search"),
     require.resolve("./plugins/model-routes.js"),
     [
       require.resolve("./plugins/llms-text"),
@@ -120,6 +121,10 @@ const config = {
           {
             href: "https://github.com/open-edge-platform/robotics-ai-suite",
             label: "GitHub",
+            position: "right",
+          },
+          {
+            type: "search",
             position: "right",
           },
         ],
