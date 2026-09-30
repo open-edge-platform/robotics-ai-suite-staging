@@ -3,7 +3,7 @@
 
 ## Product Link
 
-**Product link**: [AAEON UP WCL Edge](https://builders.intel.com/ecosystem-engagement/solution-hub/edge-ai-catalog/partner-spotlight/asus-nuc-16-338)
+**Product link**: [AAEON UP WCL Edge](https://www.aaeon.com/en/product/detail/up-systems-up-wcl-edge)
 
 ## Overview
 

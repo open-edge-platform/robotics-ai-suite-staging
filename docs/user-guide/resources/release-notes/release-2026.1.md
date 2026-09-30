@@ -63,7 +63,7 @@ Click each tab to learn about the new and updated features in each release of St
 
 RVC v2.1 release includes bug and security updates as well as Intel Lab's Histodepth Pointcloud Segmentation algorithm in a Virtual Fence application.
 
-- **Intel Lab's Histodepth Pointcloud Segmentation Virtual Fence**: Now part of the RVC package, this virtual fence application running on ROS uses depth information from an RealSense camera to create dynamic and static scene segmentation maps to enable live robotic virtual fencing and safety bounding. The use of this segmentation algorithm enables a drop-in approach to virtual fencing, requiring no training or learning before deployment.
+- **Intel Lab's Histodepth Pointcloud Segmentation Virtual Fence**: Now part of the RVC package, this virtual fence application running on ROS uses depth information from a RealSense camera to create dynamic and static scene segmentation maps to enable live robotic virtual fencing and safety bounding. The use of this segmentation algorithm enables a drop-in approach to virtual fencing, requiring no training or learning before deployment.
 
 **Features**:
 

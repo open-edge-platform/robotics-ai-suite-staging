@@ -76,7 +76,7 @@ The Robotics AI Suite integrates three complementary odometry engines ported to 
 
 - **Direct Image Alignment**: Tracks camera motion by directly minimizing photometric pixel errors across image patches without extracting ORB, SIFT, or SuperPoint descriptors.
 - **Multimodal Complementarity**: In geometrically degenerate environments (e.g. long, smooth tunnels or symmetrical corridors where LiDAR points lack unique surface normals), visual tracking constrains the state estimate. Conversely, in low-light or textureless scenes, LiDAR geometry stabilizes motion tracking.
-- **Sensor Setup**: Tested with a Livox Mid-360 LiDAR and an RealSense D415/D435i camera streaming into a unified state estimation graph.
+- **Sensor Setup**: Tested with a Livox Mid-360 LiDAR and a RealSense D415/D435i camera streaming into a unified state estimation graph.
 
 ### 3. Point-LIO (Point-by-Point Odometry)
 

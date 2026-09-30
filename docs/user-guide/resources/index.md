@@ -6,7 +6,7 @@ entry to help you find relevant material for your application.
 
 | Reference | Domains | Description |
 | --- | --- | --- |
-| [RealSense Camera with ROS 2 Sample Application](../components/sensors/reference_applications/realsense-ros2.md) | Sensors, Middleware | Integrates an RealSense camera with ROS 2 to stream color and depth data, launch camera nodes, and visualize the feed in RViz2. |
+| [RealSense Camera with ROS 2 Sample Application](../components/sensors/reference_applications/realsense-ros2.md) | Sensors, Middleware | Integrates a RealSense camera with ROS 2 to stream color and depth data, launch camera nodes, and visualize the feed in RViz2. |
 | [3D Pointcloud Groundfloor Segmentation for RealSense Camera and 3D LiDAR](../components/sensors/reference_applications/pointcloud-groundfloor-segmentation.md) | Sensors, AI | Intel algorithm that classifies 3D point clouds from RealSense or LiDAR sensors into ground, elevated surfaces, and obstacles for navigation over challenging terrain. |
 | [Multi-Camera Object Detection Powered by OpenVINO™](../ai_resources/openvino/reference_applications/openvino_multicam_demo.md) | AI, OpenVINO, Sensors | Runs OpenVINO™-optimized YOLOv8 object detection and segmentation in parallel across up to four USB or GMSL cameras. |
 | [OpenVINO™ Object Detection Tutorial](../ai_resources/openvino/reference_applications/object_detection_tutorial.md) | AI, OpenVINO, Sensors, Middleware | Deploys a ROS 2 OpenVINO™ node for object detection with selectable CPU, GPU, or NPU inference devices. |
